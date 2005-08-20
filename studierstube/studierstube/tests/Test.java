@@ -29,5 +29,7 @@ public class Test {
   	  artefakt.neuerAusloeser(artefakt.new Ausloeser(i, "Fingerschnippen", "einmalig"));
   	}
     Global.out("ergebnis == " + artefakt.zaehleAusloeser());
+    
+    Global.Fehler("aaaaaaaa");
   }
 }
