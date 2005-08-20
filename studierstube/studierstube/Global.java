@@ -9,6 +9,9 @@ package studierstube;
 
 import java.util.Random;
 
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
 public class Global {
   private static Random zufall = new Random();
   
@@ -26,9 +29,37 @@ public class Global {
   
   public static boolean debugmode = false;
   
+  void setzeOption(String option) {
+    if (option.equals("-debug")) {
+      Global g = new Global();
+      Global.debugmode = true;
+      System.out.println("Debug-Modus an");
+    }
+    else {
+      System.out.println("Sie haben eine ungültige Option angegeben: " + option);
+      Usage();
+      System.exit(1);
+    }
+  }
+  
+  void Usage() {
+    System.out.println("Verfügbare Optionen:");
+    System.out.println("  -debug          Debug-Meldungen einschalten");
+  }
+  
   public static void out(String s) {
     if (debugmode == true) System.out.println(s);
   }
   
-  public static String version = "0.01";
+  public static void Fehler(String s) {
+    JFrame.setDefaultLookAndFeelDecorated(true);
+    JFrame frame = new JFrame("Ein Fehler ist aufgetreten");
+    frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    JLabel label = new JLabel(s);
+    frame.getContentPane().add(label);
+    frame.pack();
+    frame.setVisible(true);
+  }
+  
+  public static final String version = "0.01";
 }

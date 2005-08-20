@@ -27,34 +27,18 @@ class Main {
   public static void main(String[] args) {
   	javax.swing.SwingUtilities.invokeLater(new Runnable() {
         public void run() {
-  //          createAndShowGUI();
+   //         createAndShowGUI();
         }
     });
-    Main stube = new Main();
+  	
+    Global global = new Global();
     if (args != null)
       for (int i = 0; i < args.length; i++) {
-        if (args[i].startsWith("-")) stube.setzeOption(args[i]); 
+        if (args[i].startsWith("-")) global.setzeOption(args[i]); 
       }    
     
     XMLtest x = new XMLtest();
     Test t = new Test();
-  }
-  
-  void setzeOption(String option) {
-    if (option.equals("-debug")) {
-      Global g = new Global();
-      Global.debugmode = true;
-      System.out.println("Debug-Modus an");
-    }
-    else {
-      System.out.println("Sie haben eine ungültige Option angegeben: " + option);
-      Usage();
-      System.exit(1);
-    }
-  }
-  
-  void Usage() {
-    System.out.println("Verfügbare Optionen:");
-    System.out.println("  -debug          Debug-Meldungen einschalten");
+    Global.Fehler("aaaaaaaa");
   }
 }
