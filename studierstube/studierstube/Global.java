@@ -9,8 +9,7 @@ package studierstube;
 
 import java.util.Random;
 
-import javax.swing.JFrame;
-import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 public class Global {
   private static Random zufall = new Random();
@@ -51,14 +50,14 @@ public class Global {
     if (debugmode == true) System.out.println(s);
   }
   
-  public static void Fehler(String s) {
-    JFrame.setDefaultLookAndFeelDecorated(true);
-    JFrame frame = new JFrame("Ein Fehler ist aufgetreten");
-    frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-    JLabel label = new JLabel(s);
-    frame.getContentPane().add(label);
-    frame.pack();
-    frame.setVisible(true);
+  public static void FehlerDialog(String s) {
+  	JOptionPane.showMessageDialog(null, s, "Ein Fehler ist aufgetreten", JOptionPane.ERROR_MESSAGE);
+  }
+  
+  public static void ExceptionFehlerDialog(Exception e) {
+  	JOptionPane.showMessageDialog(null,
+  			e.getMessage(),
+			"Ein Fehler ist aufgetreten", JOptionPane.ERROR_MESSAGE);
   }
   
   public static final String version = "0.01";

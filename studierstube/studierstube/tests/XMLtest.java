@@ -21,6 +21,8 @@ import javax.xml.transform.stream.StreamResult;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
+import studierstube.Global;
+
 public class XMLtest {
 	DocumentBuilderFactory factory;
 	Document document;
@@ -30,6 +32,7 @@ public class XMLtest {
 	        this.speichereXML();
 	       }
 	       catch (Exception e) {
+	         Global.ExceptionFehlerDialog(e);
 	         e.printStackTrace();
 	       }
 	}
