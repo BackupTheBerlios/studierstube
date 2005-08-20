@@ -5,7 +5,7 @@
 * of the zlib/libpng license. See LICENSE.txt for details.    *
 **************************************************************/
 
-package studierstube.regeln;
+package container;
 
 import java.util.ArrayList;
 

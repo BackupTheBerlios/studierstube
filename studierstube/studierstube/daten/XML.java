@@ -7,7 +7,7 @@
 
 package studierstube.daten;
 
-import studierstube.regeln.Artefakt;
+import container.Artefakt;
 
 public class XML {
  /* public String[] ArtefaktListe() {
