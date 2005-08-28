@@ -5,7 +5,7 @@
 * of the zlib/libpng license. See LICENSE.txt for details.    *
 **************************************************************/
 
-package gui;
+package studierstube.gui;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;

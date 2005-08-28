@@ -7,7 +7,7 @@
 
 package studierstube;
 
-import gui.ArtefaktFrame;
+import studierstube.gui.ArtefaktFrame;
 import studierstube.tests.XMLtest;
 
 class Main {
