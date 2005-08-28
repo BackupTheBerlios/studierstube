@@ -18,7 +18,12 @@ class Main {
         if (args[i].startsWith("-")) global.setzeOption(args[i]); 
       }    
     
-    new ArtefaktFrame();
+    javax.swing.SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+        	new ArtefaktFrame();
+        }
+    });
+    
     XMLtest x = new XMLtest();
   }
 }

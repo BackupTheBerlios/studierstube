@@ -12,10 +12,23 @@ import java.util.Random;
 import javax.swing.JOptionPane;
 
 public class Global {
-  private static Random zufall = new Random();
+  public static boolean debugmode = false;
+  public static final String version = "0.01";
+  
+  private static Random random = new Random();
   
   public static int Wuerfel(int seiten) {
-    return zufall.nextInt(seiten) + 1;
+    return random.nextInt(seiten) + 1;
+  }
+  
+  public static int wuerfeln(String string) {
+  	String s = string;
+  	int ergebnis = 0;
+  	int a,b, stelle;
+  	a = s.indexOf("+");
+  	b = s.indexOf("-");
+  	// TODO
+  	return ergebnis;
   }
   
   public static int W6() {
@@ -25,8 +38,6 @@ public class Global {
   public static int W20() {
     return Wuerfel(20);
   }
-  
-  public static boolean debugmode = false;
   
   void setzeOption(String option) {
     if (option.equals("-debug")) {
@@ -50,6 +61,12 @@ public class Global {
     if (debugmode == true) System.out.println(s);
   }
   
+  public static void log() {
+  	if (debugmode == true) {
+      // throw exception, get stacktrace, get class/method
+  	}
+  }
+  
   public static void FehlerDialog(String s) {
   	JOptionPane.showMessageDialog(null, s, "Ein Fehler ist aufgetreten", JOptionPane.ERROR_MESSAGE);
   }
@@ -57,8 +74,7 @@ public class Global {
   public static void ExceptionFehlerDialog(Exception e) {
   	JOptionPane.showMessageDialog(null,
   			e.getMessage(),
-			"Ein Fehler ist aufgetreten", JOptionPane.ERROR_MESSAGE);
+			"Ein Fehler ist aufgetreten",
+			JOptionPane.ERROR_MESSAGE);
   }
-  
-  public static final String version = "0.01";
 }
