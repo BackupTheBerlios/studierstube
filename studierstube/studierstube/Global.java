@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
 
 public class Global {
   public static boolean debugmode = false;
-  public static final String version = "0.01";
+  public static final String version = "0.1";
   
   private static Random random = new Random();
   
@@ -27,7 +27,7 @@ public class Global {
   	int a,b, stelle;
   	a = s.indexOf("+");
   	b = s.indexOf("-");
-  	// TODO
+  	// TODO parser schreiben
   	return ergebnis;
   }
   

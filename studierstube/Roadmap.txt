@@ -1,0 +1,21 @@
+0.0	Tests, Planung, package-Struktur
+
+0.1	Übersichtsfenster Artefaktherstellung
+
+0.2	Datenstruktur implementieren
+
+0.3	XML-Export implementieren
+
+0.4	XML-Import für Zauber implementieren
+
+0.5	Regelwerk für Artefaktherstellung
+
+0.6	GUI erweitern
+
+0.7	Integration in Helden
+
+0.8	Alpha-Test
+
+0.9	Beta-Test
+
+1.0	FINAL

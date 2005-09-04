@@ -20,10 +20,12 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.KeyStroke;
 
+import studierstube.Global;
+
 public class ArtefaktFrame implements ActionListener {
   public ArtefaktFrame() {
     JFrame.setDefaultLookAndFeelDecorated(true);
-    JFrame frame = new JFrame("Die magische Werkstatt");
+    JFrame frame = new JFrame("Die magische Werkstatt" + ", Version " + Global.version);
     frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     // TODO  void setIconImage(Image)
     frame.setJMenuBar(createJMenuBar());
@@ -44,6 +46,14 @@ public class ArtefaktFrame implements ActionListener {
   	programMenu.getAccessibleContext().setAccessibleDescription("TODO");
   	menuBar.add(programMenu);
   	
+  	optionMenu.setMnemonic(KeyEvent.VK_O);
+  	optionMenu.getAccessibleContext().setAccessibleDescription("TODO");
+  	menuBar.add(optionMenu);
+  	
+  	helpMenu.setMnemonic(KeyEvent.VK_H);
+  	helpMenu.getAccessibleContext().setAccessibleDescription("TODO");
+  	menuBar.add(helpMenu);
+  	
   	menuItem = new JMenuItem("Beenden", KeyEvent.VK_B);
     menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q, ActionEvent.CTRL_MASK));
     menuItem.getAccessibleContext().setAccessibleDescription("Programm beenden");
@@ -56,7 +66,7 @@ public class ArtefaktFrame implements ActionListener {
   public JPanel createPanel() {
   	JPanel panel = new JPanel();
     JButton button = new JButton("Klick!");
-    button.setPreferredSize(new Dimension(150, 60));
+    button.setPreferredSize(new Dimension(450, 360));
     panel.add(button);
     button.addActionListener(this);
   	return panel;
