@@ -10,7 +10,7 @@
 
 0.5	Regelwerk für Artefaktherstellung
 
-0.6	GUI erweitern
+0.6	GUI vervollständigen
 
 0.7	Integration in Helden
 

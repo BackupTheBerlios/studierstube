@@ -9,18 +9,14 @@ package studierstube.container;
 
 import java.util.ArrayList;
 
-public class Artefakt {
-  boolean	eigenschaftSiegel,
-  		eigenschaftUnzerbrechlichkeit,
-  		eigenschaftGespuer,
-  		eigenschaftApport;
+public class Ausloeser {
+
+  int zuschlagAusloeser;
+  int anzahlLadungen;
   
-  int	zuschlagMaterial,
-  	zuschlagAffinitaetsprinzip,
-	zuschlagZeit,
-	zuschlagOrt,
-	zuschlagGroesse;
-  
-  ArrayList listeAusloeser = new ArrayList(0);
-  
+  String textAusloeser;
+  String praeservanz;
+
+  ArrayList listeWirkendeSprueche = new ArrayList(0);
+
 }

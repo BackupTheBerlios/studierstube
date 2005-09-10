@@ -9,18 +9,19 @@ package studierstube.container;
 
 import java.util.ArrayList;
 
-public class Artefakt {
-  boolean	eigenschaftSiegel,
-  		eigenschaftUnzerbrechlichkeit,
-  		eigenschaftGespuer,
-  		eigenschaftApport;
+public class WirkenderSpruch {
   
-  int	zuschlagMaterial,
-  	zuschlagAffinitaetsprinzip,
-	zuschlagZeit,
-	zuschlagOrt,
-	zuschlagGroesse;
+  String zauberID;
+  String repraesentation;
   
-  ArrayList listeAusloeser = new ArrayList(0);
+  String wirkung;
+  String ZfW;
+  String ZfP;
+  
+  int zfw;
+  int zfp;
+  int stapelung;
+  
+  ArrayList listeModifikationen = new ArrayList(0);
   
 }
