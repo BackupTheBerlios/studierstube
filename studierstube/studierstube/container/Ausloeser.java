@@ -11,10 +11,10 @@ import java.util.ArrayList;
 
 public class Ausloeser {
 
-  int zuschlagAusloeser;
-  int anzahlLadungen;
+  int zuschlag;
+  int ladungen;
   
-  String textAusloeser;
+  String text;
   String praeservanz;
 
   ArrayList listeWirkendeSprueche = new ArrayList(0);

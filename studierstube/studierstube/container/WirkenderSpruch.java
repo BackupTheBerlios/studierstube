@@ -13,13 +13,11 @@ public class WirkenderSpruch {
   
   String zauberID;
   String repraesentation;
-  
   String wirkung;
-  String ZfW;
-  String ZfP;
   
   int zfw;
   int zfp;
+  int reihung;
   int stapelung;
   
   ArrayList listeModifikationen = new ArrayList(0);
