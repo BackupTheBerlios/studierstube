@@ -22,8 +22,8 @@ import javax.swing.KeyStroke;
 
 import studierstube.Global;
 
-public class ArtefaktFrame implements ActionListener {
-  public ArtefaktFrame() {
+public class HauptFrame implements ActionListener {
+  public HauptFrame() {
     JFrame.setDefaultLookAndFeelDecorated(true);
     JFrame frame = new JFrame("Die magische Werkstatt" + ", Version " + Global.version);
     frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

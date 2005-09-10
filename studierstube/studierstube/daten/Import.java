@@ -7,18 +7,6 @@
 
 package studierstube.daten;
 
-import studierstube.container.Artefakt;
+public class Import {
 
-public class XML {
- /* public String[] ArtefaktListe() {
-  	
-  }
-	
-  public Artefakt ArtefaktLaden(String id) {
-  	
-  }
-*/
-  public void ArtefaktSpeichern(Artefakt a) {
-  	
-  }
 }

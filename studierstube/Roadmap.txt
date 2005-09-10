@@ -1,16 +1,16 @@
 0.0	Tests, Planung, package-Struktur
 
-0.1	Übersichtsfenster Artefaktherstellung
+0.1	Datenstruktur implementieren
 
-0.2	Datenstruktur implementieren
+0.2	Regelwerk für Artefaktherstellung
 
-0.3	XML-Export implementieren
+0.3	XML-Export
 
-0.4	XML-Import für Zauber implementieren
+0.4	Zauberliste
 
-0.5	Regelwerk für Artefaktherstellung
+0.5	GUI erstellen
 
-0.6	GUI vervollständigen
+0.6	?
 
 0.7	Integration in Helden
 

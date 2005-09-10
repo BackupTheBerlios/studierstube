@@ -7,7 +7,7 @@
 
 package studierstube;
 
-import studierstube.gui.ArtefaktFrame;
+import studierstube.gui.HauptFrame;
 import studierstube.tests.XMLtest;
 
 class Main {
@@ -20,7 +20,7 @@ class Main {
     
     javax.swing.SwingUtilities.invokeLater(new Runnable() {
         public void run() {
-        	new ArtefaktFrame();
+        	new HauptFrame();
         }
     });
     

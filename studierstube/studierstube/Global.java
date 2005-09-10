@@ -21,22 +21,28 @@ public class Global {
     return random.nextInt(seiten) + 1;
   }
   
-  public static int wuerfeln(String string) {
-  	String s = string;
-  	int ergebnis = 0;
-  	int a,b, stelle;
-  	a = s.indexOf("+");
-  	b = s.indexOf("-");
-  	// TODO parser schreiben
-  	return ergebnis;
-  }
-  
   public static int W6() {
     return Wuerfel(6);
   }
   
   public static int W20() {
     return Wuerfel(20);
+  }
+  
+  public static int xW6(int anzahl) {
+    int summe = 0;
+    for (int i = 0; i < anzahl; i++) {
+      summe += Wuerfel(6);
+    }
+    return summe;
+  }
+  
+  public static int xW20(int anzahl) {
+    int summe = 0;
+    for (int i = 0; i < anzahl; i++) {
+      summe += Wuerfel(20);
+    }
+    return summe;
   }
   
   void setzeOption(String option) {
