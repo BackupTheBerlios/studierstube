@@ -5,8 +5,8 @@
 * of the zlib/libpng license. See LICENSE.txt for details.    *
 **************************************************************/
 
-package studierstube.regeln;
+package studierstube.daten;
 
-public class Modifikation {
+public class Schnittstelle {
 
 }

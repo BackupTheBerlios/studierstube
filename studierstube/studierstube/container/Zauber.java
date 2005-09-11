@@ -5,8 +5,14 @@
 * of the zlib/libpng license. See LICENSE.txt for details.    *
 **************************************************************/
 
-package studierstube.regeln;
+package studierstube.container;
 
 public class Zauber {
-
+  public String ID;
+  public String komplexitaet;
+  public int komplexitaetZahl;
+  public String[] probe;
+  public String[] merkmale;
+  public String[] varianten;
+  public String[] repraesentationen;
 }

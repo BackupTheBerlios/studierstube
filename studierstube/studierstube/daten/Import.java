@@ -17,6 +17,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import studierstube.Global;
+import studierstube.container.Zauber;
 
 public class Import {
   public void leseZaubernamen() {
@@ -34,14 +35,16 @@ public class Import {
     Node zauberspruecheNode = sucheChildNode(inhaltNode, "Zaubersprüche");
     NodeList zauberNodes = zauberspruecheNode.getChildNodes();
     for (int i = 0; i < zauberNodes.getLength(); i++) {
-      Node zauberNode = zauberNodes.item(i);
-      leseZauber(zauberNode);
+      leseZauber(zauberNodes.item(i));
     }    
   }
   
-  public void leseZauber(Node node) {
-    if (node.getNodeName() == "Zauber") {
-      String id = node.getAttributes().getNamedItem("ID").getNodeValue();
+  public void leseZauber(Node zauberNode) {
+    if (zauberNode.getNodeName() == "Zauber") {
+      String id = getAttribute(zauberNode, "ID");
+      Zauber zauber = new Zauber();
+      zauber.ID = id;
+
     }
   }
   
@@ -54,5 +57,9 @@ public class Import {
     }   
     Global.out("ChildNode '" + name + "' nicht gefunden!");
     return null;
+  }
+  
+  public String getAttribute(Node node, String attr) {
+    return node.getAttributes().getNamedItem(attr).getNodeValue();
   }
 }

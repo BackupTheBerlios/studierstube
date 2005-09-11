@@ -18,8 +18,10 @@ class Main {
         if (args[i].startsWith("-")) global.setzeOption(args[i]); 
       }    
     
+    Global.start();
     Import i = new Import();
     i.leseZaubernamen();
+    Global.stop();
     
     javax.swing.SwingUtilities.invokeLater(
       new Runnable() {

@@ -11,11 +11,17 @@ import java.util.Random;
 
 import javax.swing.JOptionPane;
 
+import studierstube.container.Zauberliste;
+
 public class Global {
   public static boolean debugmode = false;
   public static final String version = "0.1";
   
   private static Random random = new Random();
+  
+  static long startTime, stopTime = 0;
+  
+  static Zauberliste zauberListe = new Zauberliste();
   
   public static int Wuerfel(int seiten) {
     return random.nextInt(seiten) + 1;
@@ -68,15 +74,25 @@ public class Global {
   }
   
   public static void log() {
-  	if (debugmode == true) {
+    if (debugmode == true) {
       // throw exception, get stacktrace, get class/method
-  	}
+    }
   }
   
   public static void nullTest(Object o) {
     if (o == null) {
       System.out.println("NULL!!!!");
     }
+  }
+  
+  public static void start() {
+    startTime = System.currentTimeMillis();
+  }
+  
+  public static void stop() {
+    stopTime = System.currentTimeMillis();
+    long diff = stopTime - startTime;
+    System.out.println(diff + " ms");
   }
   
   public static void FehlerDialog(String s) {
