@@ -7,8 +7,8 @@
 
 package studierstube;
 
+import studierstube.daten.Import;
 import studierstube.gui.HauptFrame;
-import studierstube.tests.XMLtest;
 
 class Main {
   public static void main(String[] args) {
@@ -18,12 +18,15 @@ class Main {
         if (args[i].startsWith("-")) global.setzeOption(args[i]); 
       }    
     
-    javax.swing.SwingUtilities.invokeLater(new Runnable() {
-        public void run() {
-        	new HauptFrame();
-        }
-    });
+    Import i = new Import();
+    i.leseZaubernamen();
     
-    XMLtest x = new XMLtest();
+    javax.swing.SwingUtilities.invokeLater(
+      new Runnable() {
+        public void run() {
+          new HauptFrame();
+        }
+      }
+    );
   }
 }

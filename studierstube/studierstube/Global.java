@@ -73,6 +73,12 @@ public class Global {
   	}
   }
   
+  public static void nullTest(Object o) {
+    if (o == null) {
+      System.out.println("NULL!!!!");
+    }
+  }
+  
   public static void FehlerDialog(String s) {
   	JOptionPane.showMessageDialog(null, s, "Ein Fehler ist aufgetreten", JOptionPane.ERROR_MESSAGE);
   }
