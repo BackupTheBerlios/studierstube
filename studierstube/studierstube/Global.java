@@ -15,13 +15,13 @@ import studierstube.container.Zauberliste;
 
 public class Global {
   public static boolean debugmode = false;
-  public static final String version = "0.1";
+  public static final String version = "0.2";
   
   private static Random random = new Random();
   
   static long startTime, stopTime = 0;
   
-  static Zauberliste zauberListe = new Zauberliste();
+  public static Zauberliste zauberListe = new Zauberliste();
   
   public static int Wuerfel(int seiten) {
     return random.nextInt(seiten) + 1;

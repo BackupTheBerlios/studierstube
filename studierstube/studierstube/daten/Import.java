@@ -20,7 +20,7 @@ import studierstube.Global;
 import studierstube.container.Zauber;
 
 public class Import {
-  public void leseZaubernamen() {
+  public void leseZauberEin() {
     DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
     Document document = null;
     try {
@@ -41,16 +41,35 @@ public class Import {
   
   public void leseZauber(Node zauberNode) {
     if (zauberNode.getNodeName() == "Zauber") {
+      
       String id = getAttribute(zauberNode, "ID");
+      
+      Node kompNode = sucheChildNode(zauberNode, "Komplexität");
+      String komp = kompNode.getChildNodes().item(0).getNodeValue();
+      
+      Node probeNode = sucheChildNode(zauberNode, "Probe");
+      String probe = probeNode.getChildNodes().item(0).getNodeValue();
+      String probe0 = probe.substring(0,2);
+      String probe1 = probe.substring(3,5);
+      String probe2 = probe.substring(6,8);  // StringIndexOutOfBoundsException abfangen
+      
+      Node merkmaleNode = sucheChildNode(zauberNode, "Merkmale");
+      
       Zauber zauber = new Zauber();
-      zauber.ID = id;
-
+      zauber.name = id;
+      zauber.komplexitaet = komp;
+      zauber.probe[0] = probe0;
+      zauber.probe[1] = probe1;
+      zauber.probe[2] = probe2;
+      
+      Global.zauberListe.add(zauber);
     }
   }
   
   public Node sucheChildNode(Node node, String name) {
     NodeList nl = node.getChildNodes();
     for (int i = 0; i < nl.getLength(); i++) {
+      Global.out("" + nl.item(i).getNodeName());
       if (nl.item(i).getNodeName().equals(name)) {
       	return nl.item(i);
       }
@@ -62,4 +81,6 @@ public class Import {
   public String getAttribute(Node node, String attr) {
     return node.getAttributes().getNamedItem(attr).getNodeValue();
   }
+
+  
 }

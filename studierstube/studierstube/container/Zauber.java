@@ -8,11 +8,10 @@
 package studierstube.container;
 
 public class Zauber {
-  public String ID;
+  public String name;
+//  public String[] verbreitung;   /// oder rep?
   public String komplexitaet;
-  public int komplexitaetZahl;
-  public String[] probe;
+  public String[] probe = new String[3];
   public String[] merkmale;
   public String[] varianten;
-  public String[] repraesentationen;
 }
