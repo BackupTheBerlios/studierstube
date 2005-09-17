@@ -181,6 +181,7 @@ Sackleinen und Spinnenseide nur in gildenmagischer Repräsentation</Beschreibung
           <Variante>Langer Atem</Variante>
           <Variante>Sturm</Variante>
           <Variante>Übler Gestank</Variante>
+          <Variante>Lieblicher Duft</Variante>
         </Varianten>
         <Verbreitungen>
           <Verbreitung ID="Achaz-Kristallomanten">
@@ -307,6 +308,37 @@ Sackleinen und Spinnenseide nur in gildenmagischer Repräsentation</Beschreibung
         </Verbreitungen>
         <Beschreibung>siehe Liber Cantiones, S. 15</Beschreibung>
       </Zauber>
+      <Zauber ID="Ängste lindern">
+        <Probe>MU/IN/CH</Probe>
+        <Komplexität>C</Komplexität>
+        <Merkmale>
+          <Merkmal>Einfluss</Merkmal>
+        </Merkmale>
+        <Varianten>
+          <Variante>Zauberdauer</Variante>
+          <Variante>Erzwingen</Variante>
+          <Variante>Kosten</Variante>
+          <Variante>Reichweite</Variante>
+          <Variante>Gegenzauber</Variante>
+          <Variante>Seele beruhigen</Variante>
+          <Variante>Tiere besänftigen</Variante>
+        </Varianten>
+        <Verbreitungen>
+          <Verbreitung ID="Druiden">
+            <Wert>4</Wert>
+          </Verbreitung>
+          <Verbreitung ID="Geoden">
+            <Wert>5</Wert>
+          </Verbreitung>
+          <Verbreitung ID="Gildenmagier">
+            <Wert>4</Wert>
+          </Verbreitung>
+          <Verbreitung ID="Hexen">
+            <Wert>7</Wert>
+          </Verbreitung>
+        </Verbreitungen>
+        <Beschreibung>siehe Liber Cantiones, S. 16</Beschreibung>
+      </Zauber>
       <Zauber ID="Animatio stummer Diener">
         <Probe>KL/FF/GE</Probe>
         <Komplexität>E</Komplexität>
@@ -318,6 +350,8 @@ Sackleinen und Spinnenseide nur in gildenmagischer Repräsentation</Beschreibung
           <Variante>Tagelöhner</Variante>
           <Variante>Mehrere Objekte</Variante>
           <Variante>Geworfenes Objekt</Variante>
+          <Variante>Knechtschaft</Variante>
+          <Variante>Ad Infinitum, ad Nauseam</Variante>
         </Varianten>
         <Verbreitungen>
           <Verbreitung ID="Gildenmagier">
@@ -427,6 +461,7 @@ in der borbaradianischen Repräsentation zusätzlich Merkmal Dämonisch (Mishkha
           <Variante>Reichweite</Variante>
           <Variante>Wirkungsdauer</Variante>
           <Variante>Körperschild</Variante>
+          <Variante>Kraft des Fakirs</Variante>
         </Varianten>
         <Verbreitungen>
           <Verbreitung ID="Druiden">
@@ -740,6 +775,7 @@ Dritte Probe wird auf die zu steigernde Eigenschaft gewürfelt
           <Variante>Wirkungsdauer</Variante>
           <Variante>Gemeinsame Erinnerungen</Variante>
           <Variante>Keine Erinnerung</Variante>
+          <Variante>Tierfreund</Variante>
         </Varianten>
         <Verbreitungen>
           <Verbreitung ID="Druiden">
@@ -965,6 +1001,8 @@ Dritte Probe wird auf die zu steigernde Eigenschaft gewürfelt
           <Variante>Traumreise</Variante>
           <Variante>Kampfsinn</Variante>
           <Variante>Tiefentelepathie</Variante>
+          <Variante>Drachisch</Variante>
+          <Variante>Liebessinn</Variante>
         </Varianten>
         <Verbreitungen>
           <Verbreitung ID="Achaz-Kristallomanten">
@@ -1820,6 +1858,7 @@ in der borbaradianischen Version Merkmal Dämonisch (Amazeroth) anstatt Eigensch
           <Variante>Wirkungsdauer</Variante>
           <Variante>Rostträger</Variante>
           <Variante>Satinavs Hörner</Variante>
+          <Variante>Rostfalle</Variante>
         </Varianten>
         <Verbreitungen>
           <Verbreitung ID="Achaz-Kristallomanten">
@@ -1873,9 +1912,7 @@ in der borbaradianischen Version Merkmal Dämonisch (Amazeroth) anstatt Eigensch
           <Variante>Erzwingen</Variante>
           <Variante>Kosten</Variante>
           <Variante>Reichweite</Variante>
-          <Variante>Anderes Element</Variante>
           <Variante>Mindergeister bannen</Variante>
-          <Variante>Elementargeist angreifen</Variante>
           <Variante>Zone</Variante>
         </Varianten>
         <Verbreitungen>
@@ -2356,7 +2393,6 @@ Verbreitung bei Firnelfen 6, bei anderen Elfen 2</Beschreibung>
           <Variante>Zielobjekt</Variante>
           <Variante>Kosten</Variante>
           <Variante>Reichweite</Variante>
-          <Variante>Wirkungsdauer</Variante>
           <Variante>Langfristige Bannung</Variante>
           <Variante>Zone</Variante>
           <Variante>Permanente Bannung</Variante>
@@ -2950,6 +2986,7 @@ in der borbaradianischen Repräsentation Merkmal Dämonisch (Agrimoth) anstatt E
         </Merkmale>
         <Varianten>
           <Variante>Zauberdauer</Variante>
+          <Variante>Zielobjekt</Variante>
         </Varianten>
         <Verbreitungen>
           <Verbreitung ID="Geoden">
@@ -3117,7 +3154,7 @@ in der borbaradianischer Repräsentation zusätzlich Merkmal Dämonisch (Belhalh
         </Varianten>
         <Verbreitungen>
           <Verbreitung ID="Achaz-Kristallomanten">
-            <Wert>1</Wert>
+            <Wert>2</Wert>
           </Verbreitung>
           <Verbreitung ID="Geoden">
             <Wert>1</Wert>
@@ -3491,6 +3528,7 @@ Unterschiedlich bei verschiedenen Repräsentationen
           <Merkmal>Telekinese</Merkmal>
         </Merkmale>
         <Varianten>
+          <Variante>Reichweite</Variante>
           <Variante>Scherbenhaufen</Variante>
         </Varianten>
         <Verbreitungen>
@@ -3784,7 +3822,7 @@ Unterschiedlich bei verschiedenen Repräsentationen
           <Variante>Zielobjekt</Variante>
           <Variante>Reichweite</Variante>
           <Variante>Schluckauf</Variante>
-          <Variante>Furzen</Variante>
+          <Variante>Blähungen</Variante>
         </Varianten>
         <Verbreitungen>
           <Verbreitung ID="Schelme">
@@ -4004,7 +4042,7 @@ Unterschiedlich bei verschiedenen Repräsentationen
             <Wert>1</Wert>
           </Verbreitung>
           <Verbreitung ID="Hexen">
-            <Wert>3</Wert>
+            <Wert>4</Wert>
           </Verbreitung>
         </Verbreitungen>
         <Beschreibung>siehe Liber Cantiones, S. 105/106
@@ -4483,6 +4521,8 @@ Verbreitung Mag(Dru)2 fehlt
           <Variante>Wirkungsdauer</Variante>
           <Variante>Telemanipulation</Variante>
           <Variante>Verbiegen</Variante>
+          <Variante>Unsichtbarer Hieb</Variante>
+          <Variante>Rote und Weiße Kamele</Variante>
           <Variante>Fesselfeld</Variante>
         </Varianten>
         <Verbreitungen>
@@ -5001,6 +5041,8 @@ Verbreitung Mag(Dru)2 fehlt
           <Variante>Reichweite</Variante>
           <Variante>Wirkungsdauer</Variante>
           <Variante>Farbtopf</Variante>
+          <Variante>Ohne Kamm</Variante>
+          <Variante>Winterpelz und Katzenfell</Variante>
         </Varianten>
         <Verbreitungen>
           <Verbreitung ID="Gildenmagier">
@@ -5379,6 +5421,8 @@ Rituelle Form bei Ach/ Dru/ Elf/ Hex prinzipell bekannt
           <Variante>Reichweite</Variante>
           <Variante>Selbstanwendung</Variante>
           <Variante>Kleine Stabilisierung</Variante>
+          <Variante>Zielobjekt</Variante>
+          <Variante>Gegenzauber</Variante>
         </Varianten>
         <Verbreitungen>
           <Verbreitung ID="Achaz-Kristallomanten">
@@ -5463,7 +5507,6 @@ Rituelle Form bei Ach/ Dru/ Elf/ Hex prinzipell bekannt
           <Variante>Zauberdauer</Variante>
           <Variante>Kosten</Variante>
           <Variante>Reichweite</Variante>
-          <Variante>Wirkungsdauer</Variante>
           <Variante>Selemer Verhältnisse</Variante>
           <Variante>Krötenkunde</Variante>
         </Varianten>
@@ -5579,7 +5622,6 @@ in der borbaradianischen Version zusätzlich Merkmal Dämonisch (Mishkara)</Besc
         <Varianten>
           <Variante>Zauberdauer</Variante>
           <Variante>Reichweite</Variante>
-          <Variante>Wirkungsdauer</Variante>
           <Variante>längere Verwandlung</Variante>
           <Variante>permanente Verwandlung</Variante>
           <Variante>Bärenfell und Froschschenkel</Variante>
@@ -5999,7 +6041,7 @@ Mekrmal: Elementar (Luft oder Wasser)</Beschreibung>
         </Varianten>
         <Verbreitungen>
           <Verbreitung ID="Gildenmagier">
-            <Wert>2</Wert>
+            <Wert>3</Wert>
           </Verbreitung>
         </Verbreitungen>
         <Beschreibung>siehe Liber Cantiones, S. 152
@@ -6091,6 +6133,7 @@ Mekrmal: Elementar (Luft oder Wasser)</Beschreibung>
           <Variante>Zauberdauer</Variante>
           <Variante>Reichweite</Variante>
           <Variante>Zielobjekt</Variante>
+          <Variante>Psst!</Variante>
         </Varianten>
         <Verbreitungen>
           <Verbreitung ID="Druiden">
@@ -6568,7 +6611,6 @@ Merkmal Dämonisch (spezialisiert je nach Erzdämon)</Beschreibung>
           <Variante>Kosten</Variante>
           <Variante>Erzwingen</Variante>
           <Variante>Reichweite</Variante>
-          <Variante>Wirkungsdauer</Variante>
           <Variante>Permanenz</Variante>
           <Variante>Ritual der Veränderung</Variante>
         </Varianten>
@@ -7498,6 +7540,27 @@ Verbreitung Waldelfen 4/ andere Elfen 2
         <Beschreibung>siehe Liber Cantiones, S. 187
 </Beschreibung>
       </Zauber>
+      <Zauber ID="Zauberklinge Geisterspeer">
+        <Probe>KL/FF/KO</Probe>
+        <Komplexität>D</Komplexität>
+        <Merkmale>
+          <Merkmal>Objekt</Merkmal>
+          <Merkmal>Kraft</Merkmal>
+        </Merkmale>
+        <Varianten>
+          <Variante>Zauberdauer</Variante>
+          <Variante>Wirkungsdauer</Variante>
+          <Variante>Reichweite</Variante>
+          <Variante>Durstbann</Variante>
+        </Varianten>
+        <Verbreitungen>
+          <Verbreitung ID="Elfen">
+            <Wert>3</Wert>
+          </Verbreitung>
+        </Verbreitungen>
+        <Beschreibung>siehe Liber Cantiones, S. 188
+</Beschreibung>
+      </Zauber>
       <Zauber ID="Zaubernahrung Hungerbann">
         <Probe>MU/MU/KO</Probe>
         <Komplexität>C</Komplexität>
@@ -7506,17 +7569,44 @@ Verbreitung Waldelfen 4/ andere Elfen 2
           <Merkmal>Einfluss</Merkmal>
         </Merkmale>
         <Varianten>
-          <Variante>Zauberdauer</Variante>
+          <Variante>Kosten</Variante>
           <Variante>Wirkungsdauer</Variante>
           <Variante>Reichweite</Variante>
-          <Variante>Durstbann</Variante>
+          <Variante>Schnellverzauberung</Variante>
+          <Variante>Personalisierung</Variante>
+          <Variante>Permanenz</Variante>
+          <Variante>Namenssigille</Variante>
         </Varianten>
-        <Verbreitungen ID="Zaubernahrung Hungerbann">
+        <Verbreitungen>
+          <Verbreitung ID="Achaz-Kristallomanten">
+            <Wert>1</Wert>
+          </Verbreitung>
+          <Verbreitung ID="Druiden">
+            <Wert>2</Wert>
+            <Repräsentation>Geoden</Repräsentation>
+          </Verbreitung>
+          <Verbreitung ID="Druiden">
+            <Wert>2</Wert>
+            <Repräsentation>Gildenmagier</Repräsentation>
+          </Verbreitung>
+          <Verbreitung ID="Druiden">
+            <Wert>2</Wert>
+            <Repräsentation>Hexen</Repräsentation>
+          </Verbreitung>
           <Verbreitung ID="Elfen">
+            <Wert>2</Wert>
+          </Verbreitung>
+          <Verbreitung ID="Geoden">
+            <Wert>2</Wert>
+          </Verbreitung>
+          <Verbreitung ID="Gildenmagier">
             <Wert>3</Wert>
           </Verbreitung>
+          <Verbreitung ID="Hexen">
+            <Wert>2</Wert>
+          </Verbreitung>
         </Verbreitungen>
-        <Beschreibung>siehe Liber Cantiones, S. 188
+        <Beschreibung>siehe SRD, S. 125 bzw. Liber Cantiones Deluxe
 </Beschreibung>
       </Zauber>
       <Zauber ID="Zauberwesen der Natur">
@@ -7665,36 +7755,6 @@ Verbreitung Waldelfen 4/ andere Elfen 2
         </Verbreitungen>
         <Beschreibung>siehe Liber Cantiones, S. 192
 </Beschreibung>
-      </Zauber>
-      <Zauber ID="Ängste lindern">
-        <Probe>MU/IN/CH</Probe>
-        <Komplexität>C</Komplexität>
-        <Merkmale>
-          <Merkmal>Einfluss</Merkmal>
-        </Merkmale>
-        <Varianten>
-          <Variante>Zauberdauer</Variante>
-          <Variante>Erzwingen</Variante>
-          <Variante>Kosten</Variante>
-          <Variante>Reichweite</Variante>
-          <Variante>Gegenzauber</Variante>
-          <Variante>Seele beruhigen</Variante>
-        </Varianten>
-        <Verbreitungen>
-          <Verbreitung ID="Druiden">
-            <Wert>4</Wert>
-          </Verbreitung>
-          <Verbreitung ID="Geoden">
-            <Wert>5</Wert>
-          </Verbreitung>
-          <Verbreitung ID="Gildenmagier">
-            <Wert>4</Wert>
-          </Verbreitung>
-          <Verbreitung ID="Hexen">
-            <Wert>7</Wert>
-          </Verbreitung>
-        </Verbreitungen>
-        <Beschreibung>siehe Liber Cantiones, S. 16</Beschreibung>
       </Zauber>
     </Zaubersprüche>
   </Inhalt>
