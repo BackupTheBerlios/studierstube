@@ -25,7 +25,7 @@ public class Import {
     Document document = null;
     try {
       DocumentBuilder builder = factory.newDocumentBuilder();
-      document = builder.parse(new File("zauber.xml"));
+      document = builder.parse(new File("studierstube/zauber.xml"));
     } catch (Exception e) {
       e.printStackTrace();
     }
