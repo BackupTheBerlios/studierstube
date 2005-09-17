@@ -27,7 +27,6 @@ public class Import {
       DocumentBuilder builder = factory.newDocumentBuilder();
       document = builder.parse(new File("zauber.xml"));
     } catch (Exception e) {
-      e.getMessage();
       e.printStackTrace();
     }
     Node xdimlNode = sucheChildNode(document, "XDIML");
@@ -42,7 +41,7 @@ public class Import {
   public void leseZauber(Node zauberNode) {
     if (zauberNode.getNodeName() == "Zauber") {
       
-      String id = getAttribute(zauberNode, "ID");
+      String id = gibAttribut(zauberNode, "ID");
       
       Node kompNode = sucheChildNode(zauberNode, "Komplexität");
       String komp = kompNode.getChildNodes().item(0).getNodeValue();
@@ -69,7 +68,6 @@ public class Import {
   public Node sucheChildNode(Node node, String name) {
     NodeList nl = node.getChildNodes();
     for (int i = 0; i < nl.getLength(); i++) {
-      Global.out("" + nl.item(i).getNodeName());
       if (nl.item(i).getNodeName().equals(name)) {
       	return nl.item(i);
       }
@@ -78,9 +76,8 @@ public class Import {
     return null;
   }
   
-  public String getAttribute(Node node, String attr) {
+  String gibAttribut(Node node, String attr) {
     return node.getAttributes().getNamedItem(attr).getNodeValue();
   }
 
-  
 }

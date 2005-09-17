@@ -604,7 +604,7 @@ Dritte Probe wird auf die zu steigernde Eigenschaft gewürfelt
           <Variante>Kosten</Variante>
           <Variante>Wirkungsdauer</Variante>
           <Variante>Verpuffung</Variante>
-          <Variante>Au�er Sicht</Variante>
+          <Variante>Außer Sicht</Variante>
           <Variante>Entfernte Phantasmagorie</Variante>
           <Variante>Bewegte Bilder</Variante>
           <Variante>Selbstleuchtend</Variante>
@@ -1151,7 +1151,7 @@ in der borbaradianischen Version Merkmal Dämonisch (Agrimoth) statt Elementar (
         <Beschreibung>siehe Liber Cantiones, S. 33/34
 Zusätzlich Verbreitung Mag 2</Beschreibung>
       </Zauber>
-      <Zauber ID="Caldofrigo hei� und kalt">
+      <Zauber ID="Caldofrigo heiß und kalt">
         <Probe>IN/CH/KO</Probe>
         <Komplexität>E</Komplexität>
         <Merkmale>
@@ -1708,7 +1708,7 @@ man muss sich auf ein bevorzugt zu bannendes Domäne festlegen
         </Verbreitungen>
         <Beschreibung>siehe Liber Cantiones, S. 48</Beschreibung>
       </Zauber>
-      <Zauber ID="Eigne �ngste quälen dich!">
+      <Zauber ID="Eigne Ängste quälen dich!">
         <Probe>MU/IN/CH</Probe>
         <Komplexität>C</Komplexität>
         <Merkmale>
@@ -1995,6 +1995,9 @@ in der borbaradianischen Version zusätzlich Merkmal Dämonisch (Amazeroth)</Bes
       <Zauber ID="Falkenauge Meisterschuss">
         <Probe>IN/FF/GE</Probe>
         <Komplexität>B</Komplexität>
+        <Merkmale>
+          <Merkmal>Eigenschaften</Merkmal>
+        </Merkmale>
         <Varianten>
           <Variante>Zauberdauer</Variante>
           <Variante>Reichweite</Variante>
@@ -2325,7 +2328,7 @@ Verbreitung bei Firnelfen 6, bei anderen Elfen 2</Beschreibung>
         <Beschreibung>siehe Liber Cantiones, S. 63/64
 </Beschreibung>
       </Zauber>
-      <Zauber ID="Gefä� der Jahre ">
+      <Zauber ID="Gefäß der Jahre ">
         <Probe>MU/KL/KO</Probe>
         <Komplexität>E</Komplexität>
         <Merkmale>
@@ -2456,7 +2459,7 @@ auch EISWAND genannt</Beschreibung>
         <Beschreibung>siehe Liber Cantiones, S. 65/66
 in der borbaradianischen Repräsentation Merkmal Dämonisch (Agrimoth) anstatt Elementar (Erz)</Beschreibung>
       </Zauber>
-      <Zauber ID="Gro�e Gier">
+      <Zauber ID="Große Gier">
         <Probe>KL/KL/CH</Probe>
         <Komplexität>C</Komplexität>
         <Merkmale>
@@ -2482,7 +2485,7 @@ in der borbaradianischen Repräsentation Merkmal Dämonisch (Agrimoth) anstatt E
         <Beschreibung>siehe Liber Cantiones, S. 66
 </Beschreibung>
       </Zauber>
-      <Zauber ID="Gro�e Verwirrung">
+      <Zauber ID="Große Verwirrung">
         <Probe>KL/KL/CH</Probe>
         <Komplexität>C</Komplexität>
         <Merkmale>
@@ -2847,7 +2850,7 @@ in der borbaradianischen Repräsentation Merkmal Dämonisch (Agrimoth) anstatt E
           <Variante>Zauberdauer</Variante>
           <Variante>Kosten</Variante>
           <Variante>Hexenleim</Variante>
-          <Variante>Krötenschwei�</Variante>
+          <Variante>Krötenschweiß</Variante>
           <Variante>Drachenspeichel</Variante>
         </Varianten>
         <Verbreitungen>
@@ -3043,7 +3046,7 @@ in der borbaradianischen Repräsentation Merkmal Dämonisch (Agrimoth) anstatt E
         <Beschreibung>siehe Liber Cantiones, S. 79
 </Beschreibung>
       </Zauber>
-      <Zauber ID="Höllenpein zerrei�e dich!">
+      <Zauber ID="Höllenpein zerreiße dich!">
         <Probe>KL/CH/KO</Probe>
         <Komplexität>C</Komplexität>
         <Merkmale>
@@ -3686,7 +3689,7 @@ Unterschiedlich bei verschiedenen Repräsentationen
           <Variante>Kosten</Variante>
           <Variante>Reichweite</Variante>
           <Variante>Wirkungsdauer</Variante>
-          <Variante>Au�er Sicht</Variante>
+          <Variante>Außer Sicht</Variante>
           <Variante>Schneller Kugelblitz</Variante>
           <Variante>Wächter</Variante>
           <Variante>Doppelblitz</Variante>
@@ -4117,7 +4120,7 @@ Unterschiedlich bei verschiedenen Repräsentationen
         <Beschreibung>siehe Liber Cantiones, S. 109
 </Beschreibung>
       </Zauber>
-      <Zauber ID="Lockruf und Feenfü�e">
+      <Zauber ID="Lockruf und Feenfüße">
         <Probe>IN/CH/FF</Probe>
         <Komplexität>B</Komplexität>
         <Merkmale>
@@ -6060,7 +6063,7 @@ Mekrmal: Elementar (Luft oder Wasser)</Beschreibung>
           <Variante>Reichweite</Variante>
           <Variante>Fadenvipern</Variante>
           <Variante>Schlangenhaar</Variante>
-          <Variante>Bei�ender Schwanz</Variante>
+          <Variante>Beißender Schwanz</Variante>
           <Variante>Schlangengriff</Variante>
         </Varianten>
         <Verbreitungen>
@@ -6613,7 +6616,7 @@ Merkmal Dämonisch (spezialisiert je nach Erzdämon)</Beschreibung>
           <Variante>Kosten</Variante>
           <Variante>Erweiterte Aura</Variante>
           <Variante>Personen mitnehmen</Variante>
-          <Variante>Reichweite vergrö�ern</Variante>
+          <Variante>Reichweite vergrößern</Variante>
           <Variante>Lastenteleport</Variante>
         </Varianten>
         <Verbreitungen>
@@ -7239,9 +7242,12 @@ in borbaradianischer Variante Merkmal Dämonisch (Agrimoth) anstatt Elementar (E
         <Beschreibung>siehe Liber Cantiones, S. 180
 </Beschreibung>
       </Zauber>
-      <Zauber ID="Wei�e Mähn und goldener Huf">
+      <Zauber ID="Weiße Mähn und goldener Huf">
         <Probe>KL/IN/CH</Probe>
         <Komplexität>D</Komplexität>
+        <Merkmale>
+          <Merkmal>Beschwörung</Merkmal>
+        </Merkmale>
         <Verbreitungen>
           <Verbreitung ID="Elfen">
             <Wert>5</Wert>
@@ -7660,7 +7666,7 @@ Verbreitung Waldelfen 4/ andere Elfen 2
         <Beschreibung>siehe Liber Cantiones, S. 192
 </Beschreibung>
       </Zauber>
-      <Zauber ID="�ngste lindern">
+      <Zauber ID="Ängste lindern">
         <Probe>MU/IN/CH</Probe>
         <Komplexität>C</Komplexität>
         <Merkmale>
