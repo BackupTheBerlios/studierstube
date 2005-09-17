@@ -53,6 +53,16 @@ public class Import {
       String probe2 = probe.substring(6,8);  // StringIndexOutOfBoundsException abfangen
       
       Node merkmaleNode = sucheChildNode(zauberNode, "Merkmale");
+      String[] merkmale = gibListe(merkmaleNode, "Merkmal");
+      
+      Node variantenNode = sucheChildNode(zauberNode, "Varianten");
+      String[] varianten;
+      if (variantenNode == null) {
+      	varianten = null;
+      }
+      else {
+      	varianten = gibListe(variantenNode, "Variante");
+      }
       
       Zauber zauber = new Zauber();
       zauber.name = id;
@@ -60,23 +70,37 @@ public class Import {
       zauber.probe[0] = probe0;
       zauber.probe[1] = probe1;
       zauber.probe[2] = probe2;
-      
+      zauber.merkmale = merkmale;
+      zauber.varianten = varianten;     
       Global.zauberListe.add(zauber);
     }
   }
   
-  public Node sucheChildNode(Node node, String name) {
+  private Node sucheChildNode(Node node, String name) {
     NodeList nl = node.getChildNodes();
     for (int i = 0; i < nl.getLength(); i++) {
       if (nl.item(i).getNodeName().equals(name)) {
       	return nl.item(i);
       }
-    }   
-    Global.out("ChildNode '" + name + "' nicht gefunden!");
+    }
     return null;
   }
   
-  String gibAttribut(Node node, String attr) {
+  private String[] gibListe(Node node, String children) {
+    NodeList nl = node.getChildNodes();
+    if (nl.getLength() == 0) return null;
+    String[] merkmale = new String[nl.getLength()];
+    int counter = 0;
+    for (int i = 0; i < nl.getLength(); i++) {
+      if (nl.item(i).getNodeName().equals(children)) {
+        merkmale[counter] = nl.item(i).getChildNodes().item(0).getNodeValue();
+        counter++;
+      }
+    }
+    return merkmale;
+  }
+  
+  private String gibAttribut(Node node, String attr) {
     return node.getAttributes().getNamedItem(attr).getNodeValue();
   }
 
