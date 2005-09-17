@@ -15,6 +15,7 @@ import studierstube.container.Zauberliste;
 
 public class Global {
   public static boolean debugmode = false;
+  public static boolean jarmode = true;
   public static final String version = "0.2";
   
   private static Random random = new Random();
@@ -53,7 +54,6 @@ public class Global {
   
   void setzeOption(String option) {
     if (option.equals("-debug")) {
-      Global g = new Global();
       Global.debugmode = true;
       System.out.println("Debug-Modus an");
     }
