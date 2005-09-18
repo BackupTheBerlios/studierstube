@@ -7,3 +7,5 @@ regellücke: gestapelter zauber zählt nur einmal oder x mal für komplexität?
 spomods
 zauberwerkstatt
 dennys bsd license
+jar-file
+applet

@@ -7,7 +7,7 @@
 
 package studierstube.daten;
 
-import java.io.File;
+import java.io.InputStream;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -25,7 +25,9 @@ public class Import {
     Document document = null;
     try {
       DocumentBuilder builder = factory.newDocumentBuilder();
-      document = builder.parse(new File("zauber.xml")); // geht nicht im JAR
+      Class c = this.getClass();
+      InputStream is = c.getResourceAsStream("zauberliste.xml");
+      document = builder.parse(is);
     } catch (Exception e) {
       e.printStackTrace();
     }
