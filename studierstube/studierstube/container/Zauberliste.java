@@ -10,7 +10,7 @@ package studierstube.container;
 import java.util.ArrayList;
 
 public class Zauberliste {
-  ArrayList liste = new ArrayList(270);  // grobe Anzahl der Zauber im LC
+  ArrayList liste = new ArrayList(270);  // 270 = grobe Anzahl der Zauber im LC
   
   public void add(Zauber z) {
     liste.add(z);

@@ -52,7 +52,7 @@ public class Global {
     return summe;
   }
   
-  void setzeOption(String option) {
+  protected void setzeOption(String option) {
     if (option.equals("-debug")) {
       Global.debugmode = true;
       System.out.println("Debug-Modus an");
@@ -64,7 +64,7 @@ public class Global {
     }
   }
   
-  void Usage() {
+  protected void Usage() {
     System.out.println("Verfügbare Optionen:");
     System.out.println("  -debug          Debug-Meldungen einschalten");
   }

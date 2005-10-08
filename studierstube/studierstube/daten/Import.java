@@ -40,7 +40,7 @@ public class Import {
     }    
   }
   
-  public void leseZauber(Node zauberNode) {
+  private void leseZauber(Node zauberNode) {
     if (zauberNode.getNodeName() == "Zauber") {
       
       String id = gibAttribut(zauberNode, "ID");
@@ -67,13 +67,11 @@ public class Import {
       }
       
       Zauber zauber = new Zauber();
-      zauber.name = id;
-      zauber.komplexitaet = komp;
-      zauber.probe[0] = probe0;
-      zauber.probe[1] = probe1;
-      zauber.probe[2] = probe2;
-      zauber.merkmale = merkmale;
-      zauber.varianten = varianten;     
+      zauber.setzeName(id);
+      zauber.setzeKomplexitaet(komp);
+      zauber.setzeProbe(probe0, probe1, probe2);
+      zauber.setzeMerkmale(merkmale);
+      zauber.setzeVarianten(varianten);     
       Global.zauberListe.add(zauber);
     }
   }

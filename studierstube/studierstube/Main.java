@@ -10,7 +10,7 @@ package studierstube;
 import studierstube.daten.Import;
 import studierstube.gui.HauptFrame;
 
-class Main {
+public class Main {
   public static void main(String[] args) {
     Global global = new Global();
     if (args != null)
