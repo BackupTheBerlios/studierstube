@@ -26,7 +26,7 @@ class Main {
     
     Global.start();
     Import i = new Import();
-    i.leseZauberEin();
+    i.loadZauberliste();
     Global.stop();
     
     javax.swing.SwingUtilities.invokeLater(

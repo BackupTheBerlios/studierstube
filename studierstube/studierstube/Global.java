@@ -7,9 +7,6 @@
 
 package studierstube;
 
-import java.awt.Toolkit;
-import java.awt.datatransfer.Clipboard;
-import java.awt.datatransfer.StringSelection;
 import java.util.Random;
 
 import javax.swing.JOptionPane;

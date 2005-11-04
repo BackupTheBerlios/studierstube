@@ -19,8 +19,17 @@ import org.w3c.dom.NodeList;
 import studierstube.Global;
 import studierstube.container.Zauber;
 
+/*
+ * Import data from XML
+ * 
+ * This class manages reading from XML files.
+ */
 public class Import {
-  public void leseZauberEin() {
+
+ /*
+  * loads the Zauberliste into memory
+  */
+  public void loadZauberliste() {
     DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
     Document document = null;
     try {
@@ -36,11 +45,14 @@ public class Import {
     Node zauberspruecheNode = sucheChildNode(inhaltNode, "Zaubersprüche");
     NodeList zauberNodes = zauberspruecheNode.getChildNodes();
     for (int i = 0; i < zauberNodes.getLength(); i++) {
-      leseZauber(zauberNodes.item(i));
+      readZauber(zauberNodes.item(i));
     }    
   }
   
-  private void leseZauber(Node zauberNode) {
+ /*
+  * reads in a single Zauber element
+  */
+  private void readZauber(Node zauberNode) {
     if (zauberNode.getNodeName() == "Zauber") {
       
       String id = gibAttribut(zauberNode, "ID");
