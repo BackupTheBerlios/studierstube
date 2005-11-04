@@ -67,11 +67,11 @@ public class Import {
       }
       
       Zauber zauber = new Zauber();
-      zauber.setzeName(id);
-      zauber.setzeKomplexitaet(komp);
-      zauber.setzeProbe(probe0, probe1, probe2);
-      zauber.setzeMerkmale(merkmale);
-      zauber.setzeVarianten(varianten);     
+      zauber.setName(id);
+      zauber.setKomplexitaet(komp);
+      zauber.setProbe(probe0, probe1, probe2);
+      zauber.setMerkmale(merkmale);
+      zauber.setVarianten(varianten);     
       Global.zauberListe.add(zauber);
     }
   }

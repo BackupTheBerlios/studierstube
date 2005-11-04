@@ -32,7 +32,7 @@ public class XMLtest {
 	        this.speichereXML();
 	       }
 	       catch (Exception e) {
-	         Global.ExceptionFehlerDialog(e);
+	         Global.displayException(e);
 	         e.printStackTrace();
 	       }
 	}

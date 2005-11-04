@@ -10,12 +10,18 @@ package studierstube;
 import studierstube.daten.Import;
 import studierstube.gui.HauptFrame;
 
-public class Main {
+/*
+ * Main class
+ * 
+ * This is where main() resides. It just parses command line
+ * arguments and starts up the other program parts.
+ */
+class Main {
   public static void main(String[] args) {
     Global global = new Global();
     if (args != null)
       for (int i = 0; i < args.length; i++) {
-        if (args[i].startsWith("-")) global.setzeOption(args[i]); 
+        if (args[i].startsWith("-")) global.setOption(args[i]); 
       }
     
     Global.start();
