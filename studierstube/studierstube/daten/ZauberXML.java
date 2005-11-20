@@ -20,14 +20,14 @@ import studierstube.Global;
 import studierstube.container.Zauber;
 
 /*
- * Import data from XML
+ * Import Zauber data from XML
  * 
- * This class manages reading from XML files.
+ * Diese Klasse verwaltet das Im-/Exportieren der Zauberliste.
  */
-public class Import {
+public class ZauberXML {
 
  /*
-  * loads the Zauberliste into memory
+  * Läd die Zauberliste in den Speicher
   */
   public void loadZauberliste() {
     DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -35,7 +35,7 @@ public class Import {
     try {
       DocumentBuilder builder = factory.newDocumentBuilder();
       Class c = this.getClass();
-      InputStream is = c.getResourceAsStream("zauberliste.xml");
+      InputStream is = c.getResourceAsStream("zauber.xml");
       document = builder.parse(is);
     } catch (Exception e) {
       e.printStackTrace();
@@ -55,7 +55,7 @@ public class Import {
   private void readZauber(Node zauberNode) {
     if (zauberNode.getNodeName() == "Zauber") {
       
-      String id = gibAttribut(zauberNode, "ID");
+      String id = getAttribut(zauberNode, "ID");
       
       Node kompNode = sucheChildNode(zauberNode, "Komplexität");
       String komp = kompNode.getChildNodes().item(0).getNodeValue();
@@ -67,7 +67,7 @@ public class Import {
       String probe2 = probe.substring(6,8);  // StringIndexOutOfBoundsException abfangen
       
       Node merkmaleNode = sucheChildNode(zauberNode, "Merkmale");
-      String[] merkmale = gibListe(merkmaleNode, "Merkmal");
+      String[] merkmale = getListe(merkmaleNode, "Merkmal");
       
       Node variantenNode = sucheChildNode(zauberNode, "Varianten");
       String[] varianten;
@@ -75,7 +75,7 @@ public class Import {
       	varianten = null;
       }
       else {
-      	varianten = gibListe(variantenNode, "Variante");
+      	varianten = getListe(variantenNode, "Variante");
       }
       
       Zauber zauber = new Zauber();
@@ -98,7 +98,7 @@ public class Import {
     return null;
   }
   
-  private String[] gibListe(Node node, String children) {
+  private String[] getListe(Node node, String children) {
     NodeList nl = node.getChildNodes();
     if (nl.getLength() == 0) return null;
     String[] merkmale = new String[nl.getLength()];
@@ -112,7 +112,7 @@ public class Import {
     return merkmale;
   }
   
-  private String gibAttribut(Node node, String attr) {
+  private String getAttribut(Node node, String attr) {
     return node.getAttributes().getNamedItem(attr).getNodeValue();
   }
 

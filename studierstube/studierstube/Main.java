@@ -7,7 +7,7 @@
 
 package studierstube;
 
-import studierstube.daten.Import;
+import studierstube.daten.ZauberXML;
 import studierstube.gui.HauptFrame;
 
 /*
@@ -25,7 +25,7 @@ class Main {
       }
     
     Global.start();
-    Import i = new Import();
+    ZauberXML i = new ZauberXML();
     i.loadZauberliste();
     Global.stop();
     

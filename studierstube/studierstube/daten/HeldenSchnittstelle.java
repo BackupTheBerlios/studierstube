@@ -5,21 +5,8 @@
 * of the zlib/libpng license. See LICENSE.txt for details.    *
 **************************************************************/
 
-package studierstube.container;
+package studierstube.daten;
 
-import java.util.ArrayList;
+public class HeldenSchnittstelle {
 
-public class WirkenderSpruch {
-  
-  String zauberID;
-  String repraesentation;
-  String wirkung;
-  
-  int zfw;
-  int zfp;
-  int reihung;
-  int stapelung;
-  
-  ArrayList listeModifikationen = new ArrayList(0);
-  
 }

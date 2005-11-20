@@ -9,14 +9,17 @@ package studierstube.container;
 
 import java.util.ArrayList;
 
-public class Ausloeser {
-
-  int zuschlag;
-  int ladungen;
+public class ArtefaktSpruch {
   
-  String text;
-  String praeservanz;
-
-  ArrayList listeWirkendeSprueche = new ArrayList(0);
-
+  String zauberID;
+  String repraesentation;
+  String wirkung;
+  
+  int zfw;
+  int zfp;
+  int reihung;
+  int stapelung;
+  
+  ArrayList listeModifikationen = new ArrayList(0);
+  
 }

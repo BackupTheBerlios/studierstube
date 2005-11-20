@@ -5,8 +5,18 @@
 * of the zlib/libpng license. See LICENSE.txt for details.    *
 **************************************************************/
 
-package studierstube.daten;
+package studierstube.container;
 
-public class Schnittstelle {
+import java.util.ArrayList;
+
+public class ArtefaktAusloeser {
+
+  int zuschlag;
+  int ladungen;
+  
+  String text;
+  String praeservanz;
+
+  ArrayList listeWirkendeSprueche = new ArrayList(0);
 
 }

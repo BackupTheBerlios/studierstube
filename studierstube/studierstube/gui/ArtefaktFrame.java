@@ -32,7 +32,7 @@ public class ArtefaktFrame extends JFrame {
 	 * @return void
 	 */
 	private void initialize() {
-		this.setSize(300, 200);
+		this.setSize(545, 282);
 		this.setContentPane(getJContentPane());
 		this.setTitle("JFrame");
 	}
@@ -50,4 +50,4 @@ public class ArtefaktFrame extends JFrame {
 		return jContentPane;
 	}
 
-}
+}  //  @jve:decl-index=0:visual-constraint="10,10"
