@@ -1,5 +1,5 @@
 package studierstube.daten;
 
-public class ArtefaktXML {
+public class ArtefaktXML extends XMLZugriff {
 
 }

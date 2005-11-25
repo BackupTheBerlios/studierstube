@@ -20,16 +20,16 @@ import studierstube.Global;
 import studierstube.container.Zauber;
 
 /*
- * Import Zauber data from XML
+ * Zauberliste in XML
  * 
  * Diese Klasse verwaltet das Im-/Exportieren der Zauberliste.
  */
-public class ZauberXML {
+public class ZauberXML extends XMLZugriff {
 
  /*
   * Läd die Zauberliste in den Speicher
   */
-  public void loadZauberliste() {
+  public void ladeZauberliste() {
     DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
     Document document = null;
     try {
@@ -45,17 +45,17 @@ public class ZauberXML {
     Node zauberspruecheNode = sucheChildNode(inhaltNode, "Zaubersprüche");
     NodeList zauberNodes = zauberspruecheNode.getChildNodes();
     for (int i = 0; i < zauberNodes.getLength(); i++) {
-      readZauber(zauberNodes.item(i));
+      ladeZauber(zauberNodes.item(i));
     }    
   }
   
  /*
-  * reads in a single Zauber element
+  * Läd einen einzelnen Zauber
   */
-  private void readZauber(Node zauberNode) {
+  private void ladeZauber(Node zauberNode) {
     if (zauberNode.getNodeName() == "Zauber") {
       
-      String id = getAttribut(zauberNode, "ID");
+      String id = zeigeAttribut(zauberNode, "ID");
       
       Node kompNode = sucheChildNode(zauberNode, "Komplexität");
       String komp = kompNode.getChildNodes().item(0).getNodeValue();
@@ -67,7 +67,7 @@ public class ZauberXML {
       String probe2 = probe.substring(6,8);  // StringIndexOutOfBoundsException abfangen
       
       Node merkmaleNode = sucheChildNode(zauberNode, "Merkmale");
-      String[] merkmale = getListe(merkmaleNode, "Merkmal");
+      String[] merkmale = sucheChildValues(merkmaleNode, "Merkmal");
       
       Node variantenNode = sucheChildNode(zauberNode, "Varianten");
       String[] varianten;
@@ -75,7 +75,7 @@ public class ZauberXML {
       	varianten = null;
       }
       else {
-      	varianten = getListe(variantenNode, "Variante");
+      	varianten = sucheChildValues(variantenNode, "Variante");
       }
       
       Zauber zauber = new Zauber();
@@ -88,32 +88,4 @@ public class ZauberXML {
     }
   }
   
-  private Node sucheChildNode(Node node, String name) {
-    NodeList nl = node.getChildNodes();
-    for (int i = 0; i < nl.getLength(); i++) {
-      if (nl.item(i).getNodeName().equals(name)) {
-      	return nl.item(i);
-      }
-    }
-    return null;
-  }
-  
-  private String[] getListe(Node node, String children) {
-    NodeList nl = node.getChildNodes();
-    if (nl.getLength() == 0) return null;
-    String[] merkmale = new String[nl.getLength()];
-    int counter = 0;
-    for (int i = 0; i < nl.getLength(); i++) {
-      if (nl.item(i).getNodeName().equals(children)) {
-        merkmale[counter] = nl.item(i).getChildNodes().item(0).getNodeValue();
-        counter++;
-      }
-    }
-    return merkmale;
-  }
-  
-  private String getAttribut(Node node, String attr) {
-    return node.getAttributes().getNamedItem(attr).getNodeValue();
-  }
-
 }

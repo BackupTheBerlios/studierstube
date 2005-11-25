@@ -26,7 +26,7 @@ class Main {
     
     Global.start();
     ZauberXML i = new ZauberXML();
-    i.loadZauberliste();
+    i.ladeZauberliste();
     Global.stop();
     
     javax.swing.SwingUtilities.invokeLater(

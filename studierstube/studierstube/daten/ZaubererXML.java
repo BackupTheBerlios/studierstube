@@ -1,5 +1,5 @@
 package studierstube.daten;
 
-public class ZaubererXML {
+public class ZaubererXML extends XMLZugriff {
 
 }
