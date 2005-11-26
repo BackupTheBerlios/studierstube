@@ -109,10 +109,8 @@ public class Global {
   }
   
  /**
-  * Prints to stdout in debug mode
+  * Ausgabe nach stdout wenn Debug-Modus aktiv ist.
   * 
-  * Simple method that only prints a debug message when the
-  * program runs in debug mode.
   * @param string Ausgabe
   */
   public static void out(String string) {
@@ -167,12 +165,12 @@ public class Global {
   * 
   * @param exception	Die anzuzeigende Exception
   */
-  public static void displayException(Exception e) {
-	String errormsg = "Ein interner Fehler ist aufgetreten: " + e.getMessage()
+  public static void displayException(Exception exception) {
+	String errormsg = "Ein interner Fehler ist aufgetreten: " + exception.getMessage()
 			+ "\n\n"
 			+ "Bitte schicken Sie diesen Fehlerbericht an den Autor, "
 			+ "damit der Fehler behoben werden kann.\n\n"
-			+ e.toString() + "\n" + getStackTrace(e) + "\n"
+			+ exception.toString() + "\n" + getStackTrace(exception) + "\n"
 			+ "Diesen Text in die Zwischenablage kopieren?";
 	int value = JOptionPane.showConfirmDialog(null,
   			errormsg,
