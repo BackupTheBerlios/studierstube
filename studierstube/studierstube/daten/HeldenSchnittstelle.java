@@ -7,6 +7,10 @@
 
 package studierstube.daten;
 
+/**
+ * In dieser Klasse soll die Integration in die Helden-Software
+ * stattfinden. NYI
+ */
 public class HeldenSchnittstelle {
 
 }

@@ -10,11 +10,9 @@ package studierstube;
 import studierstube.daten.ZauberXML;
 import studierstube.gui.HauptFrame;
 
-/*
- * Main class
- * 
- * This is where main() resides. It just parses command line
- * arguments and starts up the other program parts.
+/**
+ * In dieser Klasse befindet sich main(). Sie dient nur zum
+ * Initialisieren des Programms und zum Starten der GUI.
  */
 class Main {
   public static void main(String[] args) {

@@ -1,4 +1,3 @@
-package studierstube.gui;
 /**************************************************************
 * This file is part of the project 'Studierstube' at berliOS. *
 * Copyright (c) 2005 Stefan Holzmüller (twelwan@gmx.de)       *
@@ -6,13 +5,15 @@ package studierstube.gui;
 * of the zlib/libpng license. See LICENSE.txt for details.    *
 **************************************************************/
 
+package studierstube.gui;
+
 import java.awt.BorderLayout;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 /**
- * Frame Artefaktkonzeption
+ * In diesem Fenster kann der Benutzer das Artefakt entwerfen.
  */
 public class ArtefaktFrame extends JFrame {
 

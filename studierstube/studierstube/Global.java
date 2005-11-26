@@ -14,11 +14,9 @@ import javax.swing.JOptionPane;
 import studierstube.container.Zauberliste;
 
 /**
- * Global settings
- * 
- * This class stores global settings and also implements some
- * methods which should be easily accessible from everywhere
- * in the program.
+ * In dieser Klasse werden globale Einstellungen gespeichert.
+ * Außerdem finden sich hier einige Felder und Methoden, die
+ * man leicht aus dem ganzen Programm aufrufen können soll.
  */
 public class Global {
   public static boolean debugmode = false;
@@ -30,31 +28,39 @@ public class Global {
   public static Zauberliste zauberListe = new Zauberliste();
   
  /**
-  * returns the result of a customizable dice rolled
+  * Gibt das Ergebnis eines Wurfs mit einem beliebigen Würfel zurück.
+  * 
+  * @param seiten	Anzahl der Seiten des Würfels
+  * @return			Zufallszahl
   */
   public static int Wuerfel(int seiten) {
     return random.nextInt(seiten) + 1;
   }
   
- /**
-  * returns the result of a 6-sided dice rolled
-  */
+  /**
+   * Gibt das Ergebnis eines Wurfs mit einem 6-seitigen Würfel zurück.
+   * 
+   * @return		Zufallszahl 1-6
+   */
   public static int W6() {
     return Wuerfel(6);
   }
   
- /**
-  * returns the result of a 20-sided dice rolled
-  */
+  /**
+   * Gibt das Ergebnis eines Wurfs mit einem 20-seitigen Würfel zurück.
+   * 
+   * @return		Zufallszahl 1-20
+   */
   public static int W20() {
     return Wuerfel(20);
   }
   
- /**
-  * returns the summed result of several 6-sided dice rolled
-  * 
-  * @param number of dice
-  */ 
+  /**
+   * Gibt die Summe einer beliebigen Zahl von W6-Würfen zurück.
+   * 
+   * @param anzahl	Anzahl der W6
+   * @return		Summe der Würfe
+   */
   public static int xW6(int anzahl) {
     int sum = 0;
     for (int i = 0; i < anzahl; i++) {
@@ -63,11 +69,12 @@ public class Global {
     return sum;
   }
   
- /**
-  * returns the summed result of several 20-sided dice rolled
-  * 
-  * @param number of dice
-  */ 
+  /**
+   * Gibt die Summe einer beliebigen Zahl von W20-Würfen zurück.
+   * 
+   * @param anzahl	Anzahl der W20
+   * @return		Summe der Würfe
+   */
   public static int xW20(int anzahl) {
     int sum = 0;
     for (int i = 0; i < anzahl; i++) {
@@ -76,14 +83,10 @@ public class Global {
     return sum;
   }
   
- /*
-  * Sets option from command line arguments
+ /**
+  * TODO
   * 
-  * A single option is processed only - if the program does not
-  * support it, a usage instruction is printed to stdout and
-  * the program terminated with exit status 1.
-  * 
-  * @param option string taken from command line arguments
+  * @param option 	eine einzelnes Argument
   */
   protected void setOption(String option) {
     if (option.equals("-debug")) {
@@ -97,67 +100,72 @@ public class Global {
     }
   }
   
- /*
-  * Prints available command line arguments
+ /**
+  * TODO
   */
   protected void printUsage() {
     System.out.println("Verfügbare Optionen:");
     System.out.println("  -debug          Debug-Meldungen einschalten");
   }
   
- /*
+ /**
   * Prints to stdout in debug mode
   * 
   * Simple method that only prints a debug message when the
   * program runs in debug mode.
+  * @param string Ausgabe
   */
-  public static void out(String s) {
-    if (debugmode == true) System.out.println(s);
+  public static void out(String string) {
+    if (debugmode == true) System.out.println(string);
   }
   
- /*
-  * start a time measurement
+ /**
+  * Startet eine Zeitmessung. stop() beendet die Messung und
+  * schreibt die Zeitdifferenz nach stdout.
   */
   public static void start() {
     startTime = System.currentTimeMillis();
   }
  
- /*
-  * stop a time measurement and print to stdout
-  */
+  /**
+   * Beendet die Zeitmessung, die vorher durch start() begonnen werden
+   * muss, und schreibt die Zeitdifferenz nach stdout.
+   */
   public static void stop() {
     stopTime = System.currentTimeMillis();
     long diff = stopTime - startTime;
     System.out.println(diff + " ms");
   }
   
- /*
-  * displays a simple dialog box with a customizable message
+ /**
+  * Zeigt eine simple Dialogbox mit einem Text darin.
+  * 
+  * param string	Ausgabe
   */
-  public static void displayMessage(String s) {
+  public static void displayMessage(String string) {
     JOptionPane.showMessageDialog(null,
-   			s,
+   			string,
    			"Hinweis",
    		//	JOptionPane.PLAIN_MESSAGE);
     		JOptionPane.INFORMATION_MESSAGE);
   }
    
- /*
-  * displays a simple dialog box with a customizable error message
+ /**
+  * Zeigt einen Fehler-Dialog mit einem Text darin.
   * 
-  * @param message string
+  * @param string Ausgabe
   */
-  public static void displayError(String s) {
+  public static void displayError(String string) {
   	JOptionPane.showMessageDialog(null,
-  			s,
+  			string,
   			"Fehler",
   			JOptionPane.ERROR_MESSAGE);
   }
  
- /*
-  * displays an exception and asks the user to submit a bug report
+ /**
+  * Zeigt eine Exception an und bittet den Benutzer, den Bug zu melden.
   * 
-  * @param exception
+  * @param exception	Die anzuzeigende Exception
   */
   public static void displayException(Exception e) {
 	String errormsg = "Ein interner Fehler ist aufgetreten: " + e.getMessage()
@@ -175,11 +183,14 @@ public class Global {
   	}
   }
   
- /*
-  * gets the stack trace of an Exception as String
+ /**
+  * Wandelt den Stacktrace einer Exception in einen String um.
+  * 
+  * @param exception	die Exception
+  * @return s	String des Stacktrace
   */
-  static String getStackTrace(Exception e) {
-    StackTraceElement stack[] = e.getStackTrace();
+  static String getStackTrace(Exception exception) {
+    StackTraceElement stack[] = exception.getStackTrace();
     String s = "";
     for (int i=0; i<stack.length; i++) {
       String fileName = stack[i].getFileName();

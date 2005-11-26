@@ -9,6 +9,10 @@ package studierstube.container;
 
 import java.util.ArrayList;
 
+/**
+ * Dies ist eine Klasse von Speicherobjekten, die je ein einzelnes
+ * Artefakt mit all seinen Eigenschaften beinhaltet.
+ */
 public class Artefakt {
   boolean	eigenschaftSiegel,
   		eigenschaftUnzerbrechlichkeit,

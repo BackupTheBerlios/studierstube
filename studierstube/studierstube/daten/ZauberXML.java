@@ -19,15 +19,14 @@ import org.w3c.dom.NodeList;
 import studierstube.Global;
 import studierstube.container.Zauber;
 
-/*
- * Zauberliste in XML
- * 
- * Diese Klasse verwaltet das Im-/Exportieren der Zauberliste.
+/**
+ * Diese Klasse verwaltet das Im- und Exportieren von Zaubern.
  */
 public class ZauberXML extends XMLZugriff {
 
- /*
-  * Läd die Zauberliste in den Speicher
+ /**
+  * Läd die Zauber in den Speicher. Die Daten aus zauber.xml
+  * werden in der globalen Zauberliste abgelegt.
   */
   public void ladeZauberliste() {
     DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -49,8 +48,8 @@ public class ZauberXML extends XMLZugriff {
     }    
   }
   
- /*
-  * Läd einen einzelnen Zauber
+ /**
+  * Läd einen einzelnen Zauber.
   */
   private void ladeZauber(Node zauberNode) {
     if (zauberNode.getNodeName() == "Zauber") {

@@ -22,6 +22,10 @@ import javax.swing.KeyStroke;
 
 import studierstube.Global;
 
+/**
+ * Dies ist das Fenster, von wo aus der Benutzer alle Unterprogramme
+ * aufrufen kann.
+ */
 public class HauptFrame implements ActionListener {
   public HauptFrame() {
     JFrame.setDefaultLookAndFeelDecorated(true);

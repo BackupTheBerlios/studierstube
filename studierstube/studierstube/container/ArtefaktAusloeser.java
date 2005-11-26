@@ -9,6 +9,11 @@ package studierstube.container;
 
 import java.util.ArrayList;
 
+/**
+ * Dies ist eine Klasse von Speicherobjekten, die je einen Auslöser
+ * mit seinen Eigenschaften und einer Liste von wirkenden Sprüchen
+ * beinhaltet.
+ */
 public class ArtefaktAusloeser {
 
   int zuschlag;
