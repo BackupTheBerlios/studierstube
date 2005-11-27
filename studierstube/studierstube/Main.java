@@ -16,17 +16,15 @@ import studierstube.gui.HauptFrame;
  */
 class Main {
   public static void main(String[] args) {
-    Global global = new Global();
-    if (args != null)
-      for (int i = 0; i < args.length; i++) {
-        if (args[i].startsWith("-")) global.setOption(args[i]); 
-      }
+    new Global();
+    Global.log("Programm wird gestartet:\n");
+
+    Global.log("* Lade Zauber ...");
+    ZauberXML z = new ZauberXML();
+    z.ladeZauberliste();
+    Global.log(" fertig.\n");
     
-    Global.start();
-    ZauberXML i = new ZauberXML();
-    i.ladeZauberliste();
-    Global.stop();
-    
+    Global.log("* Starte GUI ...");
     javax.swing.SwingUtilities.invokeLater(
       new Runnable() {
         public void run() {
@@ -34,5 +32,6 @@ class Main {
         }
       }
     );
+    Global.log(" fertig.\n");
   }
 }

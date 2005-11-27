@@ -19,7 +19,6 @@ import studierstube.container.Zauberliste;
  * man leicht aus dem ganzen Programm aufrufen können soll.
  */
 public class Global {
-  public static boolean debugmode = false;
   public static final String version = "0.2";
   
   private static long startTime, stopTime = 0;
@@ -83,11 +82,8 @@ public class Global {
     return sum;
   }
   
- /**
-  * TODO
-  * 
-  * @param option 	eine einzelnes Argument
-  */
+/*
+  
   protected void setOption(String option) {
     if (option.equals("-debug")) {
       Global.debugmode = true;
@@ -100,39 +96,43 @@ public class Global {
     }
   }
   
- /**
-  * TODO
-  */
   protected void printUsage() {
     System.out.println("Verfügbare Optionen:");
     System.out.println("  -debug          Debug-Meldungen einschalten");
   }
   
- /**
-  * Ausgabe nach stdout wenn Debug-Modus aktiv ist.
-  * 
-  * @param string Ausgabe
-  */
   public static void out(String string) {
     if (debugmode == true) System.out.println(string);
   }
   
- /**
-  * Startet eine Zeitmessung. stop() beendet die Messung und
-  * schreibt die Zeitdifferenz nach stdout.
-  */
-  public static void start() {
-    startTime = System.currentTimeMillis();
-  }
- 
+*/
+  
+//  /**
+//   * Startet eine Zeitmessung. stop() beendet die Messung.
+//   */
+//  public static void start() {
+//    startTime = System.currentTimeMillis();
+//  }
+// 
+//  /**
+//   * Beendet die Zeitmessung, die vorher durch start() begonnen werden
+//   * muss, und gibt die Zeitdifferenz in Sekunden zurück.
+//   */
+//  public static double stop() {
+//    stopTime = System.currentTimeMillis();
+//    long msec = stopTime - startTime;
+//    double sec = msec / 1000.0;
+//    return sec;
+//  }
+
   /**
-   * Beendet die Zeitmessung, die vorher durch start() begonnen werden
-   * muss, und schreibt die Zeitdifferenz nach stdout.
+   * Gibt den String auf stdout aus, kann später z.B. für Logfiles
+   * benutzt werden.
+   * 
+   * @param string Ausgabe
    */
-  public static void stop() {
-    stopTime = System.currentTimeMillis();
-    long diff = stopTime - startTime;
-    System.out.println(diff + " ms");
+  public static void log(String string) {
+    System.out.print(string);
   }
   
  /**

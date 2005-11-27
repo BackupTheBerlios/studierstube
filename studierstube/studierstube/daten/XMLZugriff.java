@@ -7,6 +7,9 @@
 
 package studierstube.daten;
 
+import javax.xml.parsers.DocumentBuilderFactory;
+
+import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
@@ -14,6 +17,10 @@ import org.w3c.dom.NodeList;
  * Oberklasse für die XML-Manipulation mit einigen Hilfsmethoden.
  */
 public class XMLZugriff {
+	
+  DocumentBuilderFactory factory;
+  Document document;
+
   /**
    * Sucht einen Node unterhalb des aktuellen mit einem bestimmten Namen.
    * Zurückgegeben wird der gefundene Node oder null, falls er nicht

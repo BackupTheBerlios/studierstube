@@ -29,8 +29,7 @@ public class ZauberXML extends XMLZugriff {
   * werden in der globalen Zauberliste abgelegt.
   */
   public void ladeZauberliste() {
-    DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-    Document document = null;
+    factory = DocumentBuilderFactory.newInstance();
     try {
       DocumentBuilder builder = factory.newDocumentBuilder();
       Class c = this.getClass();
@@ -45,7 +44,7 @@ public class ZauberXML extends XMLZugriff {
     NodeList zauberNodes = zauberspruecheNode.getChildNodes();
     for (int i = 0; i < zauberNodes.getLength(); i++) {
       ladeZauber(zauberNodes.item(i));
-    }    
+    }
   }
   
  /**
