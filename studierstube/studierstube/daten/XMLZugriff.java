@@ -18,9 +18,18 @@ import org.w3c.dom.NodeList;
  */
 public class XMLZugriff {
 	
-  DocumentBuilderFactory factory;
-  Document document;
+  protected DocumentBuilderFactory factory = null;
+  protected Document document = null;
 
+  /**
+   * Gibt ein DOM-Document einer XML-Datei zurück.
+   * 
+   * @param datei Die XML-Datei, die geladen werden soll.
+   * @return Document
+   */
+  public Document ladeDokument(String datei) {
+    return document;
+  }
   /**
    * Sucht einen Node unterhalb des aktuellen mit einem bestimmten Namen.
    * Zurückgegeben wird der gefundene Node oder null, falls er nicht

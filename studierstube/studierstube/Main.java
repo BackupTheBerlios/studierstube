@@ -15,16 +15,25 @@ import studierstube.gui.HauptFrame;
  * Initialisieren des Programms und zum Starten der GUI.
  */
 class Main {
+
+  /**
+   * Startet das Programm.
+   * 
+   * @param args Kommandozeilenargumente (werden ignoriert)
+   */
   public static void main(String[] args) {
     new Global();
-    Global.log("Programm wird gestartet:\n");
+    Global.log("Studierstube " + Global.version);
+    Global.log("Programm wird gestartet:");
+    Global.log("");
 
-    Global.log("* Lade Zauber ...");
+    Global.log("-> Lade Zauber ...");
     ZauberXML z = new ZauberXML();
     z.ladeZauberliste();
-    Global.log(" fertig.\n");
+    int anzahl = Global.zauberliste.getAnzahlZauber();
+    Global.log("   = " + anzahl + " Zauber geladen.");
     
-    Global.log("* Starte GUI ...");
+    Global.log("-> Starte GUI ...");
     javax.swing.SwingUtilities.invokeLater(
       new Runnable() {
         public void run() {
@@ -32,6 +41,6 @@ class Main {
         }
       }
     );
-    Global.log(" fertig.\n");
+    Global.log("   fertig.");
   }
 }

@@ -12,7 +12,6 @@ import java.io.InputStream;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
-import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
@@ -25,8 +24,9 @@ import studierstube.container.Zauber;
 public class ZauberXML extends XMLZugriff {
 
  /**
-  * Läd die Zauber in den Speicher. Die Daten aus zauber.xml
-  * werden in der globalen Zauberliste abgelegt.
+  * Läd die Zauber in den Speicher. Die Zauber aus der Datei 'zauber.xml'
+  * werden in der globalen Zauberliste abgelegt. Ist die Datei nicht
+  * vorhanden, so wird die mitgelieferte Resource verwendet.
   */
   public void ladeZauberliste() {
     factory = DocumentBuilderFactory.newInstance();
@@ -38,6 +38,7 @@ public class ZauberXML extends XMLZugriff {
     } catch (Exception e) {
       e.printStackTrace();
     }
+    
     Node xdimlNode = sucheChildNode(document, "XDIML");
     Node inhaltNode = sucheChildNode(xdimlNode, "Inhalt");
     Node zauberspruecheNode = sucheChildNode(inhaltNode, "Zaubersprüche");
@@ -49,6 +50,8 @@ public class ZauberXML extends XMLZugriff {
   
  /**
   * Läd einen einzelnen Zauber.
+  * 
+  * @param zauberNode Node des Zaubers
   */
   private void ladeZauber(Node zauberNode) {
     if (zauberNode.getNodeName() == "Zauber") {
@@ -82,7 +85,9 @@ public class ZauberXML extends XMLZugriff {
       zauber.setProbe(probe0, probe1, probe2);
       zauber.setMerkmale(merkmale);
       zauber.setVarianten(varianten);     
-      Global.zauberListe.add(zauber);
+      Global.zauberliste.add(zauber);
+      
+      Global.log("   + Zauber '" + id + "' geladen.");
     }
   }
   

@@ -78,10 +78,6 @@ public class HauptFrame implements ActionListener {
   
   public void actionPerformed(ActionEvent event) {
     String command = event.getActionCommand();
-    if (command.equals("Beenden")) beenden();
-  }
-  
-  public void beenden() {
-  	System.exit(0);
+    if (command.equals("Beenden")) Global.beenden();
   }
 }

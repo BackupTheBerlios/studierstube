@@ -14,7 +14,7 @@ import java.util.ArrayList;
  * Sie dient zur Verwaltung der Zauber.
  */
 public class Zauberliste {
-  private static ArrayList liste = new ArrayList(270);
+  private static ArrayList liste = new ArrayList(0);
   
   /**
    * Fügt einen neuen Zauber an die Zauberliste an.
@@ -28,7 +28,7 @@ public class Zauberliste {
   /**
    * Gibt die Anzahl der gespeicherten Zauber zurück.
    */
-  private int getAnzahlZauber() {
+  public int getAnzahlZauber() {
     return liste.size();
   }
 }

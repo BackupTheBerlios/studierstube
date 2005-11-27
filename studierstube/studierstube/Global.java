@@ -7,6 +7,8 @@
 
 package studierstube;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.util.Random;
 
 import javax.swing.JOptionPane;
@@ -21,10 +23,40 @@ import studierstube.container.Zauberliste;
 public class Global {
   public static final String version = "0.2";
   
-  private static long startTime, stopTime = 0;
-  
+  private static FileWriter filewriter;
+  private static BufferedWriter logwriter;
   private static Random random = new Random();
-  public static Zauberliste zauberListe = new Zauberliste();
+  
+  public static Zauberliste zauberliste = new Zauberliste();
+  
+  Global() {
+    try {
+      filewriter = new FileWriter("studierstube.log");
+    }
+    catch (Exception e) {
+      System.out.println("Konnte Logfile nicht initialisieren:");
+      e.printStackTrace();
+    }
+    logwriter = new BufferedWriter(filewriter);
+  }
+  
+  /**
+   * Gibt den String auf stdout aus und schreibt ihn in das Logfile.
+   * 
+   * @param string Ausgabe
+   */
+  public static void log(String string) {
+    System.out.println(string);
+    try {
+      logwriter.write(string);
+      logwriter.newLine();
+      logwriter.flush();   // TODO ugly
+    }
+    catch (Exception e) {
+      System.out.println("Fehler beim Schreiben in Logfile!");
+      e.printStackTrace();
+    }
+  }
   
  /**
   * Gibt das Ergebnis eines Wurfs mit einem beliebigen Würfel zurück.
@@ -82,63 +114,10 @@ public class Global {
     return sum;
   }
   
-/*
-  
-  protected void setOption(String option) {
-    if (option.equals("-debug")) {
-      Global.debugmode = true;
-      System.out.println("Debug-Modus an");
-    }
-    else {
-      System.out.println("Sie haben eine ungültige Option angegeben: " + option);
-      printUsage();
-      System.exit(1);
-    }
-  }
-  
-  protected void printUsage() {
-    System.out.println("Verfügbare Optionen:");
-    System.out.println("  -debug          Debug-Meldungen einschalten");
-  }
-  
-  public static void out(String string) {
-    if (debugmode == true) System.out.println(string);
-  }
-  
-*/
-  
-//  /**
-//   * Startet eine Zeitmessung. stop() beendet die Messung.
-//   */
-//  public static void start() {
-//    startTime = System.currentTimeMillis();
-//  }
-// 
-//  /**
-//   * Beendet die Zeitmessung, die vorher durch start() begonnen werden
-//   * muss, und gibt die Zeitdifferenz in Sekunden zurück.
-//   */
-//  public static double stop() {
-//    stopTime = System.currentTimeMillis();
-//    long msec = stopTime - startTime;
-//    double sec = msec / 1000.0;
-//    return sec;
-//  }
-
-  /**
-   * Gibt den String auf stdout aus, kann später z.B. für Logfiles
-   * benutzt werden.
-   * 
-   * @param string Ausgabe
-   */
-  public static void log(String string) {
-    System.out.print(string);
-  }
-  
  /**
   * Zeigt eine simple Dialogbox mit einem Text darin.
   * 
-  * param string	Ausgabe
+  * param string Ausgabe
   */
   public static void displayMessage(String string) {
     JOptionPane.showMessageDialog(null,
@@ -163,12 +142,12 @@ public class Global {
  /**
   * Zeigt eine Exception an und bittet den Benutzer, den Bug zu melden.
   * 
-  * @param exception	Die anzuzeigende Exception
+  * @param exception Die anzuzeigende Exception
   */
   public static void displayException(Exception exception) {
 	String errormsg = "Ein interner Fehler ist aufgetreten: " + exception.getMessage()
 			+ "\n\n"
-			+ "Bitte schicken Sie diesen Fehlerbericht an den Autor, "
+			+ "Bitte schicken Sie diese Meldung an den Autor, "
 			+ "damit der Fehler behoben werden kann.\n\n"
 			+ exception.toString() + "\n" + getStackTrace(exception) + "\n"
 			+ "Diesen Text in die Zwischenablage kopieren?";
@@ -184,13 +163,13 @@ public class Global {
  /**
   * Wandelt den Stacktrace einer Exception in einen String um.
   * 
-  * @param exception	die Exception
-  * @return s	String des Stacktrace
+  * @param exception	Die Exception
+  * @return s			String des Stacktrace
   */
   static String getStackTrace(Exception exception) {
     StackTraceElement stack[] = exception.getStackTrace();
     String s = "";
-    for (int i=0; i<stack.length; i++) {
+    for (int i = 0; i < stack.length; i++) {
       String fileName = stack[i].getFileName();
       String className = stack[i].getClassName();
       String methodName = stack[i].getMethodName();
@@ -203,5 +182,31 @@ public class Global {
     	s += "\n";
     }
 	return s;
+  }
+  
+  /**
+   * Beenden des Programms.
+   * 
+   * 'Aufräumen' und dann System.exit(0) aufrufen.
+   */
+  public static void beenden() {
+	try {
+	  logwriter.flush();
+	}
+	catch (Exception e) {
+	  System.out.println("Fehler beim Leeren des Logfile-Buffers!");
+	  e.printStackTrace();
+	}
+	finally {
+	  try {
+	    logwriter.close();
+	  }
+	  catch (Exception e) {
+	    System.out.println("Fehler beim Schließen des Logfiles!");
+	    e.printStackTrace();
+	  }
+	}
+	
+	System.exit(0);
   }
 }
