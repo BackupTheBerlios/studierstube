@@ -7,8 +7,15 @@
 
 package studierstube.daten;
 
+import java.io.File;
+
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
@@ -29,9 +36,54 @@ public class XMLZugriff {
    * @param datei Die XML-Datei, die geladen werden soll.
    * @return Document
    */
-  public Document ladeDokument(String datei) {
+  public Document ladeDokument(String dateiname) {
+    factory = DocumentBuilderFactory.newInstance();
+    try {
+      builder = factory.newDocumentBuilder();
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+    
+    File file = new File(dateiname);
+    if (file.canRead()) {
+      try {
+        document = builder.parse(file);
+      } catch (Exception e) {
+        e.printStackTrace();
+      }
+    }
+	
     return document;
   }
+  
+  /**
+   * Schreibt ein DOM-Document in eine XML-Datei.
+   * 
+   * @param document	Das Document
+   * @param dateiname	Die XML-Datei, die geschrieben werden soll.
+   */
+  public void schreibeDatei(Document document, String dateiname) {
+    TransformerFactory tFactory = TransformerFactory.newInstance();
+    Transformer transformer = null;
+    try {
+      transformer = tFactory.newTransformer();
+    }
+    catch (Exception e) {
+      e.printStackTrace();
+    }
+    transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+    transformer.setOutputProperty(OutputKeys.STANDALONE, "no");
+    DOMSource source = new DOMSource(document);
+    File datei = new File(dateiname);
+    StreamResult result = new StreamResult(datei);
+    try {
+      transformer.transform(source, result);
+    }
+    catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
+  
   /**
    * Sucht einen Node unterhalb des aktuellen mit einem bestimmten Namen.
    * Zurückgegeben wird der gefundene Node oder null, falls er nicht
@@ -57,15 +109,21 @@ public class XMLZugriff {
    * 
    * @param node		Von welchem Node aus gesucht wird
    * @param children	Name der gesuchten Nodes
-   * @return		String-Array mit den gefundenen Ergebnissen
+   * @return			String-Array mit den gefundenen Ergebnissen
    */
   protected String[] sucheChildValues(Node node, String children) {
     NodeList nl = node.getChildNodes();
-    if (nl.getLength() == 0) return null;
-    String[] elemente = new String[nl.getLength()];
+    int counter = 0;
+    for (int i = 0; i < nl.getLength(); i++) {
+      if (nl.item(i).getNodeName().equals(children)) counter++;
+    }
+    if (counter == 0) return null;
+    String[] elemente = new String[counter];
+    counter = 0;
     for (int i = 0; i < nl.getLength(); i++) {
       if (nl.item(i).getNodeName().equals(children)) {
-        elemente[i] = nl.item(i).getChildNodes().item(0).getNodeValue();
+        elemente[counter] = nl.item(i).getChildNodes().item(0).getNodeValue();
+        counter++;
       }
     }
     return elemente;

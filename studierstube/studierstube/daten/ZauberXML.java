@@ -7,9 +7,15 @@
 
 package studierstube.daten;
 
+import java.io.File;
 import java.io.InputStream;
 
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -113,19 +119,56 @@ public class ZauberXML extends XMLZugriff {
 	}
 	
     Element eXDIML = document.createElement("XDIML");
+    eXDIML.setAttribute("lang", "de");
+    eXDIML.setAttribute("version", "2.0");
     document.appendChild(eXDIML);
     Element eInhalt = document.createElement("Inhalt");
     eXDIML.appendChild(eInhalt);
     Element eZaubersprueche = document.createElement("Zaubersprüche");
     eInhalt.appendChild(eZaubersprueche);
+    
     for (int i = 0; i < Global.zauberliste.getAnzahlZauber(); i++) {
-      String id = Global.zauberliste.getZauber(i).getName();
-      Element eZauber = schreibeZauber(id);
+      Element eZauber = erstelleZauberElement(Global.zauberliste.getZauber(i));
       eZaubersprueche.appendChild(eZauber);
     } // TODO catch, Fehlermeldung?
+    
+    schreibeDatei(document, "zauber2.xml");
   }
   
-  private Element schreibeZauber(String id) {
-	return null;
+  private Element erstelleZauberElement(Zauber z) {
+	Element eZauber = document.createElement("Zauber");
+	eZauber.setAttribute("ID", z.getName());
+	
+	Element eProbe = document.createElement("Probe");
+	eProbe.setTextContent(z.getProbeAlsString());
+	eZauber.appendChild(eProbe);
+	
+	Element eKomplexitaet = document.createElement("Komplexität");
+	eKomplexitaet.setTextContent(z.getKomplexitaet());
+	eZauber.appendChild(eKomplexitaet);
+	
+	if (z.getMerkmale() != null) {
+	  Element eMerkmale = document.createElement("Merkmale");
+	  Element eMerkmal;
+	  for (int i = 0; i < z.getMerkmale().length; i++) {
+	    eMerkmal = document.createElement("Merkmal");
+        eMerkmal.setTextContent(z.getMerkmale()[i]);
+	    eMerkmale.appendChild(eMerkmal);
+	  }
+	  eZauber.appendChild(eMerkmale);
+	}
+	
+	if (z.getVarianten() != null) {
+	  Element eVarianten = document.createElement("Varianten");
+	  Element eVariante;
+	  for (int i = 0; i < z.getVarianten().length; i++) {
+	    eVariante = document.createElement("Variante");
+	    eVariante.setTextContent(z.getVarianten()[i]);
+	    eVarianten.appendChild(eVariante);
+	  }
+	  eZauber.appendChild(eVarianten);
+	}
+	
+	return eZauber;
   }
 }

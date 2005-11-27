@@ -7,8 +7,11 @@
 
 package studierstube;
 
+import java.io.File;
+
 import studierstube.daten.ZauberXML;
 import studierstube.gui.HauptFrame;
+import studierstube.tests.XMLtest;
 
 /**
  * In dieser Klasse befindet sich main(). Sie dient nur zum
@@ -34,6 +37,13 @@ class Main {
     z.ladeZauberliste();
     int anzahl = Global.zauberliste.getAnzahlZauber();
     Global.log("   = " + anzahl + " Zauber geladen.");
+    
+    File file = new File("zauber.xml");
+    if (!file.canRead()) {
+      Global.log("-> zauber.xml nicht gefunden. Schreibe Zauberliste neu ...");
+      z.speichereZauberliste();
+      Global.log("   fertig.");
+    }
     
     Global.log("-> Starte GUI ...");
     javax.swing.SwingUtilities.invokeLater(

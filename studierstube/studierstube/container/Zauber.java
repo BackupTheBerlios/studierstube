@@ -95,6 +95,16 @@ public class Zauber {
   }
   
   /**
+   * Liefert die Probe des Zaubers als String mit / als Trennzeichen.
+   * 
+   * @return Probe des Zaubers
+   */
+  public String getProbeAlsString() {
+	String probestring = probe[0] + "/" + probe[1] + "/" + probe[2];
+	return probestring;
+  }
+  
+  /**
    * Liefert die Merkmale des Zaubers als String-Array.
    * 
    * @return Merkmale des Zaubers
