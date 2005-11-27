@@ -11,12 +11,12 @@ package studierstube.container;
  * Einzelner Zauber mit seinen generischen Eigenschaften.
  */
 public class Zauber {
-  public String name;
+  private String name;
 //  public String[] verbreitung;   /// oder rep?
-  public String komplexitaet;
-  public String[] probe = new String[3];
-  public String[] merkmale;
-  public String[] varianten;
+  private String komplexitaet;
+  private String[] probe = new String[3];
+  private String[] merkmale;
+  private String[] varianten;
   
   /**
    * Setter für Name des Zaubers.
@@ -65,5 +65,50 @@ public class Zauber {
    */
   public void setVarianten(String[] v) {
 	varianten = v;
+  }
+  
+  /**
+   * Liefert den Namen des Zaubers.
+   * 
+   * @return Name des Zaubers
+   */
+  public String getName() {
+	return name;
+  }
+  
+  /**
+   * Liefert die Komplexität des Zaubers.
+   * 
+   * @return Komplexität des Zaubers
+   */
+  public String getKomplexitaet() {
+	return komplexitaet;
+  }
+  
+  /**
+   * Liefert die Probe des Zaubers als String-Array.
+   * 
+   * @return Probe des Zaubers
+   */
+  public String[] getProbe() {
+	return probe;
+  }
+  
+  /**
+   * Liefert die Merkmale des Zaubers als String-Array.
+   * 
+   * @return Merkmale des Zaubers
+   */
+  public String[] getMerkmale() {
+	return merkmale;
+  }
+  
+  /**
+   * Liefert die Varianten des Zaubers als String-Array.
+   * 
+   * @return Varianten des Zaubers
+   */
+  public String[] getVarianten() {
+	return varianten;
   }
 }

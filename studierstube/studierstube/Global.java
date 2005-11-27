@@ -21,6 +21,7 @@ import studierstube.container.Zauberliste;
  * man leicht aus dem ganzen Programm aufrufen können soll.
  */
 public class Global {
+  
   public static final String version = "0.2";
   
   private static FileWriter filewriter;

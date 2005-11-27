@@ -23,7 +23,9 @@ class Main {
    */
   public static void main(String[] args) {
     new Global();
-    Global.log("Studierstube " + Global.version);
+    Global.log("Studierstube Version " + Global.version);
+    Global.log("Copyright (c) Stefan Holzmüller (twelwan@gmx.de)");
+    Global.log("");
     Global.log("Programm wird gestartet:");
     Global.log("");
 

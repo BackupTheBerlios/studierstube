@@ -27,8 +27,14 @@ public class Zauberliste {
   
   /**
    * Gibt die Anzahl der gespeicherten Zauber zurück.
+   * 
+   * @return Anzahl der Zauber
    */
   public int getAnzahlZauber() {
     return liste.size();
+  }
+  
+  public Zauber getZauber(int index) {
+	return (Zauber) liste.get(index);
   }
 }

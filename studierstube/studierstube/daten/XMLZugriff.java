@@ -7,6 +7,7 @@
 
 package studierstube.daten;
 
+import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
 import org.w3c.dom.Document;
@@ -20,6 +21,7 @@ public class XMLZugriff {
 	
   protected DocumentBuilderFactory factory = null;
   protected Document document = null;
+  protected DocumentBuilder builder = null;
 
   /**
    * Gibt ein DOM-Document einer XML-Datei zurück.

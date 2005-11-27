@@ -9,9 +9,9 @@ package studierstube.daten;
 
 import java.io.InputStream;
 
-import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
+import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
@@ -29,22 +29,34 @@ public class ZauberXML extends XMLZugriff {
   * vorhanden, so wird die mitgelieferte Resource verwendet.
   */
   public void ladeZauberliste() {
-    factory = DocumentBuilderFactory.newInstance();
-    try {
-      DocumentBuilder builder = factory.newDocumentBuilder();
+	if (ladeDokument("zauber.xml") == null) {
+	  Global.log("   * Die Datei 'zauber.xml' wurde nicht gefunden.");
+	  Global.log("   * Lade Zauberliste aus mitgelieferter Resource ...");
+	  
+      factory = DocumentBuilderFactory.newInstance();
+      try {
+        builder = factory.newDocumentBuilder();
+      } catch (Exception e) {
+        e.printStackTrace();
+      }
       Class c = this.getClass();
       InputStream is = c.getResourceAsStream("zauber.xml");
-      document = builder.parse(is);
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
-    
+      try {
+        document = builder.parse(is);
+      } catch (Exception e) {
+        e.printStackTrace();
+      }
+	}
+	else {
+	  document = ladeDokument("zauber.xml");
+	}
+	
     Node xdimlNode = sucheChildNode(document, "XDIML");
     Node inhaltNode = sucheChildNode(xdimlNode, "Inhalt");
     Node zauberspruecheNode = sucheChildNode(inhaltNode, "Zaubersprüche");
     NodeList zauberNodes = zauberspruecheNode.getChildNodes();
     for (int i = 0; i < zauberNodes.getLength(); i++) {
-      ladeZauber(zauberNodes.item(i));
+      leseZauber(zauberNodes.item(i));
     }
   }
   
@@ -53,7 +65,7 @@ public class ZauberXML extends XMLZugriff {
   * 
   * @param zauberNode Node des Zaubers
   */
-  private void ladeZauber(Node zauberNode) {
+  private void leseZauber(Node zauberNode) {
     if (zauberNode.getNodeName() == "Zauber") {
       
       String id = zeigeAttribut(zauberNode, "ID");
@@ -91,4 +103,29 @@ public class ZauberXML extends XMLZugriff {
     }
   }
   
+  public void speichereZauberliste() {
+	factory = DocumentBuilderFactory.newInstance();
+	try {
+	  document = factory.newDocumentBuilder().newDocument();
+	}
+	catch (Exception e) {
+	  e.printStackTrace();
+	}
+	
+    Element eXDIML = document.createElement("XDIML");
+    document.appendChild(eXDIML);
+    Element eInhalt = document.createElement("Inhalt");
+    eXDIML.appendChild(eInhalt);
+    Element eZaubersprueche = document.createElement("Zaubersprüche");
+    eInhalt.appendChild(eZaubersprueche);
+    for (int i = 0; i < Global.zauberliste.getAnzahlZauber(); i++) {
+      String id = Global.zauberliste.getZauber(i).getName();
+      Element eZauber = schreibeZauber(id);
+      eZaubersprueche.appendChild(eZauber);
+    } // TODO catch, Fehlermeldung?
+  }
+  
+  private Element schreibeZauber(String id) {
+	return null;
+  }
 }
