@@ -132,7 +132,7 @@ public class ZauberXML extends XMLZugriff {
       eZaubersprueche.appendChild(eZauber);
     } // TODO catch, Fehlermeldung?
     
-    schreibeDatei(document, "zauber2.xml");
+    schreibeDatei(document, "zauber.xml");
   }
   
   private Element erstelleZauberElement(Zauber z) {
