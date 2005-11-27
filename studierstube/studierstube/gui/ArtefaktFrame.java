@@ -17,6 +17,7 @@ import javax.swing.JPanel;
  */
 public class ArtefaktFrame extends JFrame {
 
+	static final long serialVersionUID = 1L;  // TODO gescheiter Wert
 	private JPanel jContentPane = null;
 
 	/**

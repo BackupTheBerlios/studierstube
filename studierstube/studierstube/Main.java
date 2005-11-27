@@ -11,7 +11,6 @@ import java.io.File;
 
 import studierstube.daten.ZauberXML;
 import studierstube.gui.HauptFrame;
-import studierstube.tests.XMLtest;
 
 /**
  * In dieser Klasse befindet sich main(). Sie dient nur zum
