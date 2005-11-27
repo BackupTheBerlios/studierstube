@@ -228,19 +228,19 @@ public class Talentprobe {
   /**
    * Bestimmt und liefert den Erfolg einer Probe mit gegebenen Würfelwürfen.
    *
-   * Erfolgs-Code:
-   * -4 = Spruchhemmung
-   * -3 = schlimmer Patzer (20/20/20)
-   * -2 = Patzer
-   * -1	= misslungen
-   *  1 = gelungen
-   *  2 = glücklich
+   * <br>Erfolgs-Code:<br>
+   * -4 = Spruchhemmung<br>
+   * -3 = schlimmer Patzer (20/20/20)<br>
+   * -2 = Patzer<br>
+   * -1	= misslungen<br>
+   *  1 = gelungen<br>
+   *  2 = glücklich<br>
    *  3 = spektakulärer Erfolg (1/1/1)
    *
    * @param ww1  erster Würfel
    * @param ww2  zweiter Würfel
    * @param ww3  dritter Würfel
-   * @return  Erfolg-Code
+   * @return  Erfolgs-Code
    */
   public int bestimmeErfolg(int ww1, int ww2, int ww3) {
     bestimme(ww1, ww2, ww3);
