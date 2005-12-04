@@ -33,7 +33,7 @@ public class XMLZugriff {
   /**
    * Gibt ein DOM-Document einer XML-Datei zurück.
    * 
-   * @param datei Die XML-Datei, die geladen werden soll.
+   * @param dateiname Die XML-Datei, die geladen werden soll.
    * @return Document
    */
   public Document ladeDokument(String dateiname) {

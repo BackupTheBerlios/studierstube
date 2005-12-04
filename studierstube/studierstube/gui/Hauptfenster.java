@@ -27,8 +27,11 @@ import studierstube.tests.ArtefaktThesisVE;
  * Dies ist das Fenster, von wo aus der Benutzer alle Unterprogramme
  * aufrufen kann.
  */
-public class HauptFrame implements ActionListener {
-  public HauptFrame() {
+public class Hauptfenster implements ActionListener {
+  
+  private ArtefaktThesisVE artefaktthesis;
+
+  public Hauptfenster() {
     JFrame.setDefaultLookAndFeelDecorated(true);
     JFrame frame = new JFrame("Studierstube, Version " + Global.version);
     frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -40,7 +43,7 @@ public class HauptFrame implements ActionListener {
     frame.setVisible(true);
   }
   
-  public JMenuBar erzeugeJMenuBar() {
+  private JMenuBar erzeugeJMenuBar() {
   	JMenuBar menuBar = new JMenuBar();
   	JMenu programmMenu = new JMenu("Programm");
   	JMenu datenMenu = new JMenu("Daten");
@@ -75,7 +78,7 @@ public class HauptFrame implements ActionListener {
   	return menuBar;
   }
   
-  public JPanel createPanel() {
+  private JPanel createPanel() {
   	JPanel panel = new JPanel();
     JButton button = new JButton("Klick!");
     button.setPreferredSize(new Dimension(450, 360));
@@ -87,7 +90,14 @@ public class HauptFrame implements ActionListener {
   public void actionPerformed(ActionEvent event) {
     String command = event.getActionCommand();
     if (command.equals("Beenden")) Global.beenden();
-    else if (command.equals("Artefakterschaffung")) new ArtefaktThesisVE();
+    else if (command.equals("Artefakterschaffung")) zeigeArtefaktThesis();
     else Global.log("FEHLER: ActionCommand nicht erkannt!");
+  }
+  
+  private void zeigeArtefaktThesis() {
+	if (artefaktthesis == null)
+	  artefaktthesis = new ArtefaktThesisVE();
+	else
+	  artefaktthesis.toFront();
   }
 }

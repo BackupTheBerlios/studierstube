@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Artefakte>
+<Artefakt name="Beispielsartefakt">
+<Ausloeser Name="am Ring drehen" Zuschlag="3">
+<Spruch Ladungen="3" Name="Aeolitus" Praeservanz="aufladbar" Stapelungen="1" Wirkung="SpoMod verdoppelte Reichweite" ZfP="3" ZfW="7"/>
+<Spruch Ladungen="1" Name="Vocolimbo" Praeservanz="semipermanent (monatlich)" Stapelungen="2" Wirkung="MUAHAHAHA" ZfP="11" ZfW="12"/>
+</Ausloeser>
+<Ausloeser Name="Fingerschnippen" Zuschlag="4">
+<Spruch Ladungen="1" Name="Balsam" Praeservanz="Matrixgeber (labil)" Stapelungen="1" Wirkung="7 LeP" ZfP="2" ZfW="2"/>
+</Ausloeser>
+<Gegenstand Beschreibung="blablabla" Material="Gold"/>
+</Artefakt>
+</Artefakte>

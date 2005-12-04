@@ -10,7 +10,7 @@ package studierstube;
 import java.io.File;
 
 import studierstube.daten.ZauberXML;
-import studierstube.gui.HauptFrame;
+import studierstube.gui.Hauptfenster;
 
 /**
  * In dieser Klasse befindet sich main(). Sie dient nur zum
@@ -36,20 +36,21 @@ class Main {
     z.ladeZauberliste();
     int anzahl = Global.zauberliste.getAnzahlZauber();
     Global.log("   = " + anzahl + " Zauber geladen.");
+    Global.log("");
     
     File file = new File("zauber.xml");
     if (!file.canRead()) {
-      Global.log("-> zauber.xml nicht gefunden. Schreibe Zauberliste neu ...");
+      Global.log("-> Schreibe Zauberliste neu ...");
       z.speichereZauberliste();
       Global.log("   fertig.");
+      Global.log("");
     }
-    Global.log("");
     
     Global.log("-> Starte GUI ...");
     javax.swing.SwingUtilities.invokeLater(
       new Runnable() {
         public void run() {
-          new HauptFrame();
+          new Hauptfenster();
         }
       }
     );
