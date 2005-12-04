@@ -22,7 +22,7 @@ import studierstube.container.Zauberliste;
  */
 public class Global {
   
-  public static final String version = "0.2";
+  public static final String version = "0.3";
   
   private static FileWriter filewriter;
   private static BufferedWriter logwriter;

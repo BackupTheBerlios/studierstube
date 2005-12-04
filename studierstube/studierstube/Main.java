@@ -30,8 +30,8 @@ class Main {
     Global.log("");
     Global.log("Programm wird gestartet:");
     Global.log("");
-
-    Global.log("-> Lade Zauber ...");
+    
+    Global.log("-> Lade Zauber aus zauber.xml ...");
     ZauberXML z = new ZauberXML();
     z.ladeZauberliste();
     int anzahl = Global.zauberliste.getAnzahlZauber();
@@ -43,6 +43,7 @@ class Main {
       z.speichereZauberliste();
       Global.log("   fertig.");
     }
+    Global.log("");
     
     Global.log("-> Starte GUI ...");
     javax.swing.SwingUtilities.invokeLater(
@@ -53,5 +54,6 @@ class Main {
       }
     );
     Global.log("   fertig.");
+    Global.log("");
   }
 }

@@ -5,9 +5,7 @@
 * of the zlib/libpng license. See LICENSE.txt for details.    *
 **************************************************************/
 
-package studierstube.gui;
-
-import java.awt.BorderLayout;
+package studierstube.tests;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -15,15 +13,14 @@ import javax.swing.JPanel;
 /**
  * In diesem Fenster kann der Benutzer das Artefakt entwerfen.
  */
-public class ArtefaktFrame extends JFrame {
+public class ArtefaktThesisVE extends JFrame {
 
-	static final long serialVersionUID = 1L;  // TODO gescheiter Wert
-	private JPanel jContentPane = null;
-
+	static final long serialVersionUID = 1L;  // TODO brauchbarer Wert
+	private JPanel jContentPane = null;  //  @jve:decl-index=0:visual-constraint="10,10"
 	/**
 	 * This is the default constructor
 	 */
-	public ArtefaktFrame() {
+	public ArtefaktThesisVE() {
 		super();
 		initialize();
 	}
@@ -36,7 +33,9 @@ public class ArtefaktFrame extends JFrame {
 	private void initialize() {
 		this.setSize(545, 282);
 		this.setContentPane(getJContentPane());
-		this.setTitle("JFrame");
+		this.setTitle("test");
+		this.setVisible(true);
+		this.toFront();
 	}
 
 	/**
@@ -47,7 +46,8 @@ public class ArtefaktFrame extends JFrame {
 	private JPanel getJContentPane() {
 		if (jContentPane == null) {
 			jContentPane = new JPanel();
-			jContentPane.setLayout(new BorderLayout());
+			jContentPane.setLayout(null);
+			jContentPane.setBackground(java.awt.Color.orange);
 		}
 		return jContentPane;
 	}

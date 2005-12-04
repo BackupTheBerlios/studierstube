@@ -21,6 +21,7 @@ import javax.swing.JPanel;
 import javax.swing.KeyStroke;
 
 import studierstube.Global;
+import studierstube.tests.ArtefaktThesisVE;
 
 /**
  * Dies ist das Fenster, von wo aus der Benutzer alle Unterprogramme
@@ -29,40 +30,47 @@ import studierstube.Global;
 public class HauptFrame implements ActionListener {
   public HauptFrame() {
     JFrame.setDefaultLookAndFeelDecorated(true);
-    JFrame frame = new JFrame("Die magische Werkstatt" + ", Version " + Global.version);
+    JFrame frame = new JFrame("Studierstube, Version " + Global.version);
     frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     // TODO  void setIconImage(Image)
-    frame.setJMenuBar(createJMenuBar());
+    frame.setJMenuBar(erzeugeJMenuBar());
     frame.getContentPane().add(createPanel());
     frame.pack();
     frame.setLocationRelativeTo(null);  // centered on screen
     frame.setVisible(true);
   }
   
-  public JMenuBar createJMenuBar() {
+  public JMenuBar erzeugeJMenuBar() {
   	JMenuBar menuBar = new JMenuBar();
-  	JMenu programMenu = new JMenu("Programm");
-  	JMenu optionMenu = new JMenu("Optionen");
-  	JMenu helpMenu = new JMenu("Hilfe");
+  	JMenu programmMenu = new JMenu("Programm");
+  	JMenu datenMenu = new JMenu("Daten");
+  	JMenu optionenMenu = new JMenu("Optionen");
+  	JMenu hilfeMenu = new JMenu("Hilfe");
   	JMenuItem menuItem;
   	
-  	programMenu.setMnemonic(KeyEvent.VK_P);
-  	programMenu.getAccessibleContext().setAccessibleDescription("TODO");
-  	menuBar.add(programMenu);
+  	programmMenu.setMnemonic(KeyEvent.VK_P);
+  	menuBar.add(programmMenu);
   	
-  	optionMenu.setMnemonic(KeyEvent.VK_O);
-  	optionMenu.getAccessibleContext().setAccessibleDescription("TODO");
-  	menuBar.add(optionMenu);
+  	datenMenu.setMnemonic(KeyEvent.VK_D);
+  	menuBar.add(datenMenu);
   	
-  	helpMenu.setMnemonic(KeyEvent.VK_H);
-  	helpMenu.getAccessibleContext().setAccessibleDescription("TODO");
-  	menuBar.add(helpMenu);
+  	optionenMenu.setMnemonic(KeyEvent.VK_O);
+  	menuBar.add(optionenMenu);
   	
+  	hilfeMenu.setMnemonic(KeyEvent.VK_H);
+  	menuBar.add(hilfeMenu);
+  	
+  	menuItem = new JMenuItem("Artefakterschaffung", KeyEvent.VK_A);
+    menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_A, ActionEvent.CTRL_MASK));
+    menuItem.addActionListener(this);
+    programmMenu.add(menuItem);
+  	
+    programmMenu.addSeparator();
+    
   	menuItem = new JMenuItem("Beenden", KeyEvent.VK_B);
     menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q, ActionEvent.CTRL_MASK));
-    menuItem.getAccessibleContext().setAccessibleDescription("Programm beenden");
     menuItem.addActionListener(this);
-    programMenu.add(menuItem);
+    programmMenu.add(menuItem);
   	
   	return menuBar;
   }
@@ -79,5 +87,7 @@ public class HauptFrame implements ActionListener {
   public void actionPerformed(ActionEvent event) {
     String command = event.getActionCommand();
     if (command.equals("Beenden")) Global.beenden();
+    else if (command.equals("Artefakterschaffung")) new ArtefaktThesisVE();
+    else Global.log("FEHLER: ActionCommand nicht erkannt!");
   }
 }
