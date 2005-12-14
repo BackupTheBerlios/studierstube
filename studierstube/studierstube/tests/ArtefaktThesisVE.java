@@ -7,9 +7,17 @@
 
 package studierstube.tests;
 
-import javax.swing.BoxLayout;
+import javax.swing.ButtonGroup;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.JTree;
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
 
 /**
  * In diesem Fenster kann der Benutzer das Artefakt entwerfen.
@@ -18,9 +26,27 @@ public class ArtefaktThesisVE extends JFrame {
 
 	static final long serialVersionUID = 1L;  // TODO brauchbarer Wert
 	private JPanel jContentPane = null;  //  @jve:decl-index=0:visual-constraint="10,10"
-	private JPanel jPanel = null;
-	private JPanel jPanel1 = null;
-	private JPanel jPanel2 = null;
+	private JLabel labelName = null;
+	private JTextField textFieldName = null;
+	private JLabel labelErschaffer = null;
+	private JTextField textFieldErschaffer = null;
+	private JTextArea textAreaBeschreibung = null;
+	private JPanel panelHaltbarkeit = null;
+	private JTree treeSprueche = null;
+	private JRadioButton radioButtonHaltbarkeitPermanent = null;
+	private JRadioButton radioButtonHaltbarkeitMonat = null;
+	private JRadioButton radioButtonHaltbarkeitWoche = null;
+	private JRadioButton radioButtonHaltbarkeitTag = null;
+	private JPanel panelHaltbarkeitInnen = null;
+	private JButton buttonSpruchHinzufuegen = null;
+	private JPanel panelEigenschaften = null;
+	private JPanel panelEigenschaftenInnen = null;
+	private JCheckBox checkBoxEigenschaftSiegel = null;
+	private JCheckBox checkBoxEigenschaftUnzerbrechlichkeit = null;
+	private JCheckBox checkBoxEigenschaftGespuer = null;
+	private JCheckBox checkBoxEigenschaftApport = null;
+	private JButton buttonSpruchEntfernen = null;
+	private JButton buttonSpruchBearbeiten = null;
 	/**
 	 * This is the default constructor
 	 */
@@ -36,8 +62,9 @@ public class ArtefaktThesisVE extends JFrame {
 	 */
 	private void initialize() {
 		this.setSize(571, 391);
+		this.setResizable(false);
 		this.setContentPane(getJContentPane());
-		this.setTitle("test");
+		this.setTitle("Artefaktthesis für: unbenanntes Artefakt");
 		this.setVisible(true);
 		this.toFront();
 	}
@@ -49,14 +76,210 @@ public class ArtefaktThesisVE extends JFrame {
 	 */
 	private JPanel getJContentPane() {
 		if (jContentPane == null) {
+			labelErschaffer = new JLabel();
+			labelErschaffer.setBounds(new java.awt.Rectangle(320,10,60,16));
+			labelErschaffer.setText("Erschaffer");
+			labelName = new JLabel();
+			labelName.setText("Name");
+			labelName.setBounds(new java.awt.Rectangle(8,9,34,16));
 			jContentPane = new JPanel();
-			jContentPane.setLayout(new BoxLayout(getJContentPane(), BoxLayout.Y_AXIS));
-			jContentPane.add(getJPanel(), null);
-			jContentPane.setBackground(java.awt.Color.orange);
-			jContentPane.add(getJPanel1(), null);
-			jContentPane.add(getJPanel2(), null);
+			jContentPane.setLayout(null);
+			jContentPane.setBackground(new java.awt.Color(255,255,204));
+			jContentPane.setForeground(new java.awt.Color(255,255,204));
+			jContentPane.add(labelName, null);
+			jContentPane.add(getTextFieldName(), null);
+			jContentPane.add(labelErschaffer, null);
+			jContentPane.add(getTextFieldErschaffer(), null);
+			jContentPane.add(getTextAreaBeschreibung(), null);
+			jContentPane.add(getPanelHaltbarkeit(), null);
+			jContentPane.add(getTreeSprueche(), null);
+			jContentPane.add(getButtonSpruchHinzufuegen(), null);
+			jContentPane.add(getPanelEigenschaften(), null);
+			jContentPane.add(getButtonSpruchEntfernen(), null);
+			jContentPane.add(getButtonSpruchBearbeiten(), null);
+			ButtonGroup buttonGroupHaltbarkeit = new ButtonGroup();
+			buttonGroupHaltbarkeit.add(radioButtonHaltbarkeitPermanent);
+			buttonGroupHaltbarkeit.add(radioButtonHaltbarkeitMonat);
+			buttonGroupHaltbarkeit.add(radioButtonHaltbarkeitWoche);
+			buttonGroupHaltbarkeit.add(radioButtonHaltbarkeitTag);
 		}
 		return jContentPane;
+	}
+
+	/**
+	 * This method initializes jTextField	
+	 * 	
+	 * @return javax.swing.JTextField	
+	 */
+	private JTextField getTextFieldName() {
+		if (textFieldName == null) {
+			textFieldName = new JTextField();
+			textFieldName.setBounds(new java.awt.Rectangle(47,8,256,20));
+			textFieldName.setText("unbenanntes Artefakt");
+			textFieldName.addKeyListener(new java.awt.event.KeyAdapter() {
+				public void keyTyped(java.awt.event.KeyEvent e) {
+					System.out.println("keyTyped()"); // TODO Auto-generated Event stub keyTyped()
+				}
+			});
+		}
+		return textFieldName;
+	}
+
+	/**
+	 * This method initializes textFieldErschaffer	
+	 * 	
+	 * @return javax.swing.JTextField	
+	 */
+	private JTextField getTextFieldErschaffer() {
+		if (textFieldErschaffer == null) {
+			textFieldErschaffer = new JTextField();
+			textFieldErschaffer.setBounds(new java.awt.Rectangle(385,8,168,20));
+			textFieldErschaffer.setText("unbenannter Hersteller");
+		}
+		return textFieldErschaffer;
+	}
+
+	/**
+	 * This method initializes textAreaBeschreibung	
+	 * 	
+	 * @return javax.swing.JTextArea	
+	 */
+	private JTextArea getTextAreaBeschreibung() {
+		if (textAreaBeschreibung == null) {
+			textAreaBeschreibung = new JTextArea();
+			textAreaBeschreibung.setBounds(new java.awt.Rectangle(9,31,543,48));
+			textAreaBeschreibung.setText("Beschreibungstext");
+			textAreaBeschreibung.setLineWrap(true);
+		}
+		return textAreaBeschreibung;
+	}
+
+	/**
+	 * This method initializes panelHaltbarkeit	
+	 * 	
+	 * @return javax.swing.JPanel	
+	 */
+	private JPanel getPanelHaltbarkeit() {
+		if (panelHaltbarkeit == null) {
+			panelHaltbarkeit = new JPanel();
+			panelHaltbarkeit.setLayout(null);
+			panelHaltbarkeit.setBounds(new java.awt.Rectangle(8,162,125,120));
+			panelHaltbarkeit.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Haltbarkeit", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, null, null));
+			panelHaltbarkeit.setBackground(new java.awt.Color(255,255,204));
+			panelHaltbarkeit.add(getPanelHaltbarkeitInnen(), null);
+		}
+		return panelHaltbarkeit;
+	}
+
+	/**
+	 * This method initializes treeSprueche	
+	 * 	
+	 * @return javax.swing.JTree	
+	 */
+	private JTree getTreeSprueche() {
+		if (treeSprueche == null) {
+			treeSprueche = new JTree();
+			treeSprueche.setBounds(new java.awt.Rectangle(10,84,427,74));
+			treeSprueche.setRootVisible(false);
+		}
+		return treeSprueche;
+	}
+
+	/**
+	 * This method initializes radioButtonHaltbarkeit	
+	 * 	
+	 * @return javax.swing.JRadioButton	
+	 */
+	private JRadioButton getRadioButtonHaltbarkeitPermanent() {
+		if (radioButtonHaltbarkeitPermanent == null) {
+			radioButtonHaltbarkeitPermanent = new JRadioButton();
+			radioButtonHaltbarkeitPermanent.setText("permanent");
+			radioButtonHaltbarkeitPermanent.setBackground(new java.awt.Color(255,255,204));
+			radioButtonHaltbarkeitPermanent.setSelected(true);
+			radioButtonHaltbarkeitPermanent.setName("");
+		}
+		return radioButtonHaltbarkeitPermanent;
+	}
+
+	/**
+	 * This method initializes radioButtonHaltbarkeitTag	
+	 * 	
+	 * @return javax.swing.JRadioButton	
+	 */
+	private JRadioButton getRadioButtonHaltbarkeitMonat() {
+		if (radioButtonHaltbarkeitMonat == null) {
+			radioButtonHaltbarkeitMonat = new JRadioButton();
+			radioButtonHaltbarkeitMonat.setText("mind. 1 Monat");
+			radioButtonHaltbarkeitMonat.setBackground(new java.awt.Color(255,255,204));
+		}
+		return radioButtonHaltbarkeitMonat;
+	}
+
+	/**
+	 * This method initializes radioButtonHaltbarkeitWoche	
+	 * 	
+	 * @return javax.swing.JRadioButton	
+	 */
+	private JRadioButton getRadioButtonHaltbarkeitWoche() {
+		if (radioButtonHaltbarkeitWoche == null) {
+			radioButtonHaltbarkeitWoche = new JRadioButton();
+			radioButtonHaltbarkeitWoche.setText("mind. 1 Woche");
+			radioButtonHaltbarkeitWoche.setBackground(new java.awt.Color(255,255,204));
+		}
+		return radioButtonHaltbarkeitWoche;
+	}
+
+	/**
+	 * This method initializes radioButtonHaltbarkeitTag	
+	 * 	
+	 * @return javax.swing.JRadioButton	
+	 */
+	private JRadioButton getRadioButtonHaltbarkeitTag() {
+		if (radioButtonHaltbarkeitTag == null) {
+			radioButtonHaltbarkeitTag = new JRadioButton();
+			radioButtonHaltbarkeitTag.setText("mind. 1 Tag");
+			radioButtonHaltbarkeitTag.setBackground(new java.awt.Color(255,255,204));
+		}
+		return radioButtonHaltbarkeitTag;
+	}
+
+	/**
+	 * This method initializes panelHaltbarkeitInnen	
+	 * 	
+	 * @return javax.swing.JPanel	
+	 */
+	private JPanel getPanelHaltbarkeitInnen() {
+		if (panelHaltbarkeitInnen == null) {
+			panelHaltbarkeitInnen = new JPanel();
+			panelHaltbarkeitInnen.setLayout(new BoxLayout(getPanelHaltbarkeitInnen(), BoxLayout.Y_AXIS));
+			panelHaltbarkeitInnen.setBounds(new java.awt.Rectangle(7,18,113,97));
+			panelHaltbarkeitInnen.setBackground(new java.awt.Color(255,255,204));
+			panelHaltbarkeitInnen.add(getRadioButtonHaltbarkeitPermanent(), null);
+			panelHaltbarkeitInnen.add(getRadioButtonHaltbarkeitMonat(), null);
+			panelHaltbarkeitInnen.add(getRadioButtonHaltbarkeitWoche(), null);
+			panelHaltbarkeitInnen.add(getRadioButtonHaltbarkeitTag(), null);
+		}
+		return panelHaltbarkeitInnen;
+	}
+
+	/**
+	 * This method initializes buttonSpruchHinzufuegen	
+	 * 	
+	 * @return javax.swing.JButton	
+	 */
+	private JButton getButtonSpruchHinzufuegen() {
+		if (buttonSpruchHinzufuegen == null) {
+			buttonSpruchHinzufuegen = new JButton();
+			buttonSpruchHinzufuegen.setText("Hinzufügen ...");
+			buttonSpruchHinzufuegen.setSize(new java.awt.Dimension(109,21));
+			buttonSpruchHinzufuegen.setLocation(new java.awt.Point(443,87));
+			buttonSpruchHinzufuegen.addActionListener(new java.awt.event.ActionListener() {
+				public void actionPerformed(java.awt.event.ActionEvent e) {
+					System.out.println("actionPerformed()"); // TODO Auto-generated Event stub actionPerformed()
+				}
+			});
+		}
+		return buttonSpruchHinzufuegen;
 	}
 
 	/**
@@ -64,35 +287,151 @@ public class ArtefaktThesisVE extends JFrame {
 	 * 	
 	 * @return javax.swing.JPanel	
 	 */
-	private JPanel getJPanel() {
-		if (jPanel == null) {
-			jPanel = new JPanel();
+	private JPanel getPanelEigenschaften() {
+		if (panelEigenschaften == null) {
+			panelEigenschaften = new JPanel();
+			panelEigenschaften.setLayout(null);
+			panelEigenschaften.setBounds(new java.awt.Rectangle(139,162,235,119));
+			panelEigenschaften.setBackground(new java.awt.Color(255,255,204));
+			panelEigenschaften.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Optionale Eigenschaften", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", java.awt.Font.BOLD, 12), new java.awt.Color(51,51,51)));
+			panelEigenschaften.add(getPanelEigenschaftenInnen(), null);
 		}
-		return jPanel;
+		return panelEigenschaften;
 	}
 
 	/**
-	 * This method initializes jPanel1	
+	 * This method initializes panelEigenschaftenInnen	
 	 * 	
 	 * @return javax.swing.JPanel	
 	 */
-	private JPanel getJPanel1() {
-		if (jPanel1 == null) {
-			jPanel1 = new JPanel();
+	private JPanel getPanelEigenschaftenInnen() {
+		if (panelEigenschaftenInnen == null) {
+			panelEigenschaftenInnen = new JPanel();
+			panelEigenschaftenInnen.setLayout(new BoxLayout(getPanelEigenschaftenInnen(), BoxLayout.Y_AXIS));
+			panelEigenschaftenInnen.setBounds(new java.awt.Rectangle(7,18,223,96));
+			panelEigenschaftenInnen.setBackground(new java.awt.Color(255,255,204));
+			panelEigenschaftenInnen.add(getCheckBoxEigenschaftSiegel(), null);
+			panelEigenschaftenInnen.add(getCheckBoxEigenschaftUnzerbrechlichkeit(), null);
+			panelEigenschaftenInnen.add(getCheckBoxEigenschaftGespuer(), null);
+			panelEigenschaftenInnen.add(getCheckBoxEigenschaftApport(), null);
 		}
-		return jPanel1;
+		return panelEigenschaftenInnen;
 	}
 
 	/**
-	 * This method initializes jPanel2	
+	 * This method initializes checkBoxEigenschaftSiegel	
 	 * 	
-	 * @return javax.swing.JPanel	
+	 * @return javax.swing.JCheckBox	
 	 */
-	private JPanel getJPanel2() {
-		if (jPanel2 == null) {
-			jPanel2 = new JPanel();
+	private JCheckBox getCheckBoxEigenschaftSiegel() {
+		if (checkBoxEigenschaftSiegel == null) {
+			checkBoxEigenschaftSiegel = new JCheckBox();
+			checkBoxEigenschaftSiegel.setText("<html>Siegel und Zertifikat (+W6 AsP)</html>");
+			checkBoxEigenschaftSiegel.setBackground(new java.awt.Color(255,255,204));
+			checkBoxEigenschaftSiegel.addItemListener(new java.awt.event.ItemListener() {
+				public void itemStateChanged(java.awt.event.ItemEvent e) {
+					System.out.println("itemStateChanged()"); // TODO Auto-generated Event stub itemStateChanged()
+				}
+			});
 		}
-		return jPanel2;
+		return checkBoxEigenschaftSiegel;
+	}
+
+	/**
+	 * This method initializes checkBoxEigenschaftUnzerbrechlich	
+	 * 	
+	 * @return javax.swing.JCheckBox	
+	 */
+	private JCheckBox getCheckBoxEigenschaftUnzerbrechlichkeit() {
+		if (checkBoxEigenschaftUnzerbrechlichkeit == null) {
+			checkBoxEigenschaftUnzerbrechlichkeit = new JCheckBox();
+			checkBoxEigenschaftUnzerbrechlichkeit.setBackground(new java.awt.Color(255,255,204));
+			checkBoxEigenschaftUnzerbrechlichkeit.setText("<html>Unzerbrechlichkeit (+6W6 AsP)</html>");
+			checkBoxEigenschaftUnzerbrechlichkeit
+					.addItemListener(new java.awt.event.ItemListener() {
+						public void itemStateChanged(java.awt.event.ItemEvent e) {
+							System.out.println("itemStateChanged()"); // TODO Auto-generated Event stub itemStateChanged()
+						}
+					});
+		}
+		return checkBoxEigenschaftUnzerbrechlichkeit;
+	}
+
+	/**
+	 * This method initializes checkBoxEigenschaftGespuer	
+	 * 	
+	 * @return javax.swing.JCheckBox	
+	 */
+	private JCheckBox getCheckBoxEigenschaftGespuer() {
+		if (checkBoxEigenschaftGespuer == null) {
+			checkBoxEigenschaftGespuer = new JCheckBox();
+			checkBoxEigenschaftGespuer.setText("<html>Gespür des Schöpfers (+3W6 AsP)<html>");
+			checkBoxEigenschaftGespuer.setBackground(new java.awt.Color(255,255,204));
+			checkBoxEigenschaftGespuer.addItemListener(new java.awt.event.ItemListener() {
+				public void itemStateChanged(java.awt.event.ItemEvent e) {
+					System.out.println("itemStateChanged()"); // TODO Auto-generated Event stub itemStateChanged()
+				}
+			});
+		}
+		return checkBoxEigenschaftGespuer;
+	}
+
+	/**
+	 * This method initializes checkBoxEigenschaftApport	
+	 * 	
+	 * @return javax.swing.JCheckBox	
+	 */
+	private JCheckBox getCheckBoxEigenschaftApport() {
+		if (checkBoxEigenschaftApport == null) {
+			checkBoxEigenschaftApport = new JCheckBox();
+			checkBoxEigenschaftApport.setBackground(new java.awt.Color(255,255,204));
+			checkBoxEigenschaftApport.setText("<html>Magischer Apport (+4W6 AsP)<html>");
+			checkBoxEigenschaftApport.addItemListener(new java.awt.event.ItemListener() {
+				public void itemStateChanged(java.awt.event.ItemEvent e) {
+					System.out.println("itemStateChanged()"); // TODO Auto-generated Event stub itemStateChanged()
+				}
+			});
+		}
+		return checkBoxEigenschaftApport;
+	}
+
+	/**
+	 * This method initializes buttonSpruchEntfernen	
+	 * 	
+	 * @return javax.swing.JButton	
+	 */
+	private JButton getButtonSpruchEntfernen() {
+		if (buttonSpruchEntfernen == null) {
+			buttonSpruchEntfernen = new JButton();
+			buttonSpruchEntfernen.setLocation(new java.awt.Point(443,135));
+			buttonSpruchEntfernen.setText("Entfernen");
+			buttonSpruchEntfernen.setSize(new java.awt.Dimension(109,21));
+			buttonSpruchEntfernen.addActionListener(new java.awt.event.ActionListener() {
+				public void actionPerformed(java.awt.event.ActionEvent e) {
+					System.out.println("actionPerformed()"); // TODO Auto-generated Event stub actionPerformed()
+				}
+			});
+		}
+		return buttonSpruchEntfernen;
+	}
+
+	/**
+	 * This method initializes buttonSpruchBearbeiten	
+	 * 	
+	 * @return javax.swing.JButton	
+	 */
+	private JButton getButtonSpruchBearbeiten() {
+		if (buttonSpruchBearbeiten == null) {
+			buttonSpruchBearbeiten = new JButton();
+			buttonSpruchBearbeiten.setBounds(new java.awt.Rectangle(443,111,109,21));
+			buttonSpruchBearbeiten.setText("Bearbeiten ...");
+			buttonSpruchBearbeiten.addActionListener(new java.awt.event.ActionListener() {
+				public void actionPerformed(java.awt.event.ActionEvent e) {
+					System.out.println("actionPerformed()"); // TODO Auto-generated Event stub actionPerformed()
+				}
+			});
+		}
+		return buttonSpruchBearbeiten;
 	}
 
 }  //  @jve:decl-index=0:visual-constraint="10,10"

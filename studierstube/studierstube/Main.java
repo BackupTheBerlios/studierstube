@@ -11,6 +11,7 @@ import java.io.File;
 
 import studierstube.daten.ZauberXML;
 import studierstube.gui.Hauptfenster;
+import studierstube.tests.ArtefaktThesisVE;
 
 /**
  * In dieser Klasse befindet sich main(). Sie dient nur zum
@@ -56,5 +57,7 @@ class Main {
     );
     Global.log("   fertig.");
     Global.log("");
+    
+    new ArtefaktThesisVE();
   }
 }

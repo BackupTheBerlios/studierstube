@@ -41,6 +41,7 @@ public class Hauptfenster implements ActionListener {
     frame.pack();
     frame.setLocationRelativeTo(null);  // centered on screen
     frame.setVisible(true);
+    frame.setResizable(false);
   }
   
   private JMenuBar erzeugeJMenuBar() {
