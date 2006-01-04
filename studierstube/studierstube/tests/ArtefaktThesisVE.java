@@ -18,6 +18,9 @@ import javax.swing.JTree;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
+import javax.swing.JScrollBar;
+import javax.swing.JSlider;
+import javax.swing.JEditorPane;
 
 /**
  * In diesem Fenster kann der Benutzer das Artefakt entwerfen.
@@ -28,8 +31,6 @@ public class ArtefaktThesisVE extends JFrame {
 	private JPanel jContentPane = null;  //  @jve:decl-index=0:visual-constraint="10,10"
 	private JLabel labelName = null;
 	private JTextField textFieldName = null;
-	private JLabel labelErschaffer = null;
-	private JTextField textFieldErschaffer = null;
 	private JTextArea textAreaBeschreibung = null;
 	private JPanel panelHaltbarkeit = null;
 	private JTree treeSprueche = null;
@@ -47,6 +48,9 @@ public class ArtefaktThesisVE extends JFrame {
 	private JCheckBox checkBoxEigenschaftApport = null;
 	private JButton buttonSpruchEntfernen = null;
 	private JButton buttonSpruchBearbeiten = null;
+	private JLabel labelZauberwirkungen = null;
+	private JButton buttonLaden = null;
+	private JButton buttonSpeichern = null;
 	/**
 	 * This is the default constructor
 	 */
@@ -76,27 +80,30 @@ public class ArtefaktThesisVE extends JFrame {
 	 */
 	private JPanel getJContentPane() {
 		if (jContentPane == null) {
-			labelErschaffer = new JLabel();
-			labelErschaffer.setBounds(new java.awt.Rectangle(320,10,60,16));
-			labelErschaffer.setText("Erschaffer");
+			labelZauberwirkungen = new JLabel();
+			labelZauberwirkungen.setText("Zauberwirkungen:");
+			labelZauberwirkungen.setLocation(new java.awt.Point(4,144));
+			labelZauberwirkungen.setSize(new java.awt.Dimension(174,16));
 			labelName = new JLabel();
 			labelName.setText("Name");
-			labelName.setBounds(new java.awt.Rectangle(8,9,34,16));
+			labelName.setLocation(new java.awt.Point(9,9));
+			labelName.setSize(new java.awt.Dimension(34,16));
 			jContentPane = new JPanel();
 			jContentPane.setLayout(null);
 			jContentPane.setBackground(new java.awt.Color(255,255,204));
 			jContentPane.setForeground(new java.awt.Color(255,255,204));
 			jContentPane.add(labelName, null);
 			jContentPane.add(getTextFieldName(), null);
-			jContentPane.add(labelErschaffer, null);
-			jContentPane.add(getTextFieldErschaffer(), null);
 			jContentPane.add(getTextAreaBeschreibung(), null);
 			jContentPane.add(getPanelHaltbarkeit(), null);
-			jContentPane.add(getTreeSprueche(), null);
-			jContentPane.add(getButtonSpruchHinzufuegen(), null);
 			jContentPane.add(getPanelEigenschaften(), null);
 			jContentPane.add(getButtonSpruchEntfernen(), null);
 			jContentPane.add(getButtonSpruchBearbeiten(), null);
+			jContentPane.add(getTreeSprueche(), null);
+			jContentPane.add(getButtonSpruchHinzufuegen(), null);
+			jContentPane.add(labelZauberwirkungen, null);
+			jContentPane.add(getButtonLaden(), null);
+			jContentPane.add(getButtonSpeichern(), null);
 			ButtonGroup buttonGroupHaltbarkeit = new ButtonGroup();
 			buttonGroupHaltbarkeit.add(radioButtonHaltbarkeitPermanent);
 			buttonGroupHaltbarkeit.add(radioButtonHaltbarkeitMonat);
@@ -126,20 +133,6 @@ public class ArtefaktThesisVE extends JFrame {
 	}
 
 	/**
-	 * This method initializes textFieldErschaffer	
-	 * 	
-	 * @return javax.swing.JTextField	
-	 */
-	private JTextField getTextFieldErschaffer() {
-		if (textFieldErschaffer == null) {
-			textFieldErschaffer = new JTextField();
-			textFieldErschaffer.setBounds(new java.awt.Rectangle(385,8,168,20));
-			textFieldErschaffer.setText("unbenannter Hersteller");
-		}
-		return textFieldErschaffer;
-	}
-
-	/**
 	 * This method initializes textAreaBeschreibung	
 	 * 	
 	 * @return javax.swing.JTextArea	
@@ -147,8 +140,9 @@ public class ArtefaktThesisVE extends JFrame {
 	private JTextArea getTextAreaBeschreibung() {
 		if (textAreaBeschreibung == null) {
 			textAreaBeschreibung = new JTextArea();
-			textAreaBeschreibung.setBounds(new java.awt.Rectangle(9,31,543,48));
+			textAreaBeschreibung.setBounds(new java.awt.Rectangle(9,31,244,109));
 			textAreaBeschreibung.setText("Beschreibungstext");
+			textAreaBeschreibung.setToolTipText("Hier können Sie eine Beschreibung des Artefakts verfassen");
 			textAreaBeschreibung.setLineWrap(true);
 		}
 		return textAreaBeschreibung;
@@ -163,9 +157,10 @@ public class ArtefaktThesisVE extends JFrame {
 		if (panelHaltbarkeit == null) {
 			panelHaltbarkeit = new JPanel();
 			panelHaltbarkeit.setLayout(null);
-			panelHaltbarkeit.setBounds(new java.awt.Rectangle(8,162,125,120));
 			panelHaltbarkeit.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Haltbarkeit", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, null, null));
 			panelHaltbarkeit.setBackground(new java.awt.Color(255,255,204));
+			panelHaltbarkeit.setSize(new java.awt.Dimension(125,120));
+			panelHaltbarkeit.setLocation(new java.awt.Point(433,31));
 			panelHaltbarkeit.add(getPanelHaltbarkeitInnen(), null);
 		}
 		return panelHaltbarkeit;
@@ -179,8 +174,9 @@ public class ArtefaktThesisVE extends JFrame {
 	private JTree getTreeSprueche() {
 		if (treeSprueche == null) {
 			treeSprueche = new JTree();
-			treeSprueche.setBounds(new java.awt.Rectangle(10,84,427,74));
 			treeSprueche.setRootVisible(false);
+			treeSprueche.setBounds(new java.awt.Rectangle(5,168,414,78));
+			treeSprueche.setPreferredSize(new java.awt.Dimension(999,999));
 		}
 		return treeSprueche;
 	}
@@ -271,8 +267,7 @@ public class ArtefaktThesisVE extends JFrame {
 		if (buttonSpruchHinzufuegen == null) {
 			buttonSpruchHinzufuegen = new JButton();
 			buttonSpruchHinzufuegen.setText("Hinzufügen ...");
-			buttonSpruchHinzufuegen.setSize(new java.awt.Dimension(109,21));
-			buttonSpruchHinzufuegen.setLocation(new java.awt.Point(443,87));
+			buttonSpruchHinzufuegen.setBounds(new java.awt.Rectangle(431,174,109,26));
 			buttonSpruchHinzufuegen.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
 					System.out.println("actionPerformed()"); // TODO Auto-generated Event stub actionPerformed()
@@ -291,9 +286,10 @@ public class ArtefaktThesisVE extends JFrame {
 		if (panelEigenschaften == null) {
 			panelEigenschaften = new JPanel();
 			panelEigenschaften.setLayout(null);
-			panelEigenschaften.setBounds(new java.awt.Rectangle(139,162,235,119));
 			panelEigenschaften.setBackground(new java.awt.Color(255,255,204));
 			panelEigenschaften.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Optionale Eigenschaften", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", java.awt.Font.BOLD, 12), new java.awt.Color(51,51,51)));
+			panelEigenschaften.setSize(new java.awt.Dimension(167,120));
+			panelEigenschaften.setLocation(new java.awt.Point(261,30));
 			panelEigenschaften.add(getPanelEigenschaftenInnen(), null);
 		}
 		return panelEigenschaften;
@@ -308,7 +304,7 @@ public class ArtefaktThesisVE extends JFrame {
 		if (panelEigenschaftenInnen == null) {
 			panelEigenschaftenInnen = new JPanel();
 			panelEigenschaftenInnen.setLayout(new BoxLayout(getPanelEigenschaftenInnen(), BoxLayout.Y_AXIS));
-			panelEigenschaftenInnen.setBounds(new java.awt.Rectangle(7,18,223,96));
+			panelEigenschaftenInnen.setBounds(new java.awt.Rectangle(7,18,155,96));
 			panelEigenschaftenInnen.setBackground(new java.awt.Color(255,255,204));
 			panelEigenschaftenInnen.add(getCheckBoxEigenschaftSiegel(), null);
 			panelEigenschaftenInnen.add(getCheckBoxEigenschaftUnzerbrechlichkeit(), null);
@@ -326,13 +322,8 @@ public class ArtefaktThesisVE extends JFrame {
 	private JCheckBox getCheckBoxEigenschaftSiegel() {
 		if (checkBoxEigenschaftSiegel == null) {
 			checkBoxEigenschaftSiegel = new JCheckBox();
-			checkBoxEigenschaftSiegel.setText("<html>Siegel und Zertifikat (+W6 AsP)</html>");
+			checkBoxEigenschaftSiegel.setText("Siegel und Zertifikat");
 			checkBoxEigenschaftSiegel.setBackground(new java.awt.Color(255,255,204));
-			checkBoxEigenschaftSiegel.addItemListener(new java.awt.event.ItemListener() {
-				public void itemStateChanged(java.awt.event.ItemEvent e) {
-					System.out.println("itemStateChanged()"); // TODO Auto-generated Event stub itemStateChanged()
-				}
-			});
 		}
 		return checkBoxEigenschaftSiegel;
 	}
@@ -346,13 +337,7 @@ public class ArtefaktThesisVE extends JFrame {
 		if (checkBoxEigenschaftUnzerbrechlichkeit == null) {
 			checkBoxEigenschaftUnzerbrechlichkeit = new JCheckBox();
 			checkBoxEigenschaftUnzerbrechlichkeit.setBackground(new java.awt.Color(255,255,204));
-			checkBoxEigenschaftUnzerbrechlichkeit.setText("<html>Unzerbrechlichkeit (+6W6 AsP)</html>");
-			checkBoxEigenschaftUnzerbrechlichkeit
-					.addItemListener(new java.awt.event.ItemListener() {
-						public void itemStateChanged(java.awt.event.ItemEvent e) {
-							System.out.println("itemStateChanged()"); // TODO Auto-generated Event stub itemStateChanged()
-						}
-					});
+			checkBoxEigenschaftUnzerbrechlichkeit.setText("Unzerbrechlichkeit");
 		}
 		return checkBoxEigenschaftUnzerbrechlichkeit;
 	}
@@ -365,13 +350,9 @@ public class ArtefaktThesisVE extends JFrame {
 	private JCheckBox getCheckBoxEigenschaftGespuer() {
 		if (checkBoxEigenschaftGespuer == null) {
 			checkBoxEigenschaftGespuer = new JCheckBox();
-			checkBoxEigenschaftGespuer.setText("<html>Gespür des Schöpfers (+3W6 AsP)<html>");
+			checkBoxEigenschaftGespuer.setText("Gespür des Schöpfers");
+			checkBoxEigenschaftGespuer.setActionCommand("Gespür des Schöpfers");
 			checkBoxEigenschaftGespuer.setBackground(new java.awt.Color(255,255,204));
-			checkBoxEigenschaftGespuer.addItemListener(new java.awt.event.ItemListener() {
-				public void itemStateChanged(java.awt.event.ItemEvent e) {
-					System.out.println("itemStateChanged()"); // TODO Auto-generated Event stub itemStateChanged()
-				}
-			});
 		}
 		return checkBoxEigenschaftGespuer;
 	}
@@ -385,12 +366,7 @@ public class ArtefaktThesisVE extends JFrame {
 		if (checkBoxEigenschaftApport == null) {
 			checkBoxEigenschaftApport = new JCheckBox();
 			checkBoxEigenschaftApport.setBackground(new java.awt.Color(255,255,204));
-			checkBoxEigenschaftApport.setText("<html>Magischer Apport (+4W6 AsP)<html>");
-			checkBoxEigenschaftApport.addItemListener(new java.awt.event.ItemListener() {
-				public void itemStateChanged(java.awt.event.ItemEvent e) {
-					System.out.println("itemStateChanged()"); // TODO Auto-generated Event stub itemStateChanged()
-				}
-			});
+			checkBoxEigenschaftApport.setText("Magischer Apport");
 		}
 		return checkBoxEigenschaftApport;
 	}
@@ -403,9 +379,8 @@ public class ArtefaktThesisVE extends JFrame {
 	private JButton getButtonSpruchEntfernen() {
 		if (buttonSpruchEntfernen == null) {
 			buttonSpruchEntfernen = new JButton();
-			buttonSpruchEntfernen.setLocation(new java.awt.Point(443,135));
 			buttonSpruchEntfernen.setText("Entfernen");
-			buttonSpruchEntfernen.setSize(new java.awt.Dimension(109,21));
+			buttonSpruchEntfernen.setBounds(new java.awt.Rectangle(432,245,89,26));
 			buttonSpruchEntfernen.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
 					System.out.println("actionPerformed()"); // TODO Auto-generated Event stub actionPerformed()
@@ -423,8 +398,8 @@ public class ArtefaktThesisVE extends JFrame {
 	private JButton getButtonSpruchBearbeiten() {
 		if (buttonSpruchBearbeiten == null) {
 			buttonSpruchBearbeiten = new JButton();
-			buttonSpruchBearbeiten.setBounds(new java.awt.Rectangle(443,111,109,21));
 			buttonSpruchBearbeiten.setText("Bearbeiten ...");
+			buttonSpruchBearbeiten.setBounds(new java.awt.Rectangle(429,201,108,26));
 			buttonSpruchBearbeiten.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
 					System.out.println("actionPerformed()"); // TODO Auto-generated Event stub actionPerformed()
@@ -432,6 +407,34 @@ public class ArtefaktThesisVE extends JFrame {
 			});
 		}
 		return buttonSpruchBearbeiten;
+	}
+
+	/**
+	 * This method initializes buttonLaden	
+	 * 	
+	 * @return javax.swing.JButton	
+	 */
+	private JButton getButtonLaden() {
+		if (buttonLaden == null) {
+			buttonLaden = new JButton();
+			buttonLaden.setBounds(new java.awt.Rectangle(328,8,106,19));
+			buttonLaden.setText("Laden ...");
+		}
+		return buttonLaden;
+	}
+
+	/**
+	 * This method initializes buttonSpeichern	
+	 * 	
+	 * @return javax.swing.JButton	
+	 */
+	private JButton getButtonSpeichern() {
+		if (buttonSpeichern == null) {
+			buttonSpeichern = new JButton();
+			buttonSpeichern.setBounds(new java.awt.Rectangle(448,7,108,20));
+			buttonSpeichern.setText("Speichern ...");
+		}
+		return buttonSpeichern;
 	}
 
 }  //  @jve:decl-index=0:visual-constraint="10,10"
