@@ -1,15 +1,38 @@
-Hier ein paar Informationen um sich mit dem Programm zurechtzufinden.
+Copyright (c) 2005-2006 Stefan Holzmüller
 
-- Das eigentliche Programm befindet sich im Unterverzeichnis 'studierstube' und ist Java-intern auch im gleichnamigen Package zu finden.
+Dieses Programm richtet sich an Spieler des Rollenspiels "Das Schwarze Auge".
+Es implementiert einige Regeln, angefangen mit der Artefaktherstellung, 
+und soll vor allem Spieler von Magier-Helden durch automatische Berechnungen 
+unterstützen.
+
+Ohne die Kenntnis des Regelwerks ist dieses Programm leider nutzlos. Auf 
+Erklärungstexte wurde aus lizenzrechtlichen Gründen bewusst verzichtet. Das 
+Programm ist ein Fanprojekt und daher kein offizielles DSA-Material.
+
+"Das Schwarze Auge" ist ein eingetragenes Warenzeichen der Firma Fantasy 
+Productions. Copyright (c) 1997. Alle Rechte vorbehalten.
+
+Das Programm darf frei weitergegeben werden und auch die Quelltexte sind für 
+Interessierte einsehbar. Wenn Sie das Programm zum Download anbieten wollen,
+so müssen Sie nur den Namen des Urhebers (Stefan Holzmüller) erwähnen. Falls 
+Sie mit den Quellen arbeiten wollen, lesen Sie bitte die Lizenzbedingungen in 
+LICENSE.txt und license-zlib.txt.
+
+Es lässt sich kaum vermeiden, dass sich in ein Programm dieser Art Logik- oder 
+Programmierfehler einschleichen. Wenn Sie einen solchen Bug bemerken, bitte 
+informieren Sie mich darüber (twelwan@gmx.de) und ich werde versuchen, den 
+Fehler in einer Nachfolgeversion zu beheben. Vielen Dank für die Mühe.
+
+
+Hier noch ein paar Informationen um sich mit dem Programm zurechtzufinden.
+
+- Das eigentliche Programm befindet sich im Unterverzeichnis 'studierstube' und ist auch im gleichnamigen Java-Package zu finden.
 - Die Main-Klasse ist studierstube.Main
 - Javadoc-Dokumentation liegt dem Projekt bei (im Verzeichnis 'doc')
-- Der Quelltext ist offengelegt unter der zlib/libpng-Lizenz (die Lizenz ist richtig simpel und in Lizenz.txt nachzulesen)
 - Fragen aller Art bitte an twelwan@gmx.de
 
 
-Danksagungen:
-- Maik Schiefer-Gerke von Helden
+Mein Dank geht an
+- Maik Schiefer-Gehrke von der Helden-Software
 - Denny und Wolfgang vom DSA4 Werkzeug
-
-
-TODO: Hinweis auf Fanpro
+- BerliOS
