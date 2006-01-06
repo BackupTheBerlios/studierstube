@@ -17,11 +17,11 @@ public class Fehler {
  /**
   * Zeigt eine simple Dialogbox mit einem Text darin.
   * 
-  * param string Ausgabe
+  * param text Ausgabe
   */
-  public static void displayMessage(String string) {
+  public static void displayMessage(String text) {
     JOptionPane.showMessageDialog(null,
-   			string,
+   			text,
    			"Hinweis",
    		//	JOptionPane.PLAIN_MESSAGE);
     		JOptionPane.INFORMATION_MESSAGE);
@@ -30,11 +30,11 @@ public class Fehler {
  /**
   * Zeigt einen Fehler-Dialog mit einem Text darin.
   * 
-  * @param string Ausgabe
+  * @param text Ausgabe
   */
-  public static void displayError(String string) {
+  public static void displayError(String text) {
   	JOptionPane.showMessageDialog(null,
-  			string,
+  			text,
   			"Fehler",
   			JOptionPane.ERROR_MESSAGE);
   }
@@ -56,7 +56,7 @@ public class Fehler {
 			"Interner Fehler",
 			JOptionPane.YES_NO_OPTION);
   	if (value == JOptionPane.YES_OPTION) {
-  		// TODO copy to clipboard
+  		// TODO copy to clipboard + version
   	}
   }
 
@@ -64,23 +64,23 @@ public class Fehler {
   * Wandelt den Stacktrace einer Exception in einen String um.
   * 
   * @param exception	Die Exception
-  * @return s			String des Stacktrace
+  * @return text		String des Stacktrace
   */
   static String getStackTrace(Exception exception) {
     StackTraceElement stack[] = exception.getStackTrace();
-    String s = "";
+    String text = "";
     for (int i = 0; i < stack.length; i++) {
       String fileName = stack[i].getFileName();
       String className = stack[i].getClassName();
       String methodName = stack[i].getMethodName();
       int lineNumber = stack[i].getLineNumber();
       
-      s += "at " + className + "." + methodName;
+      text += "at " + className + "." + methodName;
       if (fileName != null)
-        s += "(" + fileName + ":" + lineNumber + ")\n";
+        text += "(" + fileName + ":" + lineNumber + ")\n";
       else
-    	s += "\n";
+    	text += "\n";
     }
-	return s;
+	return text;
   }
 }

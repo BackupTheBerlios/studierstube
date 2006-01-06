@@ -9,6 +9,8 @@ package studierstube;
 
 import java.io.File;
 
+import javax.swing.JOptionPane;
+
 import studierstube.daten.ZauberXML;
 import studierstube.gui.Hauptfenster;
 import studierstube.tests.ArtefaktThesisVE;

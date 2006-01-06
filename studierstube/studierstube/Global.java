@@ -58,6 +58,14 @@ public class Global {
       e.printStackTrace();
     }
   }
+  /**
+   * Gibt eine Zahl auf stdout aus und schreibt sie in das Logfile.
+   * 
+   * @param zahl
+   */
+  public static void log(int zahl) {
+    log("" + zahl);
+  }
   
  /**
   * Gibt das Ergebnis eines Wurfs mit einem beliebigen Würfel zurück.
@@ -121,6 +129,13 @@ public class Global {
    * 'Aufräumen' und dann System.exit(0) aufrufen.
    */
   public static void beenden() {
+    int x = JOptionPane.showConfirmDialog(  // TODO gespeichert ?
+    		null, 
+    		"Sind Sie sicher?",  // TODO andere Frage bei speichern
+    		"Programm beenden", 
+    		JOptionPane.YES_NO_OPTION);
+    if (x == JOptionPane.YES_OPTION) return;
+    
 	try {
 	  logwriter.flush();
 	}

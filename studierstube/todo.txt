@@ -7,3 +7,7 @@ spomods
 zauberwerkstatt
 menü daten (manipulation)
 JSpinner
+JProgressBar
+JOptionPane
+Tabs
+CardLayout "Ansicht"
