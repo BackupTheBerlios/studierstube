@@ -12,13 +12,13 @@ import java.awt.Dimension;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-public class ZauberPanel extends JPanel {
-  
+public class ArtefaktePanel extends JPanel {
+	
   static final long serialVersionUID = 1; // TODO brauchbarer Wert ?
   
-  public ZauberPanel() {
-    JButton button = new JButton();
-	  button.setPreferredSize(new Dimension(333,222));
-	  add(button);
+  public ArtefaktePanel() {
+	    JButton button = new JButton();
+		  button.setPreferredSize(new Dimension(555,444));
+		  add(button);
   }
 }

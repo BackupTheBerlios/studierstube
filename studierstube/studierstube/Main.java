@@ -32,7 +32,7 @@ class Main {
     Global.log("-> Lade mitgelieferte Zauber ...");
     ZauberXML z = new ZauberXML();
     z.ladeZauberliste();
-    int anzahl = Global.zauberliste.getAnzahlZauber();
+    int anzahl = Global.getZauberliste().getAnzahlZauber();
     Global.log("   = " + anzahl + " Zauber geladen.");
     Global.log("");
     

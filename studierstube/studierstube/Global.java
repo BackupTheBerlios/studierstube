@@ -32,9 +32,12 @@ public class Global {
   private static Random random = new Random();
   
   private static boolean logging = true;
+  private static boolean zauberlisteGespeichert = true;
+  private static Zauberliste zauberliste = new Zauberliste();
   
-  public static Zauberliste zauberliste = new Zauberliste();
-  
+ /**
+  * Konstruktor.
+  */
   Global() {
     oeffneLogfile();
   }
@@ -194,5 +197,32 @@ public class Global {
   	schliesseLogfile();
   	
 	System.exit(0);
+  }
+  
+ /**
+  * Liefert die globale Zauberliste.
+  * 
+  * @return die Zauberliste
+  */
+  public static Zauberliste getZauberliste() {
+	return zauberliste;
+  }
+  
+ /**
+  * Gibt zurück, ob die Zauberliste gespeichert und auf dem aktuellen Stand ist.
+  * 
+  * @return ob die Zauberliste gespeichert ist
+  */
+  public static boolean istZauberlisteGespeichert() {
+    return zauberlisteGespeichert;
+  }
+  
+ /**
+  * Setzt die Variable, die angibt, ob die Zauberliste auf dem aktuellen Stand ist.
+  * 
+  * @param status	ob die Zauberliste gespeichert ist oder nicht
+  */
+  public static void setZauberlisteGespeichert(boolean status) {
+    zauberlisteGespeichert = status;
   }
 }

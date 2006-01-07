@@ -101,7 +101,7 @@ public class ZauberXML extends XMLZugriff {
       zauber.setProbe(probe0, probe1, probe2);
       zauber.setMerkmale(merkmale);
       zauber.setVarianten(varianten);     
-      Global.zauberliste.add(zauber);
+      Global.getZauberliste().add(zauber);
       
       Global.log("   + Zauber '" + id + "' geladen.");
     }
@@ -126,8 +126,8 @@ public class ZauberXML extends XMLZugriff {
     Element eZaubersprueche = document.createElement("Zaubersprüche");
     eInhalt.appendChild(eZaubersprueche);
     
-    for (int i = 0; i < Global.zauberliste.getAnzahlZauber(); i++) {
-      Element eZauber = erstelleZauberElement(Global.zauberliste.getZauber(i));
+    for (int i = 0; i < Global.getZauberliste().getAnzahlZauber(); i++) {
+      Element eZauber = erstelleZauberElement(Global.getZauberliste().getZauber(i));
       eZaubersprueche.appendChild(eZauber);
     } // TODO catch, Fehlermeldung?
     

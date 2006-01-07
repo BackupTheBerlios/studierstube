@@ -39,6 +39,7 @@ public class Hauptfenster extends JFrame implements ActionListener {
     setJMenuBar(erzeugeJMenuBar());
     JTabbedPane tabs = new JTabbedPane();
     tabs.addTab("Zauberdatenbank", new ZauberPanel());
+    tabs.addTab("Artefaktsammlung", new ArtefaktePanel());
     getContentPane().add(tabs);
     pack();
     setResizable(false);
