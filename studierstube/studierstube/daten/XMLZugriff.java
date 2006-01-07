@@ -21,6 +21,8 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+import studierstube.Fehler;
+
 /**
  * Oberklasse für die XML-Manipulation mit einigen Hilfsmethoden.
  */
@@ -41,6 +43,7 @@ public class XMLZugriff {
     try {
       builder = factory.newDocumentBuilder();
     } catch (Exception e) {
+      Fehler.zeigeException(e);
       e.printStackTrace();
     }
     
@@ -49,6 +52,8 @@ public class XMLZugriff {
       try {
         document = builder.parse(file);
       } catch (Exception e) {
+        Fehler.zeigeFehlermeldung("Fehler beim Einlesen der XML-Daten!");
+        Fehler.zeigeException(e);
         e.printStackTrace();
       }
     }
@@ -69,6 +74,7 @@ public class XMLZugriff {
       transformer = tFactory.newTransformer();
     }
     catch (Exception e) {
+      Fehler.zeigeException(e);
       e.printStackTrace();
     }
     transformer.setOutputProperty(OutputKeys.INDENT, "yes");
@@ -80,6 +86,8 @@ public class XMLZugriff {
       transformer.transform(source, result);
     }
     catch (Exception e) {
+      Fehler.zeigeFehlermeldung("Fehler beim Schreiben der XML-Datei!");
+      Fehler.zeigeException(e);
       e.printStackTrace();
     }
   }

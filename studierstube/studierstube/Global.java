@@ -22,49 +22,85 @@ import studierstube.container.Zauberliste;
  */
 public class Global {
   
+  public static final String name = "Studierstube";
   public static final String version = "0.3";
+  public static final String author = "Stefan Holzm¸ller";
+  public static final String email = "twelwan@gmx.de";
   
   private static FileWriter filewriter;
   private static BufferedWriter logwriter;
   private static Random random = new Random();
   
+  private static boolean logging = true;
+  
   public static Zauberliste zauberliste = new Zauberliste();
   
   Global() {
-    try {
-      filewriter = new FileWriter("studierstube.log");
-    }
-    catch (Exception e) {
-      System.out.println("Konnte Logfile nicht initialisieren:");
-      e.printStackTrace();
-    }
-    logwriter = new BufferedWriter(filewriter);
+    oeffneLogfile();
   }
   
   /**
    * Gibt den String auf stdout aus und schreibt ihn in das Logfile.
    * 
+   * Tritt beim Schreiben ein Fehler auf, wird das Logging deaktiviert
+   * und das Logfile geschlossen.
+   * 
    * @param string Ausgabe
    */
   public static void log(String string) {
-    System.out.println(string);
-    try {
-      logwriter.write(string);
-      logwriter.newLine();
-      logwriter.flush();   // TODO ugly
-    }
-    catch (Exception e) {
-      System.out.println("Fehler beim Schreiben in Logfile!");
-      e.printStackTrace();
+	System.out.println(string);
+	if (logging == true) {
+      try {
+        logwriter.write(string);
+        logwriter.newLine();
+        logwriter.flush();   // TODO ugly
+      }
+      catch (Exception e) {
+        Fehler.zeigeFehlermeldung("Fehler beim Schreiben in Logfile!");
+        Fehler.zeigeException(e);
+        e.printStackTrace();
+        logging = false;
+        schliesseLogfile();
+      }
     }
   }
-  /**
-   * Gibt eine Zahl auf stdout aus und schreibt sie in das Logfile.
-   * 
-   * @param zahl
-   */
-  public static void log(int zahl) {
-    log("" + zahl);
+  
+ /**
+  * Initialisiert das Logfile
+  */
+  private static void oeffneLogfile() {
+    try {
+      filewriter = new FileWriter("studierstube.log");
+    }
+    catch (Exception e) {
+      Fehler.zeigeException(e);
+      e.printStackTrace();
+    }
+    logwriter = new BufferedWriter(filewriter);
+  }
+  
+ /**
+  * Schlieﬂt das Logfile
+  */
+  private static void schliesseLogfile() {
+    try {
+	//  logwriter.flush(); // TODO
+	}
+	catch (Exception e) {
+	  Fehler.zeigeFehlermeldung("Fehler beim Leeren des Logfile-Buffers!");
+	  Fehler.zeigeException(e);
+	  e.printStackTrace();
+	}
+	finally {
+	  try {
+	    logwriter.close();
+	  }
+	  catch (Exception e) {
+	    Fehler.zeigeFehlermeldung("Fehler beim Schlieﬂen des Logfiles!");
+	    Fehler.zeigeException(e);
+	    e.printStackTrace();
+	  }
+	}
   }
   
  /**
@@ -136,23 +172,27 @@ public class Global {
     		JOptionPane.YES_NO_OPTION);
     if (x != JOptionPane.YES_OPTION) return;
     
-	try {
-	  logwriter.flush();
-	}
-	catch (Exception e) {
-	  System.out.println("Fehler beim Leeren des Logfile-Buffers!");
-	  e.printStackTrace();
-	}
-	finally {
-	  try {
-	    logwriter.close();
-	  }
-	  catch (Exception e) {
-	    System.out.println("Fehler beim Schlieﬂen des Logfiles!");
-	    e.printStackTrace();
-	  }
-	}
-	
+    try {
+  	  logwriter.flush();
+  	}
+  	catch (Exception e) {
+  	  Fehler.zeigeFehlermeldung("Fehler beim Leeren des Logfile-Buffers!");
+  	  Fehler.zeigeException(e);
+  	  e.printStackTrace();
+  	}
+  	finally {
+  	  try {
+  	    logwriter.close();
+  	  }
+  	  catch (Exception e) {
+  	    Fehler.zeigeFehlermeldung("Fehler beim Schlieﬂen des Logfiles!");
+  	    Fehler.zeigeException(e);
+  	    e.printStackTrace();
+  	  }
+  	}
+  	
+  	schliesseLogfile();
+  	
 	System.exit(0);
   }
 }

@@ -15,6 +15,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+import studierstube.Fehler;
 import studierstube.Global;
 import studierstube.container.Zauber;
 
@@ -37,6 +38,7 @@ public class ZauberXML extends XMLZugriff {
       try {
         builder = factory.newDocumentBuilder();
       } catch (Exception e) {
+    	Fehler.zeigeException(e);
         e.printStackTrace();
       }
       Class c = this.getClass();
@@ -44,6 +46,8 @@ public class ZauberXML extends XMLZugriff {
       try {
         document = builder.parse(is);
       } catch (Exception e) {
+        Fehler.zeigeFehlermeldung("Fehler beim Einlesen der mitgelieferten Zauber!");
+    	Fehler.zeigeException(e);
         e.printStackTrace();
       }
 	}
@@ -103,12 +107,13 @@ public class ZauberXML extends XMLZugriff {
     }
   }
   
-  public void speichereZauberliste() {
+  public void speichereKompletteZauberliste() {
 	factory = DocumentBuilderFactory.newInstance();
 	try {
 	  document = factory.newDocumentBuilder().newDocument();
 	}
 	catch (Exception e) {
+	  Fehler.zeigeException(e);
 	  e.printStackTrace();
 	}
 	

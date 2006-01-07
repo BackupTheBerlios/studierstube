@@ -14,12 +14,14 @@ import javax.swing.JOptionPane;
  */
 public class Fehler {
 
+  private static Zwischenablage zwischenablage = new Zwischenablage();
+
  /**
   * Zeigt eine simple Dialogbox mit einem Text darin.
   * 
   * param text Ausgabe
   */
-  public static void displayMessage(String text) {
+  public static void zeigeHinweis(String text) {
     JOptionPane.showMessageDialog(null,
    			text,
    			"Hinweis",
@@ -32,7 +34,7 @@ public class Fehler {
   * 
   * @param text Ausgabe
   */
-  public static void displayError(String text) {
+  public static void zeigeFehlermeldung(String text) {
   	JOptionPane.showMessageDialog(null,
   			text,
   			"Fehler",
@@ -44,19 +46,19 @@ public class Fehler {
   * 
   * @param exception Die anzuzeigende Exception
   */
-  public static void displayException(Exception exception) {
+  public static void zeigeException(Exception exception) {
 	String errormsg = "Ein interner Fehler ist aufgetreten: " + exception.getMessage()
 			+ "\n\n"
 			+ "Bitte schicken Sie diese Meldung an den Autor, "
 			+ "damit der Fehler behoben werden kann.\n\n"
-			+ exception.toString() + "\n" + getStackTrace(exception) + "\n"
-			+ "Diesen Text in die Zwischenablage kopieren?";
+			+ exception.toString() + "\n" + stackTraceAlsString(exception) + "\n"
+			+ "Verwendete Version: " + Global.name + " " + Global.version;
 	int value = JOptionPane.showConfirmDialog(null,
-  			errormsg,
+  			errormsg + "\n\nDiesen Text in die Zwischenablage kopieren?",
 			"Interner Fehler",
 			JOptionPane.YES_NO_OPTION);
   	if (value == JOptionPane.YES_OPTION) {
-  		// TODO copy to clipboard + version
+  	  zwischenablage.schreibeInZwischenablage(errormsg);
   	}
   }
 
@@ -66,18 +68,18 @@ public class Fehler {
   * @param exception	Die Exception
   * @return text		String des Stacktrace
   */
-  static String getStackTrace(Exception exception) {
-    StackTraceElement stack[] = exception.getStackTrace();
+  private static String stackTraceAlsString(Exception exception) {
+    StackTraceElement ste[] = exception.getStackTrace();
     String text = "";
-    for (int i = 0; i < stack.length; i++) {
-      String fileName = stack[i].getFileName();
-      String className = stack[i].getClassName();
-      String methodName = stack[i].getMethodName();
-      int lineNumber = stack[i].getLineNumber();
+    for (int i = 0; i < ste.length; i++) {
+      String fileName = ste[i].getFileName();
+      String className = ste[i].getClassName();
+      String methodName = ste[i].getMethodName();
+      int lineNumber = ste[i].getLineNumber();
       
       text += "at " + className + "." + methodName;
       if (fileName != null)
-        text += "(" + fileName + ":" + lineNumber + ")\n";
+        text += " (" + fileName + ":" + lineNumber + ")\n";
       else
     	text += "\n";
     }

@@ -32,7 +32,7 @@ public class XMLtest {
 	        this.speichereXML();
 	       }
 	       catch (Exception e) {
-	         Fehler.displayException(e);
+	         Fehler.zeigeException(e);
 	         e.printStackTrace();
 	       }
 	}

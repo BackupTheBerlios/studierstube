@@ -7,8 +7,6 @@
 
 package studierstube;
 
-import java.io.File;
-
 import studierstube.daten.ZauberXML;
 import studierstube.gui.Hauptfenster;
 
@@ -25,8 +23,8 @@ class Main {
    */
   public static void main(String[] args) {
     new Global();
-    Global.log("Studierstube Version " + Global.version);
-    Global.log("Copyright (c) Stefan Holzmüller (twelwan@gmx.de)");
+    Global.log(Global.name + " Version " + Global.version);
+    Global.log("Copyright (c) " + Global.author + "(" + Global.email + ")");
     Global.log("");
     Global.log("Programm wird gestartet:");
     Global.log("");
@@ -38,14 +36,14 @@ class Main {
     Global.log("   = " + anzahl + " Zauber geladen.");
     Global.log("");
     
-    File file = new File("zauber.xml");
+/*    File file = new File("zauber.xml");
     if (!file.canRead()) {
-      Global.log("-> Schreibe Zauberliste neu ..."); // TODO
+      Global.log("-> Schreibe Zauberliste neu ...");
       z.speichereZauberliste();
       Global.log("   fertig.");
       Global.log("");
     }
-    
+*/    
     Global.log("-> Starte GUI ...");
     javax.swing.SwingUtilities.invokeLater(
       new Runnable() {
