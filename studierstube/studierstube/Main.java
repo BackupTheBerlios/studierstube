@@ -9,11 +9,8 @@ package studierstube;
 
 import java.io.File;
 
-import javax.swing.JOptionPane;
-
 import studierstube.daten.ZauberXML;
 import studierstube.gui.Hauptfenster;
-import studierstube.tests.ArtefaktThesisVE;
 
 /**
  * In dieser Klasse befindet sich main(). Sie dient nur zum
@@ -34,7 +31,7 @@ class Main {
     Global.log("Programm wird gestartet:");
     Global.log("");
     
-    Global.log("-> Lade Zauber aus zauber.xml ...");
+    Global.log("-> Lade mitgelieferte Zauber ...");
     ZauberXML z = new ZauberXML();
     z.ladeZauberliste();
     int anzahl = Global.zauberliste.getAnzahlZauber();
@@ -43,7 +40,7 @@ class Main {
     
     File file = new File("zauber.xml");
     if (!file.canRead()) {
-      Global.log("-> Schreibe Zauberliste neu ...");
+      Global.log("-> Schreibe Zauberliste neu ..."); // TODO
       z.speichereZauberliste();
       Global.log("   fertig.");
       Global.log("");
@@ -59,7 +56,5 @@ class Main {
     );
     Global.log("   fertig.");
     Global.log("");
-    
-    new ArtefaktThesisVE();
   }
 }

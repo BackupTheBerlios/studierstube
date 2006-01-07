@@ -7,12 +7,13 @@
 
 package studierstube.gui;
 
-import javax.swing.JFrame;
+import javax.swing.JPanel;
 
-/**
- * In diesem Fenster kann der Benutzer das Artefakt entwerfen.
- */
-public class ArtefaktThesis extends JFrame {
-  static final long serialVersionUID = 1L;  // TODO brauchbarer Wert
-
+public class ZauberPanel extends JPanel {
+  
+  static final long serialVersionUID = 1; // TODO brauchbarer Wert ?
+  
+  public ZauberPanel() {
+    
+  }
 }

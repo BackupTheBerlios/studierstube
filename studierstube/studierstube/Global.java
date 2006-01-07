@@ -134,7 +134,7 @@ public class Global {
     		"Sind Sie sicher?",  // TODO andere Frage bei speichern
     		"Programm beenden", 
     		JOptionPane.YES_NO_OPTION);
-    if (x == JOptionPane.YES_OPTION) return;
+    if (x != JOptionPane.YES_OPTION) return;
     
 	try {
 	  logwriter.flush();

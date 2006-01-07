@@ -7,98 +7,31 @@
 
 package studierstube.gui;
 
-import java.awt.Dimension;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
-import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
-import javax.swing.JPanel;
-import javax.swing.KeyStroke;
 
 import studierstube.Global;
-import studierstube.tests.ArtefaktThesisVE;
 
-/**
- * Dies ist das Fenster, von wo aus der Benutzer alle Unterprogramme
- * aufrufen kann.
- */
-public class Hauptfenster implements ActionListener {
+public class Hauptfenster extends JFrame {
+	
+  static final long serialVersionUID = 1; // TODO anderer Wert ?
   
-  private ArtefaktThesisVE artefaktthesis;
-
   public Hauptfenster() {
-    JFrame.setDefaultLookAndFeelDecorated(true);
-    JFrame frame = new JFrame("Studierstube, Version " + Global.version);
-    frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-    // TODO  void setIconImage(Image)
-    frame.setJMenuBar(erzeugeJMenuBar());
-    frame.getContentPane().add(createPanel());
-    frame.pack();
-    frame.setLocationRelativeTo(null);  // centered on screen
-    frame.setVisible(true);
-    frame.setResizable(false);
-  }
-  
-  private JMenuBar erzeugeJMenuBar() {
-  	JMenuBar menuBar = new JMenuBar();
-  	JMenu programmMenu = new JMenu("Programm");
-  	JMenu datenMenu = new JMenu("Daten");
-  	JMenu optionenMenu = new JMenu("Optionen");
-  	JMenu hilfeMenu = new JMenu("Hilfe");
-  	JMenuItem menuItem;
-  	
-  	programmMenu.setMnemonic(KeyEvent.VK_P);
-  	menuBar.add(programmMenu);
-  	
-  	datenMenu.setMnemonic(KeyEvent.VK_D);
-  	menuBar.add(datenMenu);
-  	
-  	optionenMenu.setMnemonic(KeyEvent.VK_O);
-  	menuBar.add(optionenMenu);
-  	
-  	hilfeMenu.setMnemonic(KeyEvent.VK_H);
-  	menuBar.add(hilfeMenu);
-  	
-  	menuItem = new JMenuItem("Artefakterschaffung", KeyEvent.VK_A);
-    menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_A, ActionEvent.CTRL_MASK));
-    menuItem.addActionListener(this);
-    programmMenu.add(menuItem);
-  	
-    programmMenu.addSeparator();
-    
-  	menuItem = new JMenuItem("Beenden", KeyEvent.VK_B);
-    menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q, ActionEvent.CTRL_MASK));
-    menuItem.addActionListener(this);
-    programmMenu.add(menuItem);
-  	
-  	return menuBar;
-  }
-  
-  private JPanel createPanel() {
-  	JPanel panel = new JPanel();
-    JButton button = new JButton("Klick!");
-    button.setPreferredSize(new Dimension(450, 360));
-    panel.add(button);
-    button.addActionListener(this);
-  	return panel;
-  }
-  
-  public void actionPerformed(ActionEvent event) {
-    String command = event.getActionCommand();
-    if (command.equals("Beenden")) Global.beenden();
-    else if (command.equals("Artefakterschaffung")) zeigeArtefaktThesis();
-    else Global.log("FEHLER: ActionCommand nicht erkannt!");
-  }
-  
-  private void zeigeArtefaktThesis() {
-	if (artefaktthesis == null)
-	  artefaktthesis = new ArtefaktThesisVE();
-	else
-	  artefaktthesis.toFront();
+    setDefaultLookAndFeelDecorated(true);
+    setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+    addWindowListener(new WindowAdapter() {
+      public void windowClosing(WindowEvent evt) {
+        Global.beenden();
+      }
+    });
+    setTitle("Studierstube, Version " + Global.version);
+    // TODO  setIconImage(Image)
+    getContentPane().add(new ZauberPanel());
+    pack();
+    setResizable(false);
+    setLocationRelativeTo(null);
+    setVisible(true);
   }
 }
