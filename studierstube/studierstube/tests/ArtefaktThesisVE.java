@@ -66,7 +66,8 @@ public class ArtefaktThesisVE extends JFrame {
 	 */
 	private void initialize() {
 		this.setSize(571, 391);
-		this.setResizable(false);
+		this.setMinimumSize(new java.awt.Dimension(90,208));
+		this.setResizable(true);
 		this.setContentPane(getJContentPane());
 		this.setTitle("Artefaktthesis für: unbenanntes Artefakt");
 		this.setVisible(true);
@@ -156,7 +157,7 @@ public class ArtefaktThesisVE extends JFrame {
 	private JPanel getPanelHaltbarkeit() {
 		if (panelHaltbarkeit == null) {
 			panelHaltbarkeit = new JPanel();
-			panelHaltbarkeit.setLayout(null);
+			panelHaltbarkeit.setLayout(new BoxLayout(getPanelHaltbarkeit(), BoxLayout.X_AXIS));
 			panelHaltbarkeit.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Haltbarkeit", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, null, null));
 			panelHaltbarkeit.setBackground(new java.awt.Color(255,255,204));
 			panelHaltbarkeit.setSize(new java.awt.Dimension(125,120));
@@ -248,7 +249,6 @@ public class ArtefaktThesisVE extends JFrame {
 		if (panelHaltbarkeitInnen == null) {
 			panelHaltbarkeitInnen = new JPanel();
 			panelHaltbarkeitInnen.setLayout(new BoxLayout(getPanelHaltbarkeitInnen(), BoxLayout.Y_AXIS));
-			panelHaltbarkeitInnen.setBounds(new java.awt.Rectangle(7,18,113,97));
 			panelHaltbarkeitInnen.setBackground(new java.awt.Color(255,255,204));
 			panelHaltbarkeitInnen.add(getRadioButtonHaltbarkeitPermanent(), null);
 			panelHaltbarkeitInnen.add(getRadioButtonHaltbarkeitMonat(), null);

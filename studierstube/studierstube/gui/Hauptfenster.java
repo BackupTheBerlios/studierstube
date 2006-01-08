@@ -7,6 +7,7 @@
 
 package studierstube.gui;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -26,6 +27,8 @@ public class Hauptfenster extends JFrame implements ActionListener {
 	
   static final long serialVersionUID = 1; // TODO anderer Wert ?
   
+  private Color farbeHintergrund = new Color(200,210,255);
+  
   public Hauptfenster() {
     setDefaultLookAndFeelDecorated(true);
     setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
@@ -37,14 +40,14 @@ public class Hauptfenster extends JFrame implements ActionListener {
     setTitle(Global.name + " Version " + Global.version);
     // TODO  setIconImage(Image)
     setJMenuBar(erzeugeJMenuBar());
-    setBackground(new java.awt.Color(200,210,255));
+    setBackground(farbeHintergrund);
     JTabbedPane tabs = new JTabbedPane();
     tabs.setBackground(new java.awt.Color(200,210,255));
-    tabs.addTab("Zauberdatenbank", new ZauberPanel(new java.awt.Color(200,210,255)));
-    tabs.addTab("Artefaktsammlung", new ArtefaktePanel(new java.awt.Color(200,210,255)));
+    tabs.addTab("Zauberdatenbank", new ZauberPanel(farbeHintergrund));
+    tabs.addTab("Artefaktsammlung", new ArtefaktePanel(farbeHintergrund));
     getContentPane().add(tabs);
     pack();
-    setResizable(false);
+    setResizable(true);
     setLocationRelativeTo(null);
     setVisible(true);
     toFront();

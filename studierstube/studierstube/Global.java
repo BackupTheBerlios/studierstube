@@ -33,7 +33,8 @@ public class Global {
   
   private static boolean logging = true;
   private static boolean zauberlisteGespeichert = true;
-  private static Zauberliste zauberliste = new Zauberliste();
+  private static Zauberliste aktuelleZauberliste = new Zauberliste();
+  private static Zauberliste alteZauberliste = new Zauberliste();
   
  /**
   * Konstruktor.
@@ -205,7 +206,7 @@ public class Global {
   * @return die Zauberliste
   */
   public static Zauberliste getZauberliste() {
-	return zauberliste;
+	return aktuelleZauberliste;
   }
   
  /**

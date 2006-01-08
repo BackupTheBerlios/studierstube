@@ -7,20 +7,13 @@
 
 package studierstube.gui;
 
-import java.awt.Dimension;
+import javax.swing.JSplitPane;
 
-import javax.swing.JButton;
-import javax.swing.JPanel;
-
-public class ArtefaktePanel extends JPanel {
+public class ArtefaktePanel extends JSplitPane {
 	
   static final long serialVersionUID = 1; // TODO brauchbarer Wert ?
   
   public ArtefaktePanel(java.awt.Color hintergrund) {
-    setBackground(hintergrund); 
-	 
-	    JButton button = new JButton();
-		  button.setPreferredSize(new Dimension(555,444));
-		  add(button);
+
   }
 }

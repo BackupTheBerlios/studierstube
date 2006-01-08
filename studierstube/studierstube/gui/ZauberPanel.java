@@ -8,15 +8,24 @@
 package studierstube.gui;
 
 import java.awt.Dimension;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
-import javax.swing.JButton;
-import javax.swing.JPanel;
+import javax.swing.JList;
+import javax.swing.JScrollPane;
+import javax.swing.JSplitPane;
+import javax.swing.ListSelectionModel;
 
-public class ZauberPanel extends JPanel {
+import studierstube.Global;
+
+public class ZauberPanel extends JSplitPane {
   
   static final long serialVersionUID = 1; // TODO brauchbarer Wert ?
   
   private java.awt.Color farbeHintergrund = new java.awt.Color(200,210,255);
+  private String aktuellerZauber = null;
+  
+  private JList liste;
   
   public ZauberPanel(java.awt.Color hintergrund) {
     farbeHintergrund = hintergrund;
@@ -25,12 +34,45 @@ public class ZauberPanel extends JPanel {
   }
   
   public ZauberPanel() {
+	super(JSplitPane.HORIZONTAL_SPLIT);
     initialisiere();
   }
   
   private void initialisiere() {
-    JButton button = new JButton();
-	  button.setPreferredSize(new Dimension(333,222));
-	  add(button);
+    liste = new JList();
+    liste.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+    liste.addMouseListener(new MouseAdapter() {
+      public void mouseClicked(MouseEvent e) {
+        angeklickterZauber(liste.locationToIndex(e.getPoint()));
+/*        if (e.getClickCount() == 2) {
+	            int index = liste.locationToIndex(e.getPoint());
+	            System.out.println("Double clicked on Item " + index);
+	         }
+*/    }
+	});
+    JScrollPane scrollListe = new JScrollPane(liste);
+    scrollListe.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+    scrollListe.setMinimumSize(new Dimension(200,0));
+    setLeftComponent(scrollListe);
+    setOneTouchExpandable(true);
+    setDividerLocation(200);
+    setPreferredSize(new Dimension(444,333));
+    setMinimumSize(new Dimension(400,200));  // funzt net
+    fuelleListe();
+  }
+  
+  private int fuelleListe() {
+    int anzahl = Global.getZauberliste().getAnzahlZauber();
+    String[] namenListe = new String[anzahl];
+    for (int i = 0; i < anzahl; i++) {
+      namenListe[i] = Global.getZauberliste().getZauber(i).getName();
+    }
+    liste.setListData(namenListe);
+    return anzahl;
+  }
+  
+  private void angeklickterZauber(int index) {
+    aktuellerZauber = Global.getZauberliste().getZauber(index).getName();
+    Global.log("angeklickterZauber " + index); // Update rechte seite
   }
 }

@@ -54,7 +54,6 @@ class Main {
         }
       }
     );
-    Global.log("   fertig.");
     Global.log("");
   }
 }

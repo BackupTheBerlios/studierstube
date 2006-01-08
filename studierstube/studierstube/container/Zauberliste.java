@@ -37,4 +37,12 @@ public class Zauberliste {
   public Zauber getZauber(int index) {
 	return (Zauber) liste.get(index);
   }
+  
+  private Zauberliste copy() {
+    Zauberliste neu = new Zauberliste();
+    for (int i = 0; i < this.getAnzahlZauber(); i++) {
+      neu.add(this.getZauber(i).copy());  // nur referenz ?
+    }
+    return neu;
+  }
 }

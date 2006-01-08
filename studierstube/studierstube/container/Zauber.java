@@ -11,8 +11,7 @@ package studierstube.container;
  * Einzelner Zauber mit seinen generischen Eigenschaften.
  */
 public class Zauber {
-  private String name;
-//  public String[] verbreitung;   /// oder rep?
+  private String name; // rep
   private String komplexitaet;
   private String[] probe = new String[3];
   private String[] merkmale;
@@ -120,5 +119,15 @@ public class Zauber {
    */
   public String[] getVarianten() {
 	return varianten;
+  }
+  
+  protected Zauber copy() {
+    Zauber neu = new Zauber();
+    neu.name = this.name;
+    neu.komplexitaet = this.komplexitaet;
+    neu.probe = this.probe;
+    neu.merkmale = this.merkmale;
+    neu.varianten = this.varianten;
+    return neu;
   }
 }
