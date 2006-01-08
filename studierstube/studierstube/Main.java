@@ -7,6 +7,8 @@
 
 package studierstube;
 
+import java.io.File;
+
 import studierstube.daten.ZauberXML;
 import studierstube.gui.Hauptfenster;
 
@@ -36,14 +38,14 @@ class Main {
     Global.log("   = " + anzahl + " Zauber geladen.");
     Global.log("");
     
-/*    File file = new File("zauber.xml");
-    if (!file.canRead()) {
-      Global.log("-> Schreibe Zauberliste neu ...");
-      z.speichereZauberliste();
+    File file = new File("zauber.xml");
+    if (file.canRead()) {
+      Global.log("-> Lade zauber.xml ...");
+      // TODO
       Global.log("   fertig.");
       Global.log("");
     }
-*/    
+    
     Global.log("-> Starte GUI ...");
     javax.swing.SwingUtilities.invokeLater(
       new Runnable() {

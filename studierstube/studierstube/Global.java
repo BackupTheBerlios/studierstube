@@ -48,13 +48,13 @@ public class Global {
    * Tritt beim Schreiben ein Fehler auf, wird das Logging deaktiviert
    * und das Logfile geschlossen.
    * 
-   * @param string Ausgabe
+   * @param ausgabe Ausgabe
    */
-  public static void log(String string) {
-	System.out.println(string);
+  public static void log(String ausgabe) {
+	System.out.println(ausgabe);
 	if (logging == true) {
       try {
-        logwriter.write(string);
+        logwriter.write(ausgabe);
         logwriter.newLine();
         logwriter.flush();   // TODO ugly
       }

@@ -90,7 +90,7 @@ public class ArtefaktThesisVE extends JFrame {
 			labelName.setSize(new java.awt.Dimension(34,16));
 			jContentPane = new JPanel();
 			jContentPane.setLayout(null);
-			jContentPane.setBackground(new java.awt.Color(255,255,204));
+			jContentPane.setBackground(new java.awt.Color(200,210,255));
 			jContentPane.setForeground(new java.awt.Color(255,255,204));
 			jContentPane.add(labelName, null);
 			jContentPane.add(getTextFieldName(), null);

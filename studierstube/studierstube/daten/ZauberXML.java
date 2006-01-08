@@ -107,7 +107,14 @@ public class ZauberXML extends XMLZugriff {
     }
   }
   
-  public void speichereKompletteZauberliste() {
+ /**
+  * Speichert die komplette Liste der Zauber in eine Datei.
+  * 
+  * Wird benutzt um die mitgelieferte zauber.xml zu aktualisieren.
+  * 
+  * @param dateiname	der Name der XML-Datei
+  */
+  public void speichereKompletteZauberliste(String dateiname) {
 	factory = DocumentBuilderFactory.newInstance();
 	try {
 	  document = factory.newDocumentBuilder().newDocument();
@@ -131,7 +138,7 @@ public class ZauberXML extends XMLZugriff {
       eZaubersprueche.appendChild(eZauber);
     } // TODO catch, Fehlermeldung?
     
-    schreibeDatei(document, "zauber.xml");
+    schreibeDatei(document, dateiname);
   }
   
   private Element erstelleZauberElement(Zauber z) {

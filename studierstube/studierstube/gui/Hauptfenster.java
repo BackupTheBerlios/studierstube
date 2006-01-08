@@ -37,14 +37,17 @@ public class Hauptfenster extends JFrame implements ActionListener {
     setTitle(Global.name + " Version " + Global.version);
     // TODO  setIconImage(Image)
     setJMenuBar(erzeugeJMenuBar());
+    setBackground(new java.awt.Color(200,210,255));
     JTabbedPane tabs = new JTabbedPane();
-    tabs.addTab("Zauberdatenbank", new ZauberPanel());
-    tabs.addTab("Artefaktsammlung", new ArtefaktePanel());
+    tabs.setBackground(new java.awt.Color(200,210,255));
+    tabs.addTab("Zauberdatenbank", new ZauberPanel(new java.awt.Color(200,210,255)));
+    tabs.addTab("Artefaktsammlung", new ArtefaktePanel(new java.awt.Color(200,210,255)));
     getContentPane().add(tabs);
     pack();
     setResizable(false);
     setLocationRelativeTo(null);
     setVisible(true);
+    toFront();
   }
  
   private JMenuBar erzeugeJMenuBar() {

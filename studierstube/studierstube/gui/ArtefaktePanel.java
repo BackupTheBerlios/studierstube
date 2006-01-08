@@ -16,7 +16,9 @@ public class ArtefaktePanel extends JPanel {
 	
   static final long serialVersionUID = 1; // TODO brauchbarer Wert ?
   
-  public ArtefaktePanel() {
+  public ArtefaktePanel(java.awt.Color hintergrund) {
+    setBackground(hintergrund); 
+	 
 	    JButton button = new JButton();
 		  button.setPreferredSize(new Dimension(555,444));
 		  add(button);

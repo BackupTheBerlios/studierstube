@@ -16,7 +16,19 @@ public class ZauberPanel extends JPanel {
   
   static final long serialVersionUID = 1; // TODO brauchbarer Wert ?
   
+  private java.awt.Color farbeHintergrund = new java.awt.Color(200,210,255);
+  
+  public ZauberPanel(java.awt.Color hintergrund) {
+    farbeHintergrund = hintergrund;
+    setBackground(farbeHintergrund);
+    initialisiere();
+  }
+  
   public ZauberPanel() {
+    initialisiere();
+  }
+  
+  private void initialisiere() {
     JButton button = new JButton();
 	  button.setPreferredSize(new Dimension(333,222));
 	  add(button);
