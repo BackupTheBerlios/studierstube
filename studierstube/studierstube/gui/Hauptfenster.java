@@ -25,7 +25,7 @@ import studierstube.Global;
 
 public class Hauptfenster extends JFrame implements ActionListener {
 	
-  static final long serialVersionUID = 1; // TODO anderer Wert ?
+  static final long serialVersionUID = 1; // brauchbarer Wert ?
   
   private Color farbeHintergrund = new Color(200,210,255);
   
@@ -38,7 +38,7 @@ public class Hauptfenster extends JFrame implements ActionListener {
       }
     });
     setTitle(Global.name + " Version " + Global.version);
-    // TODO  setIconImage(Image)
+    // setIconImage(Image)
     setJMenuBar(erzeugeJMenuBar());
     setBackground(farbeHintergrund);
     JTabbedPane tabs = new JTabbedPane();

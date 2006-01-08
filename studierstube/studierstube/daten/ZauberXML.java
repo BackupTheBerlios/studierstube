@@ -136,7 +136,7 @@ public class ZauberXML extends XMLZugriff {
     for (int i = 0; i < Global.getZauberliste().getAnzahlZauber(); i++) {
       Element eZauber = erstelleZauberElement(Global.getZauberliste().getZauber(i));
       eZaubersprueche.appendChild(eZauber);
-    } // TODO catch, Fehlermeldung?
+    } // catch, Fehlermeldung?
     
     schreibeDatei(document, dateiname);
   }

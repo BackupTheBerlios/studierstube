@@ -20,7 +20,7 @@ import studierstube.Global;
 
 public class ZauberPanel extends JSplitPane {
   
-  static final long serialVersionUID = 1; // TODO brauchbarer Wert ?
+  static final long serialVersionUID = 1; // brauchbarer Wert ?
   
   private java.awt.Color farbeHintergrund = new java.awt.Color(200,210,255);
   private String aktuellerZauber = null;
@@ -44,11 +44,7 @@ public class ZauberPanel extends JSplitPane {
     liste.addMouseListener(new MouseAdapter() {
       public void mouseClicked(MouseEvent e) {
         angeklickterZauber(liste.locationToIndex(e.getPoint()));
-/*        if (e.getClickCount() == 2) {
-	            int index = liste.locationToIndex(e.getPoint());
-	            System.out.println("Double clicked on Item " + index);
-	         }
-*/    }
+      }
 	});
     JScrollPane scrollListe = new JScrollPane(liste);
     scrollListe.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
@@ -56,8 +52,8 @@ public class ZauberPanel extends JSplitPane {
     setLeftComponent(scrollListe);
     setOneTouchExpandable(true);
     setDividerLocation(200);
-    setPreferredSize(new Dimension(444,333));
-    setMinimumSize(new Dimension(400,200));  // funzt net
+    setPreferredSize(new Dimension(555,444));
+    setMinimumSize(new Dimension(400,200));  // funktioniert nicht
     fuelleListe();
   }
   
@@ -73,6 +69,6 @@ public class ZauberPanel extends JSplitPane {
   
   private void angeklickterZauber(int index) {
     aktuellerZauber = Global.getZauberliste().getZauber(index).getName();
-    Global.log("angeklickterZauber " + index); // Update rechte seite
+    Global.log("angeklickterZauber " + index); // TODO Update rechte seite
   }
 }

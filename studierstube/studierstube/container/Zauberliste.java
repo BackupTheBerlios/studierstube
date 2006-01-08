@@ -41,7 +41,7 @@ public class Zauberliste {
   private Zauberliste copy() {
     Zauberliste neu = new Zauberliste();
     for (int i = 0; i < this.getAnzahlZauber(); i++) {
-      neu.add(this.getZauber(i).copy());  // nur referenz ?
+      neu.add(this.getZauber(i).copy());
     }
     return neu;
   }

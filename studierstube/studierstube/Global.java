@@ -34,7 +34,6 @@ public class Global {
   private static boolean logging = true;
   private static boolean zauberlisteGespeichert = true;
   private static Zauberliste aktuelleZauberliste = new Zauberliste();
-  private static Zauberliste alteZauberliste = new Zauberliste();
   
  /**
   * Konstruktor.
@@ -57,7 +56,7 @@ public class Global {
       try {
         logwriter.write(ausgabe);
         logwriter.newLine();
-        logwriter.flush();   // TODO ugly
+        logwriter.flush();  // ugly
       }
       catch (Exception e) {
         Fehler.zeigeFehlermeldung("Fehler beim Schreiben in Logfile!");
@@ -88,7 +87,7 @@ public class Global {
   */
   private static void schliesseLogfile() {
     try {
-	//  logwriter.flush(); // TODO
+	//  logwriter.flush(); // wenn beim Schreiben nicht schon flush() aufgerufen wurde
 	}
 	catch (Exception e) {
 	  Fehler.zeigeFehlermeldung("Fehler beim Leeren des Logfile-Buffers!");

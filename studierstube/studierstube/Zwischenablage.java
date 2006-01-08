@@ -16,7 +16,7 @@ import java.awt.datatransfer.Transferable;
 public class Zwischenablage implements ClipboardOwner {
   
   public void lostOwnership(Clipboard clipboard, Transferable contents) {
-	// leer
+	// absichtlich leer
   }
   
   public void schreibeInZwischenablage(String text) {

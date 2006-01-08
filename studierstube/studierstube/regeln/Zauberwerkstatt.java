@@ -5,15 +5,8 @@
 * of the zlib/libpng license. See LICENSE.txt for details.    *
 **************************************************************/
 
-package studierstube.gui;
+package studierstube.regeln;
 
-import javax.swing.JSplitPane;
+public class Zauberwerkstatt {
 
-public class ArtefaktePanel extends JSplitPane {
-	
-  static final long serialVersionUID = 1; // brauchbarer Wert ?
-  
-  public ArtefaktePanel(java.awt.Color hintergrund) {
-
-  }
 }

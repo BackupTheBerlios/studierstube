@@ -42,11 +42,12 @@ class Main {
     if (file.canRead()) {
       Global.log("-> Lade zauber.xml ...");
       // TODO
-      Global.log("   fertig.");
+      Global.log("   fertig.");  // TODO mehr verbosity
       Global.log("");
     }
     
     Global.log("-> Starte GUI ...");
+    Global.log("");
     javax.swing.SwingUtilities.invokeLater(
       new Runnable() {
         public void run() {
@@ -54,6 +55,5 @@ class Main {
         }
       }
     );
-    Global.log("");
   }
 }

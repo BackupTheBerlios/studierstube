@@ -11,14 +11,14 @@ package studierstube.container;
  * Einzelner Zauber mit seinen generischen Eigenschaften.
  */
 public class Zauber {
-  private String name; // rep
+  private String name;
   private String komplexitaet;
   private String[] probe = new String[3];
   private String[] merkmale;
   private String[] varianten;
   
   /**
-   * Setter für Name des Zaubers.
+   * Setzt den Namen des Zaubers.
    * 
    * @param n	neuer Name
    */
@@ -27,7 +27,7 @@ public class Zauber {
   }
   
   /**
-   * Setter für Komplexität des Zaubers.
+   * Setzt die Komplexität des Zaubers.
    * 
    * @param k	neue Komplexität
    */
@@ -36,7 +36,7 @@ public class Zauber {
   }
   
   /**
-   * Setter für Probe des Zaubers.
+   * Setzt de Probe des Zaubers.
    * 
    * @param p0	erste Eigenschaft
    * @param p1	zweite Eigenschaft
@@ -49,7 +49,7 @@ public class Zauber {
   }
   
   /**
-   * Setter für Merkmale des Zaubers.
+   * Setzt die Merkmale des Zaubers.
    * 
    * @param m	neue Merkmale in einem Array
    */
@@ -58,7 +58,7 @@ public class Zauber {
   }
   
   /**
-   * Setter für Varianten des Zaubers.
+   * Setzt die Varianten des Zaubers.
    * 
    * @param v	neue Varianten in einem Array
    */
