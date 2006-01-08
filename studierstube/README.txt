@@ -28,7 +28,7 @@ Hier noch ein paar Informationen um sich mit dem Programm zurechtzufinden.
 
 - Das eigentliche Programm befindet sich im Unterverzeichnis 'studierstube' und ist auch im gleichnamigen Java-Package zu finden.
 - Die Main-Klasse ist studierstube.Main
-- Javadoc-Dokumentation liegt dem Projekt bei (im Verzeichnis 'doc')
+- Javadoc-Dokumentation liegt dem Projekt bei (im Verzeichnis 'api')
 - Fragen aller Art bitte an twelwan@gmx.de
 
 
