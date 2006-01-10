@@ -54,10 +54,10 @@ public class ZauberPanel extends JSplitPane {
     setDividerLocation(200);
     setPreferredSize(new Dimension(555,444));
     setMinimumSize(new Dimension(400,200));  // funktioniert nicht
-    fuelleListe();
+    initialisiereListe();
   }
   
-  private int fuelleListe() {
+  private int initialisiereListe() {
     int anzahl = Global.getZauberliste().getAnzahlZauber();
     String[] namenListe = new String[anzahl];
     for (int i = 0; i < anzahl; i++) {

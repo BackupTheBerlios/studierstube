@@ -8,16 +8,17 @@
 package studierstube.tests;
 
 import studierstube.Global;
+import studierstube.regeln.Wuerfel;
 
-public class Wuerfel {
-  public Wuerfel() {
+public class WuerfelTest extends Wuerfel {
+  public WuerfelTest() {
     Global.log("" + durchschnittW6(1000000));
   }
 
   double durchschnittW6(int anzahl) {
 	double erg = 0;
 	for (int i = 0; i < anzahl; i++) {
-	  int plus = Global.W6();
+	  int plus = W6();
 	  switch (plus) {
 	  case 1:
 	  case 2:
