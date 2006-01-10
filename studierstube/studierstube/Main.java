@@ -26,7 +26,7 @@ class Main {
   public static void main(String[] args) {
     new Global();
     Global.log(Global.name + " Version " + Global.version);
-    Global.log("Copyright (c) " + Global.author + "(" + Global.email + ")");
+    Global.log("Copyright (c) " + Global.years + ", " + Global.author + " (" + Global.email + ")");
     Global.log("");
     Global.log("Programm wird gestartet:");
     Global.log("");

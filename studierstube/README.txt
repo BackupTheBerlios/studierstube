@@ -1,4 +1,4 @@
-Copyright (c) 2005-2006 Stefan Holzmüller
+Copyright (c) 2005-2006, Stefan Holzmüller
 
 Dieses Programm richtet sich an Spieler des Rollenspiels "Das Schwarze Auge".
 Es implementiert einige Regeln, angefangen mit der Artefaktherstellung, 

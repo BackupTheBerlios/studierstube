@@ -24,6 +24,7 @@ public class Global {
   
   public static final String name = "Studierstube";
   public static final String version = "0.3";
+  public static final String years = "2005-2006";
   public static final String author = "Stefan Holzmüller";
   public static final String email = "twelwan@gmx.de";
   
