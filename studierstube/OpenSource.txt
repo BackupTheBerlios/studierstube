@@ -1,0 +1,22 @@
+Copyright (c) 2005-2006 Stefan Holzmüller
+
+Es ist erlaubt und erwünscht, dieses Programm zu erweitern, zu modifizieren 
+oder in ein anderes Programm zu integrieren. Der Quelltext ist offengelegt 
+unter der neuen BSD-Lizenz, welche in LICENSE.txt nachzulesen ist.
+Auf den Punkt gebracht verlangt diese Lizenz nur, dass man den Lizenztext 
+reproduziert und damit auf die Urheberschaft des Autors aufmerksam macht.
+
+Dieses Projekt benutzt Material aus den offiziellen DSA-Publikationen.
+"Das Schwarze Auge" ist ein eingetragenes Warenzeichen der Firma Fantasy 
+Productions. Copyright (c) 1997. Alle Rechte vorbehalten.
+
+
+Die Projektseiten des Projektes "Studierstube" auf der Entwicklerplattform
+BerliOS sind hier zu finden:
+
+    http://developer.berlios.de/projects/studierstube/
+
+Über Fragen, konstruktive Kritik und Ideen würde ich mich freuen.
+
+    Stefan Holzmüller
+    twelwan@gmx.de

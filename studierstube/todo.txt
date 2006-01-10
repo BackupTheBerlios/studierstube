@@ -5,9 +5,17 @@ zeitliche reihung: checkbox und disabled spinctrl mit 2 eingestellt
 regellücke: gestapelter zauber zählt nur einmal oder x mal für komplexität?
 spomods
 zauberwerkstatt
-menü daten (manipulation)
+
 JSpinner
 JProgressBar
 JOptionPane
 Tabs
 CardLayout "Ansicht"
+
+javadoc für gui
+
+neue zauber
+zauber überschreiben
+zauber leer = gelöscht
+
+extends Wuerfel

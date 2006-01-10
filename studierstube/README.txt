@@ -14,9 +14,9 @@ Productions. Copyright (c) 1997. Alle Rechte vorbehalten.
 
 Das Programm darf frei weitergegeben werden und auch die Quelltexte sind für 
 Interessierte einsehbar. Wenn Sie das Programm zum Download anbieten wollen,
-so müssen Sie nur den Namen des Urhebers (Stefan Holzmüller) erwähnen. Falls 
-Sie mit den Quellen arbeiten wollen, lesen Sie bitte die Lizenzbedingungen in 
-LICENSE.txt und license-zlib.txt.
+dann muss die Datei LICENSE.txt ebenfalls dem Download beiliegen. Falls Sie 
+mit den Quellen arbeiten wollen, lesen Sie bitte die Lizenzbedingungen in 
+LICENSE.txt und OpenSource.txt.
 
 Es lässt sich kaum vermeiden, dass sich in ein Programm dieser Art Logik- oder 
 Programmierfehler einschleichen. Wenn Sie einen solchen Bug bemerken, bitte 
