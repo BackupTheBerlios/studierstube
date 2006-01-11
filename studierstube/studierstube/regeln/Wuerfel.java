@@ -17,7 +17,7 @@ public class Wuerfel {
   * @param seiten	Anzahl der Seiten des Würfels
   * @return			Zufallszahl
   */
-  protected static int Wx(int seiten) {
+  protected int Wx(int seiten) {
     return Global.getRandom().nextInt(seiten) + 1;
   }
   
@@ -26,7 +26,7 @@ public class Wuerfel {
    * 
    * @return		Zufallszahl 1-6
    */
-  protected static int W6() {
+  protected int W6() {
     return Wx(6);
   }
   
@@ -35,7 +35,7 @@ public class Wuerfel {
    * 
    * @return		Zufallszahl 1-20
    */
-  protected static int W20() {
+  protected int W20() {
     return Wx(20);
   }
   
@@ -45,7 +45,7 @@ public class Wuerfel {
    * @param anzahl	Anzahl der W6
    * @return		Summe der Würfe
    */
-  protected static int xW6(int anzahl) {
+  protected int xW6(int anzahl) {
     int sum = 0;
     for (int i = 0; i < anzahl; i++) {
       sum += Wx(6);
@@ -59,7 +59,7 @@ public class Wuerfel {
    * @param anzahl	Anzahl der W20
    * @return		Summe der Würfe
    */
-  protected static int xW20(int anzahl) {
+  protected int xW20(int anzahl) {
     int sum = 0;
     for (int i = 0; i < anzahl; i++) {
       sum += Wx(20);

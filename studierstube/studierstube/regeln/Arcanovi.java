@@ -11,6 +11,6 @@ package studierstube.regeln;
  * Hier sind die eigentlichen Regeln für den Gebrauch des Zaubers
  * ARCANOVI abgelegt.
  */
-public class Arcanovi {
-  
+public class Arcanovi extends Wuerfel {
+
 }

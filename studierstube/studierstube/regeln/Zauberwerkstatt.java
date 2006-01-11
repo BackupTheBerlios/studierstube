@@ -7,6 +7,6 @@
 
 package studierstube.regeln;
 
-public class Zauberwerkstatt {
+public class Zauberwerkstatt extends Wuerfel {
 
 }
