@@ -29,6 +29,6 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 The data distributed with this code is copyrighted by Fantasy Productions, 
 and *not* subject to the here given license. Distributing and using this data 
-is granted by FanPro for the purpose of using computer driven tools for the 
+is tolerated by FanPro for the purpose of using computer driven tools for the 
 role playing game "Das Schwarze Auge" / "The Dark Eye". Any other use is only 
 allowed with prior written permission by FanPro.

@@ -30,7 +30,8 @@ public class ZauberXML extends XMLZugriff {
   * vorhanden, so wird die mitgelieferte Resource verwendet.
   */
   public void ladeZauberliste() {
-	if (ladeDokument("zauber.xml") == null) {
+	document = ladeDokument("zauber.xml");
+	if (document == null) {
 	  Global.log("   * Die Datei 'zauber.xml' wurde nicht gefunden.");
 	  Global.log("   * Lade Zauberliste aus mitgelieferter Resource ...");
 	  
@@ -50,9 +51,6 @@ public class ZauberXML extends XMLZugriff {
     	Fehler.zeigeException(e);
         e.printStackTrace();
       }
-	}
-	else {
-	  document = ladeDokument("zauber.xml");
 	}
 	
     Node xdimlNode = sucheChildNode(document, "XDIML");
