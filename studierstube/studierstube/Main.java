@@ -9,8 +9,8 @@ package studierstube;
 
 import java.io.File;
 
-import studierstube.daten.ZauberXML;
 import studierstube.gui.Hauptfenster;
+import studierstube.xml.ZauberDaten;
 
 /**
  * In dieser Klasse befindet sich main(). Sie dient nur zum
@@ -32,7 +32,7 @@ class Main {
     Global.log("");
     
     Global.log("-> Lade mitgelieferte Zauber ...");
-    ZauberXML z = new ZauberXML();
+    ZauberDaten z = new ZauberDaten();
     z.ladeZauberliste();
     int anzahl = Global.getZauberliste().getAnzahlZauber();
     Global.log("   = " + anzahl + " Zauber geladen.");

@@ -5,12 +5,12 @@
 * of the (3-clause) BSD license. See LICENSE.txt for details. *
 **************************************************************/
 
-package studierstube.daten;
+package studierstube.xml;
 
 /**
  * Diese Klasse verwaltet das Im- und Exportieren von Zauberer-Daten
  * in XML-Files.
  */
-public class ZaubererXML extends XMLZugriff {
+public class ZaubererDaten extends Hilfsfunktionen {
 
 }

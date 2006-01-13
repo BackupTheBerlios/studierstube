@@ -5,12 +5,12 @@
 * of the (3-clause) BSD license. See LICENSE.txt for details. *
 **************************************************************/
 
-package studierstube.daten;
+package studierstube.xml;
 
 /**
- * In dieser Klasse soll die Integration in die Helden-Software
- * stattfinden. NYI
+ * Diese Klasse verwaltet das Im- und Exportieren von Artefakt-Daten
+ * in XML.
  */
-public class HeldenSchnittstelle {
+public class ArtefaktDaten extends Hilfsfunktionen {
 
 }
