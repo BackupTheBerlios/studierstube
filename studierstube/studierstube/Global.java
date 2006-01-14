@@ -14,6 +14,7 @@ import java.util.Random;
 import javax.swing.JOptionPane;
 
 import studierstube.container.Zauberliste;
+import studierstube.gui.Hauptfenster;
 
 /**
  * In dieser Klasse werden globale Einstellungen gespeichert.
@@ -35,6 +36,8 @@ public class Global {
   private static boolean logging = true;
   private static boolean zauberlisteGespeichert = true;
   private static Zauberliste aktuelleZauberliste = new Zauberliste();
+  
+  protected static Hauptfenster hauptfenster;
   
  /**
   * Konstruktor.
@@ -113,12 +116,8 @@ public class Global {
    * 'Aufräumen' und dann System.exit(0) aufrufen.
    */
   public static void beenden() {
-    int x = JOptionPane.showConfirmDialog(  // TODO gespeichert ?
-    		null, 
-    		"Sind Sie sicher?",  // TODO andere Frage bei speichern
-    		"Programm beenden", 
-    		JOptionPane.YES_NO_OPTION);
-    if (x != JOptionPane.YES_OPTION) return;
+    if (hauptfenster.beendenBestaetigen() != JOptionPane.YES_OPTION) return;
+    log("-> Beenden ...");
     
     try {
   	  logwriter.flush();
@@ -141,6 +140,7 @@ public class Global {
   	
   	schliesseLogfile();
   	
+  	System.out.println("   * Aufrufen von System.exit(0)");
 	System.exit(0);
   }
   

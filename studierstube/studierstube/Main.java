@@ -31,7 +31,7 @@ class Main {
     Global.log("Programm wird gestartet:");
     Global.log("");
     
-    Global.log("-> Lade mitgelieferte Zauber ...");
+    Global.log("-> Lade Zauberliste ...");
     ZauberDaten z = new ZauberDaten();
     z.ladeZauberliste();
     int anzahl = Global.getZauberliste().getAnzahlZauber();
@@ -39,10 +39,10 @@ class Main {
     Global.log("");
     
     File file = new File("zauber.xml");
-    if (file.canRead()) {
-      Global.log("-> Lade zauber.xml ...");
-      // TODO
-      Global.log("   fertig.");  // TODO mehr verbosity
+    if (!file.exists()) {
+      Global.log("-> Schreibe Zauberliste nach zauber.xml ...");
+      z.speichereKompletteZauberliste("zauber.xml");
+      Global.log("   fertig.");
       Global.log("");
     }
     
@@ -51,7 +51,7 @@ class Main {
     javax.swing.SwingUtilities.invokeLater(
       new Runnable() {
         public void run() {
-          new Hauptfenster();
+          Global.hauptfenster = new Hauptfenster();
         }
       }
     );

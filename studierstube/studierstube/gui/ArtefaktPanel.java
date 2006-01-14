@@ -18,32 +18,32 @@ import javax.swing.ListSelectionModel;
 
 import studierstube.Global;
 
-public class ZauberPanel extends JSplitPane {
-  
+public class ArtefaktPanel extends JSplitPane {
+	
   static final long serialVersionUID = 1; // brauchbarer Wert ?
   
   private java.awt.Color farbeHintergrund;;
-  private String aktuellerZauber = null;
+  private String aktuellesArtefakt = null;
   
   private JList liste;
   
-  public ZauberPanel(java.awt.Color hintergrund) {
+  public ArtefaktPanel(java.awt.Color hintergrund) {
     farbeHintergrund = hintergrund;
     setBackground(farbeHintergrund);
     initialisiere();
   }
   
-  public ZauberPanel() {
-	super(JSplitPane.HORIZONTAL_SPLIT);
+  public ArtefaktPanel() {
+    super(JSplitPane.HORIZONTAL_SPLIT);
     initialisiere();
   }
-  
+	  
   private void initialisiere() {
     liste = new JList();
     liste.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
     liste.addMouseListener(new MouseAdapter() {
       public void mouseClicked(MouseEvent e) {
-        angeklickterZauber(liste.locationToIndex(e.getPoint()));
+        angeklicktesArtefakt(liste.locationToIndex(e.getPoint()));
       }
 	});
     JScrollPane scrollListe = new JScrollPane(liste);
@@ -54,21 +54,11 @@ public class ZauberPanel extends JSplitPane {
     setDividerLocation(200);
     setPreferredSize(new Dimension(555,444));  // TODO
     setMinimumSize(new Dimension(400,200));  // funktioniert nicht
-    initialisiereListe();
+    // initialisiereListe();
   }
   
-  private int initialisiereListe() {
-    int anzahl = Global.getZauberliste().getAnzahlZauber();
-    String[] namenListe = new String[anzahl];
-    for (int i = 0; i < anzahl; i++) {
-      namenListe[i] = Global.getZauberliste().getZauber(i).getName();
-    }
-    liste.setListData(namenListe);
-    return anzahl;
-  }
-  
-  private void angeklickterZauber(int index) {
-    aktuellerZauber = Global.getZauberliste().getZauber(index).getName();
-    Global.log("aktuellerZauber " + index); // TODO Update rechte seite
+  private void angeklicktesArtefakt(int index) {
+    aktuellesArtefakt = Global.getZauberliste().getZauber(index).getName();
+    Global.log("aktuellesArtefakt " + index); // TODO Update rechte seite
   }
 }

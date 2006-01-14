@@ -18,6 +18,7 @@ import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JTabbedPane;
 import javax.swing.KeyStroke;
 
@@ -44,7 +45,7 @@ public class Hauptfenster extends JFrame implements ActionListener {
     JTabbedPane tabs = new JTabbedPane();
     tabs.setBackground(new java.awt.Color(200,210,255));
     tabs.addTab("Zauberdatenbank", new ZauberPanel(farbeHintergrund));
-    tabs.addTab("Artefaktsammlung", new ArtefaktePanel(farbeHintergrund));
+    tabs.addTab("Artefaktsammlung", new ArtefaktPanel(farbeHintergrund));
     getContentPane().add(tabs);
     pack();
     setResizable(true);
@@ -92,5 +93,14 @@ public class Hauptfenster extends JFrame implements ActionListener {
     String command = event.getActionCommand();
     if (command.equals("Beenden")) Global.beenden();
     else Global.log("FEHLER: ActionCommand nicht erkannt!");
+  }
+  
+  public int beendenBestaetigen() {
+    int x = JOptionPane.showConfirmDialog(  // TODO gespeichert ?
+    		this, 
+    		"Sind Sie sicher?",  // TODO andere Frage bei speichern
+    		"Programm beenden", 
+    		JOptionPane.YES_NO_OPTION);
+    return x;
   }
 }
