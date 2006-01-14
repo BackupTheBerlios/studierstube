@@ -7,7 +7,10 @@
 
 package studierstube.tests;
 
+import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -15,12 +18,6 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.JTree;
-import javax.swing.BoxLayout;
-import javax.swing.JButton;
-import javax.swing.JCheckBox;
-import javax.swing.JScrollBar;
-import javax.swing.JSlider;
-import javax.swing.JEditorPane;
 
 /**
  * In diesem Fenster kann der Benutzer das Artefakt entwerfen.
