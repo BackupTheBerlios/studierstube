@@ -1,6 +1,6 @@
 studierstube
 studierstube.container
-studierstube.daten
 studierstube.gui
 studierstube.regeln
 studierstube.tests
+studierstube.xml
