@@ -25,7 +25,7 @@ public class Global {
   
   public static final String name = "Studierstube";
   public static final String version = "0.3";
-  public static final String years = "2005-2006";
+  public static final String copyright = "Copyright (c) 2005-2006";
   public static final String author = "Stefan Holzm¸ller";
   public static final String email = "twelwan@gmx.de";
   
@@ -119,6 +119,7 @@ public class Global {
     if (hauptfenster.beendenBestaetigen() != JOptionPane.YES_OPTION) return;
     log("-> Beenden ...");
     
+    log("   * Schlieﬂen des Logfiles ...");
     try {
   	  logwriter.flush();
   	}
@@ -140,7 +141,7 @@ public class Global {
   	
   	schliesseLogfile();
   	
-  	System.out.println("   * Aufrufen von System.exit(0)");
+  	System.out.println("   * Aufruf von System.exit(0)");
 	System.exit(0);
   }
   

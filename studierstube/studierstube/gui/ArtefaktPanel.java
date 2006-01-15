@@ -11,7 +11,10 @@ import java.awt.Dimension;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
 import javax.swing.JList;
+import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 import javax.swing.ListSelectionModel;
@@ -26,6 +29,11 @@ public class ArtefaktPanel extends JSplitPane {
   private String aktuellesArtefakt = null;
   
   private JList liste;
+  private JPanel panelLinks;
+  private JPanel panelLinksUnten;
+  private JButton buttonNeu;
+  private JButton buttonAendern;
+  private JButton buttonLoeschen;
   
   public ArtefaktPanel(java.awt.Color hintergrund) {
     farbeHintergrund = hintergrund;
@@ -49,15 +57,36 @@ public class ArtefaktPanel extends JSplitPane {
     JScrollPane scrollListe = new JScrollPane(liste);
     scrollListe.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
     scrollListe.setMinimumSize(new Dimension(200,0));
-    setLeftComponent(scrollListe);
+    panelLinks = new JPanel();
+    panelLinks.setLayout(new BoxLayout(panelLinks, BoxLayout.Y_AXIS));
+    panelLinks.add(scrollListe);
+    
+    buttonNeu = new JButton("Neu");
+    buttonAendern = new JButton("Ändern");
+    buttonLoeschen = new JButton("Löschen");
+    panelLinksUnten = new JPanel();
+    panelLinksUnten.setLayout(new BoxLayout(panelLinksUnten, BoxLayout.X_AXIS));
+    panelLinksUnten.add(buttonNeu);
+    panelLinksUnten.add(buttonAendern);
+    panelLinksUnten.add(buttonLoeschen);
+    
+    panelLinks.add(panelLinksUnten);
+    setLeftComponent(panelLinks);
     setOneTouchExpandable(true);
-    setDividerLocation(200);
+
     setPreferredSize(new Dimension(555,444));  // TODO
     setMinimumSize(new Dimension(400,200));  // funktioniert nicht
     // initialisiereListe();
+    
+    JPanel panelRechts = new JPanel();
+    panelRechts.setBackground(farbeHintergrund);
+    panelRechts.setLayout(new BoxLayout(panelRechts, BoxLayout.X_AXIS));
+    
+    resetToPreferredSizes();
   }
   
   private void angeklicktesArtefakt(int index) {
+	if (index == -1) return;
     aktuellesArtefakt = Global.getZauberliste().getZauber(index).getName();
     Global.log("aktuellesArtefakt " + index); // TODO Update rechte seite
   }

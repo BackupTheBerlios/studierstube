@@ -22,7 +22,8 @@ public class Fehler {
   * param text Ausgabe
   */
   public static void zeigeHinweis(String text) {
-    JOptionPane.showMessageDialog(null,
+    JOptionPane.showMessageDialog(
+    		Global.hauptfenster,
    			text,
    			"Hinweis",
    		//	JOptionPane.PLAIN_MESSAGE);
@@ -35,7 +36,8 @@ public class Fehler {
   * @param text Ausgabe
   */
   public static void zeigeFehlermeldung(String text) {
-  	JOptionPane.showMessageDialog(null,
+  	JOptionPane.showMessageDialog(
+  			Global.hauptfenster,
   			text,
   			"Fehler",
   			JOptionPane.ERROR_MESSAGE);
@@ -53,7 +55,8 @@ public class Fehler {
 			+ "damit der Fehler behoben werden kann.\n\n"
 			+ exception.toString() + "\n" + stackTraceAlsString(exception) + "\n"
 			+ "Verwendete Version: " + Global.name + " " + Global.version;
-	int value = JOptionPane.showConfirmDialog(null,
+	int value = JOptionPane.showConfirmDialog(
+			Global.hauptfenster,
   			errormsg + "\n\nDiesen Text in die Zwischenablage kopieren?",
 			"Interner Fehler",
 			JOptionPane.YES_NO_OPTION);
