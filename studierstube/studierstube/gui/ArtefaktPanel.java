@@ -13,6 +13,7 @@ import java.awt.event.MouseEvent;
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -26,14 +27,20 @@ public class ArtefaktPanel extends JSplitPane {
   static final long serialVersionUID = 1; // brauchbarer Wert ?
   
   private java.awt.Color farbeHintergrund;;
+  private String aktuelleThesis = null;
   private String aktuellesArtefakt = null;
   
-  private JList liste;
+  private JList listeThesis;
+  private JList listeArtefakt;
   private JPanel panelLinks;
-  private JPanel panelLinksUnten;
-  private JButton buttonNeu;
-  private JButton buttonAendern;
-  private JButton buttonLoeschen;
+  private JPanel panelLinksButtonsThesis;
+  private JPanel panelLinksButtonsArtefakt;
+  private JButton buttonThesisNeu;
+  private JButton buttonThesisKopieren;
+  private JButton buttonThesisLoeschen;
+  private JButton buttonArtefaktNeu;
+  private JButton buttonArtefaktAendern;
+  private JButton buttonArtefaktLoeschen;
   
   public ArtefaktPanel(java.awt.Color hintergrund) {
     farbeHintergrund = hintergrund;
@@ -47,31 +54,8 @@ public class ArtefaktPanel extends JSplitPane {
   }
 	  
   private void initialisiere() {
-    liste = new JList();
-    liste.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-    liste.addMouseListener(new MouseAdapter() {
-      public void mouseClicked(MouseEvent e) {
-        angeklicktesArtefakt(liste.locationToIndex(e.getPoint()));
-      }
-	});
-    JScrollPane scrollListe = new JScrollPane(liste);
-    scrollListe.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-    scrollListe.setMinimumSize(new Dimension(200,0));
-    panelLinks = new JPanel();
-    panelLinks.setLayout(new BoxLayout(panelLinks, BoxLayout.Y_AXIS));
-    panelLinks.add(scrollListe);
-    
-    buttonNeu = new JButton("Neu");
-    buttonAendern = new JButton("Ändern");
-    buttonLoeschen = new JButton("Löschen");
-    panelLinksUnten = new JPanel();
-    panelLinksUnten.setLayout(new BoxLayout(panelLinksUnten, BoxLayout.X_AXIS));
-    panelLinksUnten.add(buttonNeu);
-    panelLinksUnten.add(buttonAendern);
-    panelLinksUnten.add(buttonLoeschen);
-    
-    panelLinks.add(panelLinksUnten);
-    setLeftComponent(panelLinks);
+    setLeftComponent(getLinkeSeite());
+    setRightComponent(getRechteSeite());
     setOneTouchExpandable(true);
 
     setPreferredSize(new Dimension(555,444));  // TODO
@@ -85,9 +69,78 @@ public class ArtefaktPanel extends JSplitPane {
     resetToPreferredSizes();
   }
   
-  private void angeklicktesArtefakt(int index) {
+  private JPanel getLinkeSeite() {
+    panelLinks = new JPanel();
+    panelLinks.setLayout(new BoxLayout(panelLinks, BoxLayout.PAGE_AXIS));
+    
+    JLabel labelThesis = new JLabel("Artefaktthesis:");
+    panelLinks.add(labelThesis);
+    
+    listeThesis = new JList();
+    listeThesis.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+    listeThesis.addMouseListener(new MouseAdapter() {
+      public void mouseClicked(MouseEvent e) {
+        angeklickteThesis(listeThesis.locationToIndex(e.getPoint()));
+      }
+	});
+    JScrollPane scrollbareListeThesis = new JScrollPane(listeThesis);
+    scrollbareListeThesis.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+    scrollbareListeThesis.setMinimumSize(new Dimension(200,0));
+    panelLinks.add(scrollbareListeThesis);
+    
+    buttonThesisNeu = new JButton("Neu");
+    buttonThesisKopieren = new JButton("Kopieren");
+    buttonThesisLoeschen = new JButton("Löschen");
+    panelLinksButtonsThesis = new JPanel();
+    panelLinksButtonsThesis.setLayout(new BoxLayout(panelLinksButtonsThesis, BoxLayout.X_AXIS));
+    panelLinksButtonsThesis.add(buttonThesisNeu);
+    panelLinksButtonsThesis.add(buttonThesisKopieren);
+    panelLinksButtonsThesis.add(buttonThesisLoeschen);
+    panelLinks.add(panelLinksButtonsThesis);
+    
+    JLabel labelArtefakt = new JLabel("Artefakte:");
+    panelLinks.add(labelArtefakt);
+    
+    listeArtefakt = new JList();
+    listeArtefakt.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+    listeArtefakt.addMouseListener(new MouseAdapter() {
+      public void mouseClicked(MouseEvent e) {
+        angeklicktesArtefakt(listeArtefakt.locationToIndex(e.getPoint()));
+      }
+	});
+    JScrollPane scrollbareListeArtefakt = new JScrollPane(listeArtefakt);
+    scrollbareListeArtefakt.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+    scrollbareListeArtefakt.setMinimumSize(new Dimension(200,0));
+    panelLinks.add(scrollbareListeArtefakt);
+    
+    buttonArtefaktNeu = new JButton("Neu");
+    buttonArtefaktAendern = new JButton("Ändern");
+    buttonArtefaktLoeschen = new JButton("Löschen");
+    panelLinksButtonsArtefakt = new JPanel();
+    panelLinksButtonsArtefakt.setLayout(new BoxLayout(panelLinksButtonsArtefakt, BoxLayout.X_AXIS));
+    panelLinksButtonsArtefakt.add(buttonArtefaktNeu);
+    panelLinksButtonsArtefakt.add(buttonArtefaktAendern);
+    panelLinksButtonsArtefakt.add(buttonArtefaktLoeschen);
+    panelLinks.add(panelLinksButtonsArtefakt);
+    
+    return panelLinks;
+  }
+  
+  private JPanel getRechteSeite() {
+    JPanel rechtesPanel = new JPanel();
+    
+    return rechtesPanel;
+  }
+  
+  private void angeklickteThesis(int index) {
 	if (index == -1) return;
-    aktuellesArtefakt = Global.getZauberliste().getZauber(index).getName();
+    // aktuelleThesis = ??? 
+    Global.log("aktuelleThesis " + index); // TODO Update rechte seite
+  }
+  
+  private void angeklicktesArtefakt(int index) {
+    if (index == -1) return;
+    // aktuellesArtefakt = ???
     Global.log("aktuellesArtefakt " + index); // TODO Update rechte seite
   }
 }
