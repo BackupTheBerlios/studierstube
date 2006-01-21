@@ -25,7 +25,6 @@ public class ZauberPanel extends JSplitPane {
   
   static final long serialVersionUID = 1; // brauchbarer Wert ?
   
-  private java.awt.Color farbeHintergrund;;
   private String aktuellerZauber = null;
   
   private JList listeZauber;
@@ -35,18 +34,12 @@ public class ZauberPanel extends JSplitPane {
   private JButton buttonKopieren;
   private JButton buttonLoeschen;
   
-  public ZauberPanel(java.awt.Color hintergrund) {
-    farbeHintergrund = hintergrund;
-    setBackground(farbeHintergrund);
-    initialisiere();
-  }
-  
   public ZauberPanel() {
 	super(JSplitPane.HORIZONTAL_SPLIT);
-    initialisiere();
-  }
-  
-  private void initialisiere() {
+	
+	setBackground(Hauptfenster.farbeHintergrund);
+    setOneTouchExpandable(true);
+    
     listeZauber = new JList();
     listeZauber.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
     listeZauber.addMouseListener(new MouseAdapter() {
@@ -56,7 +49,6 @@ public class ZauberPanel extends JSplitPane {
 	});
     JScrollPane scrollListe = new JScrollPane(listeZauber);
     scrollListe.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-    scrollListe.setMinimumSize(new Dimension(200,0));
     panelLinks = new JPanel();
     panelLinks.setLayout(new BoxLayout(panelLinks, BoxLayout.Y_AXIS));
     panelLinks.add(scrollListe);
@@ -73,10 +65,10 @@ public class ZauberPanel extends JSplitPane {
     
     panelLinks.add(panelLinksUnten);
     setLeftComponent(panelLinks);
-    setOneTouchExpandable(true);
+    setRightComponent(new JPanel());  // TODO Platzhalter
+
     setDividerLocation(200);
-    setPreferredSize(new Dimension(555,444));  // TODO
-    setMinimumSize(new Dimension(400,200));  // funktioniert nicht
+    setPreferredSize(new Dimension(444,333));
     initialisiereListe();
   }
   

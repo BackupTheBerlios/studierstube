@@ -22,7 +22,7 @@ import studierstube.xml.ZauberDaten;
  * In dieser Klasse befindet sich main(). Sie dient zum
  * Initialisieren des Programms und zum Starten der GUI.
  * 
- * Die Klasse wird nicht instanziert, sondern besitzt einige
+ * Die Klasse wird nicht instanziiert, sondern besitzt einige
  * statische Methoden, die man leicht vom ganzen Programm aus
  * aufrufen kann.
  */

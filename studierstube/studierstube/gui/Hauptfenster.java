@@ -28,7 +28,7 @@ public class Hauptfenster extends JFrame implements ActionListener {
 	
   static final long serialVersionUID = 1; // brauchbarer Wert ?
   
-  private Color farbeHintergrund = new Color(200,210,255);
+  static Color farbeHintergrund = new Color(200,210,255);
   
   public Hauptfenster() {
     setDefaultLookAndFeelDecorated(true);
@@ -44,8 +44,8 @@ public class Hauptfenster extends JFrame implements ActionListener {
     setBackground(farbeHintergrund);
     JTabbedPane tabs = new JTabbedPane();
     tabs.setBackground(new java.awt.Color(200,210,255));
-    tabs.addTab("Zauberdatenbank", new ZauberPanel(farbeHintergrund));
-    tabs.addTab("Artefaktsammlung", new ArtefaktPanel(farbeHintergrund));
+    tabs.addTab("Zauberdatenbank", new ZauberPanel());
+    tabs.addTab("Artefaktsammlung", new ArtefaktPanel());
     getContentPane().add(tabs);
     pack();
     setResizable(true);

@@ -7,7 +7,6 @@
 
 package studierstube.gui;
 
-import java.awt.Dimension;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -26,7 +25,6 @@ public class ArtefaktPanel extends JSplitPane {
 	
   static final long serialVersionUID = 1; // brauchbarer Wert ?
   
-  private java.awt.Color farbeHintergrund;;
   private String aktuelleThesis = null;
   private String aktuellesArtefakt = null;
   
@@ -42,28 +40,17 @@ public class ArtefaktPanel extends JSplitPane {
   private JButton buttonArtefaktAendern;
   private JButton buttonArtefaktLoeschen;
   
-  public ArtefaktPanel(java.awt.Color hintergrund) {
-    farbeHintergrund = hintergrund;
-    setBackground(farbeHintergrund);
-    initialisiere();
-  }
-  
   public ArtefaktPanel() {
     super(JSplitPane.HORIZONTAL_SPLIT);
-    initialisiere();
-  }
-	  
-  private void initialisiere() {
+    
+    setBackground(Hauptfenster.farbeHintergrund);
+    setOneTouchExpandable(true);
+    
     setLeftComponent(getLinkeSeite());
     setRightComponent(getRechteSeite());
-    setOneTouchExpandable(true);
 
-    setPreferredSize(new Dimension(555,444));  // TODO
-    setMinimumSize(new Dimension(400,200));  // funktioniert nicht
-    // initialisiereListe();
-    
     JPanel panelRechts = new JPanel();
-    panelRechts.setBackground(farbeHintergrund);
+    panelRechts.setBackground(Hauptfenster.farbeHintergrund);
     panelRechts.setLayout(new BoxLayout(panelRechts, BoxLayout.X_AXIS));
     
     resetToPreferredSizes();
@@ -85,7 +72,6 @@ public class ArtefaktPanel extends JSplitPane {
 	});
     JScrollPane scrollbareListeThesis = new JScrollPane(listeThesis);
     scrollbareListeThesis.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-    scrollbareListeThesis.setMinimumSize(new Dimension(200,0));
     panelLinks.add(scrollbareListeThesis);
     
     buttonThesisNeu = new JButton("Neu");
@@ -110,7 +96,6 @@ public class ArtefaktPanel extends JSplitPane {
 	});
     JScrollPane scrollbareListeArtefakt = new JScrollPane(listeArtefakt);
     scrollbareListeArtefakt.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-    scrollbareListeArtefakt.setMinimumSize(new Dimension(200,0));
     panelLinks.add(scrollbareListeArtefakt);
     
     buttonArtefaktNeu = new JButton("Neu");
