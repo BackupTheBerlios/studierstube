@@ -62,6 +62,7 @@ public class ZauberPanel extends JSplitPane {
     panelLinks.add(scrollListe);
     
     buttonNeu = new JButton("Neu");
+    // buttonNeu.setToolTipText("TODO");
     buttonKopieren = new JButton("Kopieren");
     buttonLoeschen = new JButton("Löschen");
     panelLinksUnten = new JPanel();

@@ -174,6 +174,7 @@ public class ArtefaktThesisVE extends JFrame {
 			treeSprueche = new JTree();
 			treeSprueche.setRootVisible(false);
 			treeSprueche.setBounds(new java.awt.Rectangle(5,168,414,78));
+			treeSprueche.setToolTipText("asd");
 			treeSprueche.setPreferredSize(new java.awt.Dimension(999,999));
 		}
 		return treeSprueche;
