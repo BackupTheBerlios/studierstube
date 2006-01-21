@@ -16,6 +16,7 @@ import java.util.ArrayList;
 public class Zauberliste {
   private ArrayList liste = new ArrayList(0);
   private String[] zauberNamen;
+  private boolean gespeichert = true;
   
   /**
    * Fügt einen neuen Zauber an die Zauberliste an.

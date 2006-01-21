@@ -11,9 +11,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 
 /**
- * In dieser Klasse werden globale Einstellungen gespeichert.
- * Außerdem finden sich hier einige Felder und Methoden, die
- * man leicht aus dem ganzen Programm aufrufen können soll.
+ * Diese Klasse sorgt für Logging.
  */
 public class Logfile {
   

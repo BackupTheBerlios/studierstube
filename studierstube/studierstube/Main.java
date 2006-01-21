@@ -17,8 +17,14 @@ import studierstube.gui.Hauptfenster;
 import studierstube.xml.ZauberDaten;
 
 /**
+ * Hauptklasse.
+ * 
  * In dieser Klasse befindet sich main(). Sie dient zum
  * Initialisieren des Programms und zum Starten der GUI.
+ * 
+ * Die Klasse wird nicht instanziert, sondern besitzt einige
+ * statische Methoden, die man leicht vom ganzen Programm aus
+ * aufrufen kann.
  */
 public class Main {
 
