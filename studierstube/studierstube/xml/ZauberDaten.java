@@ -16,7 +16,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import studierstube.Fehler;
-import studierstube.Global;
+import studierstube.Main;
 import studierstube.container.Zauber;
 
 /**
@@ -32,8 +32,8 @@ public class ZauberDaten extends Hilfsfunktionen {
   public void ladeZauberliste() {
 	document = ladeDokument("zauber.xml");
 	if (document == null) {
-	  Global.log("   * Die Datei 'zauber.xml' wurde nicht gefunden.");
-	  Global.log("   * Lade Zauberliste aus mitgelieferter Resource ...");
+	  Main.log("   * Die Datei 'zauber.xml' wurde nicht gefunden.");
+	  Main.log("   * Lade Zauberliste aus mitgelieferter Resource ...");
 	  
       factory = DocumentBuilderFactory.newInstance();
       try {
@@ -99,9 +99,9 @@ public class ZauberDaten extends Hilfsfunktionen {
       zauber.setProbe(probe0, probe1, probe2);
       zauber.setMerkmale(merkmale);
       zauber.setVarianten(varianten);     
-      Global.getZauberliste().add(zauber);
+      Main.getZauberliste().add(zauber);
       
-      Global.log("   + Zauber '" + id + "' geladen.");
+      Main.log("   + Zauber '" + id + "' geladen.");
     }
   }
   
@@ -131,8 +131,8 @@ public class ZauberDaten extends Hilfsfunktionen {
     Element eZaubersprueche = document.createElement("Zaubersprüche");
     eInhalt.appendChild(eZaubersprueche);
     
-    for (int i = 0; i < Global.getZauberliste().getAnzahlZauber(); i++) {
-      Element eZauber = erstelleZauberElement(Global.getZauberliste().getZauber(i));
+    for (int i = 0; i < Main.getZauberliste().getAnzahlZauber(); i++) {
+      Element eZauber = erstelleZauberElement(Main.getZauberliste().getZauber(i));
       eZaubersprueche.appendChild(eZauber);
     } // catch, Fehlermeldung?
     

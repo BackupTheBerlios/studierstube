@@ -19,7 +19,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 import javax.swing.ListSelectionModel;
 
-import studierstube.Global;
+import studierstube.Main;
 
 public class ZauberPanel extends JSplitPane {
   
@@ -80,17 +80,17 @@ public class ZauberPanel extends JSplitPane {
   }
   
   private int initialisiereListe() {
-    int anzahl = Global.getZauberliste().getAnzahlZauber();
+    int anzahl = Main.getZauberliste().getAnzahlZauber();
     String[] namenListe = new String[anzahl];
     for (int i = 0; i < anzahl; i++) {
-      namenListe[i] = Global.getZauberliste().getZauber(i).getName();
+      namenListe[i] = Main.getZauberliste().getZauber(i).getName();
     }
     listeZauber.setListData(namenListe);
     return anzahl;
   }
   
   private void angeklickterZauber(int index) {
-    aktuellerZauber = Global.getZauberliste().getZauber(index).getName();
-    Global.log("aktuellerZauber " + index); // TODO Update rechte seite
+    aktuellerZauber = Main.getZauberliste().getZauber(index).getName();
+    Main.log("aktuellerZauber " + index); // TODO Update rechte seite
   }
 }

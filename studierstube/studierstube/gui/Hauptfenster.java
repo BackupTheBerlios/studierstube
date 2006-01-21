@@ -22,7 +22,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTabbedPane;
 import javax.swing.KeyStroke;
 
-import studierstube.Global;
+import studierstube.Main;
 
 public class Hauptfenster extends JFrame implements ActionListener {
 	
@@ -35,10 +35,10 @@ public class Hauptfenster extends JFrame implements ActionListener {
     setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
     addWindowListener(new WindowAdapter() {
       public void windowClosing(WindowEvent evt) {
-        Global.beenden();
+        Main.beenden();
       }
     });
-    setTitle(Global.name + " Version " + Global.version);
+    setTitle(Main.projektName + " Version " + Main.version);
     // setIconImage(Image)
     setJMenuBar(erzeugeJMenuBar());
     setBackground(farbeHintergrund);
@@ -91,8 +91,8 @@ public class Hauptfenster extends JFrame implements ActionListener {
   
   public void actionPerformed(ActionEvent event) {
     String command = event.getActionCommand();
-    if (command.equals("Beenden")) Global.beenden();
-    else Global.log("FEHLER: ActionCommand nicht erkannt!");
+    if (command.equals("Beenden")) Main.beenden();
+    else Main.log("FEHLER: ActionCommand nicht erkannt!");
   }
   
   public int beendenBestaetigen() {

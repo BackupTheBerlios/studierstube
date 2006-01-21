@@ -7,12 +7,12 @@
 
 package studierstube.tests;
 
-import studierstube.Global;
+import studierstube.Main;
 import studierstube.regeln.Wuerfel;
 
 public class WuerfelTest extends Wuerfel {
   public WuerfelTest() {
-    Global.log("" + durchschnittW6(1000000));
+    Main.log("" + durchschnittW6(1000000));
   }
 
   double durchschnittW6(int anzahl) {
@@ -28,7 +28,7 @@ public class WuerfelTest extends Wuerfel {
 	  case 6:
 		  break;
 	  default:
-		  Global.log("W6 -> " + plus);
+		  Main.log("W6 -> " + plus);
 	  }
 	  erg += plus;
 	}

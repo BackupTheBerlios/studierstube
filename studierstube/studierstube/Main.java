@@ -8,53 +8,112 @@
 package studierstube;
 
 import java.io.File;
+import java.util.Random;
 
+import javax.swing.JOptionPane;
+
+import studierstube.container.Zauberliste;
 import studierstube.gui.Hauptfenster;
 import studierstube.xml.ZauberDaten;
 
 /**
- * In dieser Klasse befindet sich main(). Sie dient nur zum
+ * In dieser Klasse befindet sich main(). Sie dient zum
  * Initialisieren des Programms und zum Starten der GUI.
  */
-class Main {
+public class Main {
 
+  public static final String projektName = "Studierstube";
+  public static final String version = "0.1";
+  public static final String copyright = "Copyright (c) 2005-2006";
+  public static final String author = "Stefan Holzm¸ller";
+  public static final String email = "twelwan@gmx.de";
+
+  static Hauptfenster hauptfenster;
+  
+  private static Logfile logfile;
+  private static Random zufallsGenerator;
+  private static Zauberliste globaleZauberliste;
+  
   /**
    * Startet das Programm.
    * 
    * @param args Kommandozeilenargumente (werden ignoriert)
    */
   public static void main(String[] args) {
-    new Global();
-    Global.log(Global.name + " Version " + Global.version);
-    Global.log(Global.copyright + ", " + Global.author + " (" + Global.email + ")");
-    Global.log("");
-    Global.log("Programm wird gestartet:");
-    Global.log("");
+    logfile = new Logfile("studierstube.log");
+    zufallsGenerator = new Random();
+    globaleZauberliste = new Zauberliste();
+	  
+    log(projektName + " Version " + version);
+    log(copyright + ", " + author + " (" + email + ")");
+    log("");
+    log("Programm wird gestartet:");
+    log("");
     
-    Global.log("-> Lade Zauberliste ...");
+    log("-> Lade Zauberliste ...");
     ZauberDaten z = new ZauberDaten();
     z.ladeZauberliste();
-    int anzahl = Global.getZauberliste().getAnzahlZauber();
-    Global.log("   = " + anzahl + " Zauber geladen.");
-    Global.log("");
+    int anzahl = globaleZauberliste.getAnzahlZauber();
+    log("   = " + anzahl + " Zauber geladen.");
+    log("");
     
     File file = new File("zauber.xml");
     if (!file.exists()) {
-      Global.log("-> Schreibe Zauberliste nach zauber.xml ...");
+      log("-> Schreibe Zauberliste nach zauber.xml ...");
       z.speichereKompletteZauberliste("zauber.xml");
-      Global.log("   fertig.");
-      Global.log("");
+      log("   fertig.");
+      log("");
     }
     
-    Global.log("-> Starte GUI ...");
-    Global.log("");
+    log("-> Starte GUI ...");
+    log("");
     javax.swing.SwingUtilities.invokeLater(
       new Runnable() {
         public void run() {
-          Global.hauptfenster = new Hauptfenster();
+          hauptfenster = new Hauptfenster();
         }
       }
     );
-
   }
+  
+  /**
+   * Einfache Mˆglichkeit ins Logfile zu schreiben.
+   * 
+   * @param ausgabe Ausgabe
+   */
+  public static void log(String ausgabe) {
+	logfile.println(ausgabe);
+  }
+  
+  /**
+   * Gibt den globale Zufallszahlengenerator zur¸ck.
+   */
+  public static Random getZufallsGenerator() {
+    return zufallsGenerator;
+  }
+  
+  /**
+   * Gibt die globale Zauberliste zur¸ck.
+   */
+  public static Zauberliste getZauberliste() {
+    return globaleZauberliste;
+  }
+  
+  /**
+   * Beenden des Programms.
+   * 
+   * 'Aufr‰umen' und dann System.exit(0) aufrufen.
+   */
+  public static void beenden() {
+    if (hauptfenster.beendenBestaetigen() != JOptionPane.YES_OPTION) return;
+    log("");
+    log("-> Beenden ...");
+     
+    log("   * Schlieﬂen des Logfiles ...");
+    logfile.schliesseLogfile();
+    	
+    System.out.println("   * Aufruf von System.exit(0)");
+    System.exit(0);
+  }
+  
 }

@@ -7,7 +7,7 @@
 
 package studierstube.regeln;
 
-import studierstube.Global;
+import studierstube.Main;
 
 public class Wuerfel {
 
@@ -18,7 +18,7 @@ public class Wuerfel {
   * @return			Zufallszahl
   */
   protected int Wx(int seiten) {
-    return Global.getRandom().nextInt(seiten) + 1;
+    return Main.getZufallsGenerator().nextInt(seiten) + 1;
   }
   
   /**

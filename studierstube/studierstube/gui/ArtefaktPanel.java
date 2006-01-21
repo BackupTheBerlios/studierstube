@@ -20,7 +20,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 import javax.swing.ListSelectionModel;
 
-import studierstube.Global;
+import studierstube.Main;
 
 public class ArtefaktPanel extends JSplitPane {
 	
@@ -135,12 +135,12 @@ public class ArtefaktPanel extends JSplitPane {
   private void angeklickteThesis(int index) {
 	if (index == -1) return;
     // aktuelleThesis = ??? 
-    Global.log("aktuelleThesis " + index); // TODO Update rechte seite
+    Main.log("aktuelleThesis " + index); // TODO Update rechte seite
   }
   
   private void angeklicktesArtefakt(int index) {
     if (index == -1) return;
     // aktuellesArtefakt = ???
-    Global.log("aktuellesArtefakt " + index); // TODO Update rechte seite
+    Main.log("aktuellesArtefakt " + index); // TODO Update rechte seite
   }
 }
