@@ -119,8 +119,8 @@ public class ArtefaktPanel extends JSplitPane {
   
   private void angeklickteThesis(int index) {
 	if (index == -1) return;
-    // aktuelleThesis = ??? 
-    Main.log("aktuelleThesis " + index); // TODO Update rechte seite
+    // aktuelleThesis = ???
+    Main.log("aktuelleThesis " + aktuelleThesis); // TODO Update rechte seite
   }
   
   private void angeklicktesArtefakt(int index) {

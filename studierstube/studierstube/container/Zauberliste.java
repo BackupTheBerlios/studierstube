@@ -7,6 +7,14 @@
 
 package studierstube.container;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import studierstube.Dialoge;
@@ -15,7 +23,9 @@ import studierstube.Dialoge;
  * In dieser Klasse werden alle Objekte der Klasse Zauber gespeichert.
  * Sie dient zur Verwaltung der Zauber.
  */
-public class Zauberliste {
+public class Zauberliste implements Serializable {
+  private static final long serialVersionUID = 1L; // brauchbarer Wert?
+
   private ArrayList liste = new ArrayList(270);
   private ArrayList zauberNamen = new ArrayList(270);
   private boolean gespeichert = true;
@@ -107,6 +117,10 @@ public class Zauberliste {
     return liste.size();
   }
   
+  public String getZauberName(int index) {
+	return (String) zauberNamen.get(index);
+  }
+  
   public Zauber getZauber(int index) {
 	return (Zauber) liste.get(index);
   }
@@ -122,5 +136,21 @@ public class Zauberliste {
     }
     neu.zauberNamen = this.zauberNamen;
     return neu;
+  }
+  
+  public void save() throws FileNotFoundException, IOException {
+    FileOutputStream fos = new FileOutputStream("test.obj");
+    ObjectOutputStream oos = new ObjectOutputStream(fos);
+    oos.writeObject(this);
+    oos.close();
+  }
+  
+  public Zauberliste load() throws FileNotFoundException, IOException, ClassNotFoundException {
+    File f = new File("test.obj");
+    FileInputStream fis = new FileInputStream(f);
+    ObjectInputStream ois = new ObjectInputStream(fis);
+    Zauberliste zl = (Zauberliste) ois.readObject();
+    fis.close(); // nicht ois.close() ?
+    return zl;
   }
 }

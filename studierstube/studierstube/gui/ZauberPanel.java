@@ -86,7 +86,7 @@ public class ZauberPanel extends JSplitPane {
   }
   
   private void angeklickterZauber(int index) {
-    aktuellerZauber = Main.getZauberliste().getZauber(index).getName();
+    aktuellerZauber = Main.getZauberliste().getZauberName(index);
     Main.log("aktuellerZauber " + index); // TODO Update rechte seite
   }
 }
