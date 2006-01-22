@@ -44,7 +44,7 @@ public class Hauptfenster extends JFrame implements ActionListener {
     setBackground(farbeHintergrund);
     JTabbedPane tabs = new JTabbedPane();
     tabs.setBackground(new java.awt.Color(200,210,255));
-    tabs.addTab("Zauberdatenbank", new ZauberPanel());
+    tabs.addTab("Zauberverwaltung", new ZauberPanel());
     tabs.addTab("Artefaktsammlung", new ArtefaktPanel());
     getContentPane().add(tabs);
     pack();
