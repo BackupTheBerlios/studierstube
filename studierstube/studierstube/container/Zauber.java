@@ -121,7 +121,11 @@ public class Zauber {
 	return varianten;
   }
   
-  protected Zauber copy() {
+  public Zauber getClone() {
+    return (Zauber) clone();
+  }
+	  
+  protected Object clone() {
     Zauber neu = new Zauber();
     neu.name = this.name;
     neu.komplexitaet = this.komplexitaet;
