@@ -46,6 +46,9 @@ public class ZauberPanel extends JSplitPane {
       public void mouseClicked(MouseEvent e) {
         angeklickterZauber(listeZauber.locationToIndex(e.getPoint()));
       }
+      public void mouseEntered(MouseEvent e) {
+        // TODO statusbar
+      }
 	});
     JScrollPane scrollListe = new JScrollPane(listeZauber);
     scrollListe.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);

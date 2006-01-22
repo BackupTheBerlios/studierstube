@@ -7,6 +7,7 @@
 
 package studierstube.gui;
 
+import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -19,7 +20,7 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
-import javax.swing.JTabbedPane;
+import javax.swing.JPanel;
 import javax.swing.KeyStroke;
 
 import studierstube.Main;
@@ -30,6 +31,10 @@ public class Hauptfenster extends JFrame implements ActionListener {
   
   static Color farbeHintergrund = new Color(200,210,255);
   
+  private CardLayout cardLayout;
+  private JPanel panels;
+  private String titel = Main.projektName + " Version " + Main.version;
+  
   public Hauptfenster() {
     setDefaultLookAndFeelDecorated(true);
     setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
@@ -38,15 +43,20 @@ public class Hauptfenster extends JFrame implements ActionListener {
         Main.beenden();
       }
     });
-    setTitle(Main.projektName + " Version " + Main.version);
     // setIconImage(Image)
     setJMenuBar(erzeugeJMenuBar());
     setBackground(farbeHintergrund);
-    JTabbedPane tabs = new JTabbedPane();
-    tabs.setBackground(new java.awt.Color(200,210,255));
-    tabs.addTab("Zauberverwaltung", new ZauberPanel());
-    tabs.addTab("Artefaktsammlung", new ArtefaktPanel());
-    getContentPane().add(tabs);
+//    JTabbedPane panels = new JTabbedPane();
+//    panels.setBackground(new java.awt.Color(200,210,255));
+//    panels.addTab("Zauberverwaltung", new ZauberPanel());
+//    panels.addTab("Artefaktsammlung", new ArtefaktPanel());
+    cardLayout = new CardLayout();
+    panels = new JPanel(cardLayout);
+    panels.setBackground(farbeHintergrund);
+    panels.add("Zauberverwaltung", new ZauberPanel());
+    panels.add("Artefaktsammlung", new ArtefaktPanel());
+    zeigeArtefaktPanel();
+    getContentPane().add(panels);
     pack();
     setResizable(true);
     setLocationRelativeTo(null);
@@ -74,8 +84,13 @@ public class Hauptfenster extends JFrame implements ActionListener {
   	hilfeMenu.setMnemonic(KeyEvent.VK_H);
   	menuBar.add(hilfeMenu);
   	
-  	menuItem = new JMenuItem("Artefakterschaffung", KeyEvent.VK_A);
+  	menuItem = new JMenuItem("Artefaktsammlung", KeyEvent.VK_A);
     menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_A, ActionEvent.CTRL_MASK));
+    menuItem.addActionListener(this);
+    programmMenu.add(menuItem);
+    
+  	menuItem = new JMenuItem("Zauberverwaltung", KeyEvent.VK_Z);
+    menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Z, ActionEvent.CTRL_MASK));
     menuItem.addActionListener(this);
     programmMenu.add(menuItem);
   	
@@ -92,7 +107,19 @@ public class Hauptfenster extends JFrame implements ActionListener {
   public void actionPerformed(ActionEvent event) {
     String command = event.getActionCommand();
     if (command.equals("Beenden")) Main.beenden();
+    else if (command.equals("Artefaktsammlung")) zeigeArtefaktPanel();
+    else if (command.equals("Zauberverwaltung")) zeigeZauberPanel();
     else Main.log("FEHLER: ActionCommand nicht erkannt!");
+  }
+  
+  public void zeigeArtefaktPanel() {
+    cardLayout.show(panels, "Artefaktsammlung");
+    setTitle(titel + " (Artefaktsammlung)");
+  }
+  
+  public void zeigeZauberPanel() {
+    cardLayout.show(panels, "Zauberverwaltung");
+    setTitle(titel + " (Zauberverwaltung)");
   }
   
   public int beendenBestaetigen() {

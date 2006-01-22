@@ -37,7 +37,7 @@ public class ArtefaktPanel extends JSplitPane {
   private JButton buttonThesisKopieren;
   private JButton buttonThesisLoeschen;
   private JButton buttonArtefaktNeu;
-  private JButton buttonArtefaktAendern;
+  private JButton buttonArtefaktVariieren;
   private JButton buttonArtefaktLoeschen;
   
   public ArtefaktPanel() {
@@ -99,12 +99,12 @@ public class ArtefaktPanel extends JSplitPane {
     panelLinks.add(scrollbareListeArtefakt);
     
     buttonArtefaktNeu = new JButton("Neu");
-    buttonArtefaktAendern = new JButton("Ändern");
+    buttonArtefaktVariieren = new JButton("Variieren");
     buttonArtefaktLoeschen = new JButton("Löschen");
     panelLinksButtonsArtefakt = new JPanel();
     panelLinksButtonsArtefakt.setLayout(new BoxLayout(panelLinksButtonsArtefakt, BoxLayout.X_AXIS));
     panelLinksButtonsArtefakt.add(buttonArtefaktNeu);
-    panelLinksButtonsArtefakt.add(buttonArtefaktAendern);
+    panelLinksButtonsArtefakt.add(buttonArtefaktVariieren);
     panelLinksButtonsArtefakt.add(buttonArtefaktLoeschen);
     panelLinks.add(panelLinksButtonsArtefakt);
     
