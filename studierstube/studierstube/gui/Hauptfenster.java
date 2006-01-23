@@ -32,7 +32,7 @@ public class Hauptfenster extends JFrame implements ActionListener {
 	
   static final long serialVersionUID = 1; // brauchbarer Wert ?
   
-  static Color farbeHintergrund = new Color(200,210,255);
+  static final Color farbeHintergrund = new Color(200,210,255);
   
   private CardLayout cardLayout;
   private JPanel panels;
