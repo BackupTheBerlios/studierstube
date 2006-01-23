@@ -7,6 +7,7 @@
 
 package studierstube.gui;
 
+import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
@@ -15,12 +16,14 @@ import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JToolBar;
 import javax.swing.KeyStroke;
 
 import studierstube.Main;
@@ -46,17 +49,38 @@ public class Hauptfenster extends JFrame implements ActionListener {
     // setIconImage(Image)
     setJMenuBar(erzeugeJMenuBar());
     setBackground(farbeHintergrund);
-//    JTabbedPane panels = new JTabbedPane();
-//    panels.setBackground(new java.awt.Color(200,210,255));
-//    panels.addTab("Zauberverwaltung", new ZauberPanel());
-//    panels.addTab("Artefaktsammlung", new ArtefaktPanel());
+    
+    JPanel panelHauptfenster = new JPanel();
+    panelHauptfenster.setLayout(new BorderLayout());
+    JButton buttonArtefaktPanel = new JButton("Artefaktsammlung");
+    JButton buttonZauberPanel = new JButton("Zauberverwaltung");
+    buttonArtefaktPanel.addActionListener(new java.awt.event.ActionListener() {
+	  public void actionPerformed(java.awt.event.ActionEvent e) {
+	    zeigeArtefaktPanel();
+	  }
+	});
+    buttonZauberPanel.addActionListener(new java.awt.event.ActionListener() {
+  	  public void actionPerformed(java.awt.event.ActionEvent e) {
+  	    zeigeZauberPanel();
+  	  }
+  	});
+    JToolBar toolBar = new JToolBar();
+    toolBar.setBackground(farbeHintergrund);
+    toolBar.setFloatable(false);
+    toolBar.setRollover(true);
+    toolBar.add(buttonArtefaktPanel);
+    toolBar.add(buttonZauberPanel);
+    panelHauptfenster.add(toolBar, java.awt.BorderLayout.NORTH);
+    
     cardLayout = new CardLayout();
     panels = new JPanel(cardLayout);
     panels.setBackground(farbeHintergrund);
     panels.add("Zauberverwaltung", new ZauberPanel());
     panels.add("Artefaktsammlung", new ArtefaktPanel());
+    panelHauptfenster.add(panels);
+    
+    getContentPane().add(panelHauptfenster);
     zeigeArtefaktPanel();
-    getContentPane().add(panels);
     pack();
     setResizable(true);
     setLocationRelativeTo(null);
