@@ -37,6 +37,8 @@ public class Hauptfenster extends JFrame implements ActionListener {
   private CardLayout cardLayout;
   private JPanel panels;
   private String titel = Main.projektName + " Version " + Main.version;
+  private final String nameArtefaktPanel = "Artefakte";
+  private final String nameZauberPanel = "Zauber";
   
   public Hauptfenster() {
     setDefaultLookAndFeelDecorated(true);
@@ -52,8 +54,8 @@ public class Hauptfenster extends JFrame implements ActionListener {
     
     JPanel panelHauptfenster = new JPanel();
     panelHauptfenster.setLayout(new BorderLayout());
-    JButton buttonArtefaktPanel = new JButton("Artefaktsammlung");
-    JButton buttonZauberPanel = new JButton("Zauberverwaltung");
+    JButton buttonArtefaktPanel = new JButton(nameArtefaktPanel);
+    JButton buttonZauberPanel = new JButton(nameZauberPanel);
     buttonArtefaktPanel.addActionListener(new java.awt.event.ActionListener() {
 	  public void actionPerformed(java.awt.event.ActionEvent e) {
 	    zeigeArtefaktPanel();
@@ -75,8 +77,8 @@ public class Hauptfenster extends JFrame implements ActionListener {
     cardLayout = new CardLayout();
     panels = new JPanel(cardLayout);
     panels.setBackground(farbeHintergrund);
-    panels.add("Zauberverwaltung", new ZauberPanel());
-    panels.add("Artefaktsammlung", new ArtefaktPanel());
+    panels.add(nameArtefaktPanel, new ArtefaktPanel());
+    panels.add(nameZauberPanel, new ZauberPanel());
     panelHauptfenster.add(panels);
     
     getContentPane().add(panelHauptfenster);
@@ -108,12 +110,12 @@ public class Hauptfenster extends JFrame implements ActionListener {
   	hilfeMenu.setMnemonic(KeyEvent.VK_H);
   	menuBar.add(hilfeMenu);
   	
-  	menuItem = new JMenuItem("Artefaktsammlung", KeyEvent.VK_A);
+  	menuItem = new JMenuItem(nameArtefaktPanel, KeyEvent.VK_A);
     menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_A, ActionEvent.CTRL_MASK));
     menuItem.addActionListener(this);
     programmMenu.add(menuItem);
     
-  	menuItem = new JMenuItem("Zauberverwaltung", KeyEvent.VK_Z);
+  	menuItem = new JMenuItem(nameZauberPanel, KeyEvent.VK_Z);
     menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Z, ActionEvent.CTRL_MASK));
     menuItem.addActionListener(this);
     programmMenu.add(menuItem);
@@ -131,19 +133,19 @@ public class Hauptfenster extends JFrame implements ActionListener {
   public void actionPerformed(ActionEvent event) {
     String command = event.getActionCommand();
     if (command.equals("Beenden")) Main.beenden();
-    else if (command.equals("Artefaktsammlung")) zeigeArtefaktPanel();
-    else if (command.equals("Zauberverwaltung")) zeigeZauberPanel();
+    else if (command.equals(nameArtefaktPanel)) zeigeArtefaktPanel();
+    else if (command.equals(nameZauberPanel)) zeigeZauberPanel();
     else Main.log("FEHLER: ActionCommand nicht erkannt!");
   }
   
   public void zeigeArtefaktPanel() {
-    cardLayout.show(panels, "Artefaktsammlung");
-    setTitle(titel + " (Artefaktsammlung)");
+    cardLayout.show(panels, nameArtefaktPanel);
+    setTitle(titel + " (" + nameArtefaktPanel +")");
   }
   
   public void zeigeZauberPanel() {
-    cardLayout.show(panels, "Zauberverwaltung");
-    setTitle(titel + " (Zauberverwaltung)");
+    cardLayout.show(panels, nameZauberPanel);
+    setTitle(titel + " (" + nameZauberPanel + ")");
   }
   
   public int beendenBestaetigen() {
