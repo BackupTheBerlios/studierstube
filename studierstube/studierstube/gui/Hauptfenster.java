@@ -66,10 +66,7 @@ public class Hauptfenster extends JFrame implements ActionListener {
   	    zeigeZauberPanel();
   	  }
   	});
-    JToolBar toolBar = new JToolBar();
-    toolBar.setBackground(farbeHintergrund);
-    toolBar.setFloatable(false);
-    toolBar.setRollover(true);
+    JToolBar toolBar = new JToolBar(JToolBar.HORIZONTAL);
     toolBar.add(buttonArtefaktPanel);
     toolBar.add(buttonZauberPanel);
     panelHauptfenster.add(toolBar, java.awt.BorderLayout.NORTH);
