@@ -36,7 +36,7 @@ public class Hauptfenster extends JFrame implements ActionListener {
   
   private CardLayout cardLayout;
   private JPanel panels;
-  private String titel = Main.projektName + " Version " + Main.version;
+  private String titel = Main.PROJEKTNAME + " Version " + Main.VERSION;
   private final String nameArtefaktPanel = "Artefakte";
   private final String nameZauberPanel = "Zauber";
   
@@ -71,12 +71,18 @@ public class Hauptfenster extends JFrame implements ActionListener {
     toolBar.add(buttonZauberPanel);
     panelHauptfenster.add(toolBar, java.awt.BorderLayout.NORTH);
     
+//    JPanel statusBar = new JPanel();
+//    statusBar.setLayout(new BorderLayout());
+//    statusBar.add(new JLabel("Subhash"), BorderLayout.CENTER);
+//    statusBar.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
+//    panelHauptfenster.add(statusBar,BorderLayout.SOUTH);
+    
     cardLayout = new CardLayout();
     panels = new JPanel(cardLayout);
     panels.setBackground(farbeHintergrund);
     panels.add(nameArtefaktPanel, new ArtefaktPanel());
     panels.add(nameZauberPanel, new ZauberPanel());
-    panelHauptfenster.add(panels);
+    panelHauptfenster.add(panels, java.awt.BorderLayout.CENTER);
     
     getContentPane().add(panelHauptfenster);
     zeigeArtefaktPanel();
