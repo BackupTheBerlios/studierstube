@@ -10,21 +10,18 @@ package studierstube.container;
 import java.util.ArrayList;
 
 /**
- * Dies ist eine Klasse von Speicherobjekten, die je ein einzelnes
- * Artefakt mit all seinen Eigenschaften beinhaltet.
+ * Dies ist eine Klasse von Speicherobjekten, die je einen Auslöser
+ * mit seinen Eigenschaften und einer Liste von wirkenden Sprüchen
+ * beinhaltet.
  */
-public class Artefakt {
-  boolean	eigenschaftSiegel,
-  		eigenschaftUnzerbrechlichkeit,
-  		eigenschaftGespuer,
-  		eigenschaftApport;
+public class ArcanoviPraeservanz {
+
+  int zuschlag;
+  int ladungen;
   
-  int	zuschlagMaterial,
-  	zuschlagAffinitaetsprinzip,
-	zuschlagZeit,
-	zuschlagOrt,
-	zuschlagGroesse;
-  
-  ArrayList listeAusloeser = new ArrayList(0);
-  
+  String text;
+  String praeservanz;
+
+  ArrayList listeWirkendeSprueche = new ArrayList(0);
+
 }

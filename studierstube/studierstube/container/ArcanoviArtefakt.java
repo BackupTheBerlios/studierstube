@@ -10,20 +10,21 @@ package studierstube.container;
 import java.util.ArrayList;
 
 /**
- * Dies ist eine Klasse von Speicherobjekten, die je einen wirkenden
- * Spruch mit all seinen Eigenschaften beinhaltet.
+ * Dies ist eine Klasse von Speicherobjekten, die je ein einzelnes
+ * Artefakt mit all seinen Eigenschaften beinhaltet.
  */
-public class ArtefaktSpruch {
+public class ArcanoviArtefakt {
+  boolean	eigenschaftSiegel,
+  		eigenschaftUnzerbrechlichkeit,
+  		eigenschaftGespuer,
+  		eigenschaftApport;
   
-  String zauberID;
-  String repraesentation;
-  String wirkung;
+  int	zuschlagMaterial,
+  	zuschlagAffinitaetsprinzip,
+	zuschlagZeit,
+	zuschlagOrt,
+	zuschlagGroesse;
   
-  int zfw;
-  int zfp;
-  int reihung;
-  int stapelung;
-  
-  ArrayList listeModifikationen = new ArrayList(0);
+  ArrayList listePraeservanzen = new ArrayList(0);
   
 }
