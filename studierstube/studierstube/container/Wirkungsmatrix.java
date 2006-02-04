@@ -13,7 +13,7 @@ import java.util.ArrayList;
  * Dies ist eine Klasse von Speicherobjekten, die je einen wirkenden
  * Spruch mit all seinen Eigenschaften beinhaltet.
  */
-public class ArcanoviSpruch {
+public class Wirkungsmatrix {
   
   String zauberID;
   String repraesentation;

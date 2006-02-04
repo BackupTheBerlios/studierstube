@@ -52,7 +52,7 @@ public class ZauberDaten extends Hilfsfunktionen {
         e.printStackTrace();
       }
 	}
-	
+	Main.getZauberliste().clear();
     Node xdimlNode = sucheChildNode(document, "XDIML");
     Node inhaltNode = sucheChildNode(xdimlNode, "Inhalt");
     Node zauberspruecheNode = sucheChildNode(inhaltNode, "Zaubersprüche");

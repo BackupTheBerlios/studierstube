@@ -27,4 +27,15 @@ public class ArcanoviArtefakt {
   
   ArrayList listePraeservanzen = new ArrayList(0);
   
+  class ArcanoviPraeservanz {
+
+    int zuschlag;
+    int ladungen;
+  
+    String text;
+    String praeservanz;
+
+    ArrayList listeWirkendeSprueche = new ArrayList(0);
+
+  }
 }

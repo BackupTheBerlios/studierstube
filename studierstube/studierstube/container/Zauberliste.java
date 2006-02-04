@@ -96,6 +96,11 @@ public class Zauberliste implements Serializable {
 */
   }
   
+  public void clear() {
+    liste = new ArrayList(270);
+    zauberNamen = new ArrayList(270);
+  }
+  
   private String ohneUmlaute(String string) {
 	String stringOhneUmlaute = string;
 	stringOhneUmlaute = stringOhneUmlaute.replace('ä', 'a');
@@ -121,8 +126,19 @@ public class Zauberliste implements Serializable {
 	return (String) zauberNamen.get(index);
   }
   
+  public int getZauberIndex(String name) {
+    for (int i = 0; i < getAnzahlZauber(); i++) {
+      if (name.equals( getZauberName(i) )) return i;
+    }
+    return -1;
+  }
+  
   public Zauber getZauber(int index) {
 	return (Zauber) liste.get(index);
+  }
+  
+  public Zauber getZauber(String name) {
+    return getZauber( getZauberIndex(name) );
   }
   
   public Zauberliste getClone() {
