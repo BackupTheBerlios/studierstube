@@ -54,7 +54,7 @@ public class Fehler {
 			+ "Bitte schicken Sie diese Meldung an den Autor, "
 			+ "damit der Fehler behoben werden kann.\n\n"
 			+ exception.toString() + "\n" + stackTraceAlsString(exception) + "\n"
-			+ "Verwendete Version: " + Main.projektName + " " + Main.version;
+			+ "Verwendete Version: " + Main.PROJEKTNAME + " " + Main.VERSION;
 	int value = JOptionPane.showConfirmDialog(
 			Main.hauptfenster,
   			errormsg + "\n\nDiesen Text in die Zwischenablage kopieren?",

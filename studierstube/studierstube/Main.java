@@ -28,11 +28,11 @@ import studierstube.xml.ZauberDaten;
  */
 public class Main {
 
-  public static final String projektName = "Studierstube";
-  public static final String version = "0.1";
-  public static final String copyright = "Copyright (c) 2005-2006";
-  public static final String author = "Stefan Holzmüller";
-  public static final String email = "twelwan@gmx.de";
+  public static final String PROJEKTNAME = "Studierstube";
+  public static final String VERSION = "0.1";
+  public static final String COPYRIGHT = "Copyright (c) 2005-2006";
+  public static final String AUTHOR = "Stefan Holzmüller";
+  public static final String EMAIL = "twelwan@gmx.de";
 
   static Hauptfenster hauptfenster;
   
@@ -50,8 +50,8 @@ public class Main {
     zufallsGenerator = new Random();
     globaleZauberliste = new Zauberliste();
 	  
-    log(projektName + " Version " + version);
-    log(copyright + ", " + author + " (" + email + ")");
+    log(PROJEKTNAME + " Version " + VERSION);
+    log(COPYRIGHT + ", " + AUTHOR + " (" + EMAIL + ")");
     log("");
     log("Programm wird gestartet:");
     log("");
