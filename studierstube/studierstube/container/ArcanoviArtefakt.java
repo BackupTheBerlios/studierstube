@@ -35,7 +35,7 @@ public class ArcanoviArtefakt {
     String text;
     String praeservanz;
 
-    ArrayList listeWirkendeSprueche = new ArrayList(0);
+    ArrayList listeWirkungsmatrizen = new ArrayList(0);
 
   }
 }

@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
 
 import studierstube.container.Zauberliste;
 import studierstube.gui.Hauptfenster;
-import studierstube.xml.ZauberDaten;
+import studierstube.persistenz.ZauberXML;
 
 /**
  * Hauptklasse.
@@ -57,7 +57,7 @@ public class Main {
     log("");
     
     log("-> Lade Zauberliste ...");
-    ZauberDaten z = new ZauberDaten();
+    ZauberXML z = new ZauberXML();
     z.ladeZauberliste();
     int anzahl = globaleZauberliste.getAnzahlZauber();
     log("   = " + anzahl + " Zauber geladen.");

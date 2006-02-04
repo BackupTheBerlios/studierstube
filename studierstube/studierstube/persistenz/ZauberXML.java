@@ -5,7 +5,7 @@
 * of the (3-clause) BSD license. See LICENSE.txt for details. *
 **************************************************************/
 
-package studierstube.xml;
+package studierstube.persistenz;
 
 import java.io.InputStream;
 
@@ -22,7 +22,7 @@ import studierstube.container.Zauber;
 /**
  * Diese Klasse verwaltet das Im- und Exportieren von Zaubern.
  */
-public class ZauberDaten extends Hilfsfunktionen {
+public class ZauberXML extends XMLHilfsfunktionen {
 
  /**
   * Läd die Zauber in den Speicher. Die Zauber aus der Datei 'zauber.xml'

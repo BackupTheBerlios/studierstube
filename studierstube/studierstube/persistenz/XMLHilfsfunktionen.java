@@ -5,7 +5,7 @@
 * of the (3-clause) BSD license. See LICENSE.txt for details. *
 **************************************************************/
 
-package studierstube.xml;
+package studierstube.persistenz;
 
 import java.io.File;
 
@@ -26,7 +26,7 @@ import studierstube.Fehler;
 /**
  * Oberklasse für die XML-Manipulation mit einigen Hilfsmethoden.
  */
-public class Hilfsfunktionen {
+public class XMLHilfsfunktionen {
 	
   protected DocumentBuilderFactory factory = null;
   protected Document document = null;
