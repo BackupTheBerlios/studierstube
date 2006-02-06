@@ -23,7 +23,7 @@ import studierstube.Dialoge;
  * In dieser Klasse werden alle Objekte der Klasse Zauber gespeichert.
  * Sie dient zur Verwaltung der Zauber.
  */
-public class Zauberliste implements Serializable {
+public class Zauberliste implements Cloneable, Serializable {
   private static final long serialVersionUID = 1L; // brauchbarer Wert?
 
   private ArrayList liste = new ArrayList(270);
