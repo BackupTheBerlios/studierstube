@@ -1,6 +1,15 @@
-<ArcanoviArtefakt ID="" Name="" Version="" Aktiv="">
-<Teilartefakt AusloeserText="" AusloeserZuschlag="" Praeservanz="" Ladungen="">
-<Ladung>
-</Ladung>
+<ArcanoviArtefakt ID="Testartefakt" Name="Testartefakt" Version="0.1" Aktiv="ja">
+
+<Teilartefakt Praeservanz="einmalig" Ladungen="2" AusloeserText="Fingerschnippen" AusloeserZuschlag="3">
 </Teilartefakt>
+
+<Teilartefakt Praeservanz="aufladbar" Ladungen="2" AusloeserText="Fingerschnippen" AusloeserZuschlag="3">
+</Teilartefakt>
+
+<Teilartefakt Praeservanz="semipermanent (täglich)" Ladungen="2" AusloeserText="Fingerschnippen" AusloeserZuschlag="3">
+</Teilartefakt>
+
+<Teilartefakt Praeservanz="Matrixgeber (labil)" Ladungen="1" AusloeserText="Fingerschnippen" AusloeserZuschlag="3">
+</Teilartefakt>
+
 </ArcanoviArtefakt>
