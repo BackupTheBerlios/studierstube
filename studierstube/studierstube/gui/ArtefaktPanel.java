@@ -22,8 +22,8 @@ import javax.swing.ListSelectionModel;
 import studierstube.Main;
 
 public class ArtefaktPanel extends JSplitPane {
-	
-  static final long serialVersionUID = 1; // brauchbarer Wert ?
+  
+  private static final long serialVersionUID = 1L;
   
   private String aktuelleThesis = null;
   private String aktuellesArtefakt = null;

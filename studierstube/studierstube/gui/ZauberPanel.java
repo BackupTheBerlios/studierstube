@@ -44,10 +44,8 @@ public class ZauberPanel extends JSplitPane {
     listeZauber.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
     listeZauber.addMouseListener(new MouseAdapter() {
       public void mouseClicked(MouseEvent e) {
-        angeklickterZauber(listeZauber.locationToIndex(e.getPoint()));
-      }
-      public void mouseEntered(MouseEvent e) {
-        // TODO statusbar
+        if (e.getClickCount() == 2) 
+          angeklickterZauber(listeZauber.locationToIndex(e.getPoint()));
       }
 	});
     JScrollPane scrollListe = new JScrollPane(listeZauber);
