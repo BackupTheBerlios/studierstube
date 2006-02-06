@@ -63,10 +63,10 @@ public class Main {
     log("   = " + anzahl + " Zauber geladen.");
     log("");
     
-    File file = new File("zauber.xml");
+    File file = new File("data/zauber/zauber.xml");
     if (!file.exists()) {
       log("-> Schreibe Zauberliste nach zauber.xml ...");
-      z.speichereKompletteZauberliste("zauber.xml");
+      z.speichereKompletteZauberliste("data/zauber/zauber.xml");
       log("   fertig.");
       log("");
     }

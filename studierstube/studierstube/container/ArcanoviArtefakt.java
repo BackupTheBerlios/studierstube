@@ -14,18 +14,23 @@ import java.util.ArrayList;
  * Artefakt mit all seinen Eigenschaften beinhaltet.
  */
 public class ArcanoviArtefakt {
-  boolean	eigenschaftSiegel,
-  		eigenschaftUnzerbrechlichkeit,
-  		eigenschaftGespuer,
-  		eigenschaftApport;
+  boolean eigenschaftSiegel,
+  	      eigenschaftUnzerbrechlichkeit,
+          eigenschaftGespuer,
+          eigenschaftApport;
   
-  int	zuschlagMaterial,
-  	zuschlagAffinitaetsprinzip,
-	zuschlagZeit,
-	zuschlagOrt,
-	zuschlagGroesse;
+  boolean temporaeresArtefakt;
+  String temporaeresArtefaktGrundzeitraum;
+  
+  int zuschlagMaterial,
+      zuschlagAffinitaetsprinzip,
+      zuschlagZeit,
+      zuschlagOrt,
+      zuschlagGroesse,
+      zuschlagSonstiges;
   
   ArrayList listePraeservanzen = new ArrayList(0);
+  
   
   class ArcanoviPraeservanz {
 
@@ -35,7 +40,13 @@ public class ArcanoviArtefakt {
     String text;
     String praeservanz;
 
-    ArrayList listeWirkungsmatrizen = new ArrayList(0);
-
+    ArrayList listeWirkendeSprueche = new ArrayList(0);
+    
+    
+    class ArcanoviWirkendeSprueche {
+      
+    }
+    
   }
+  
 }

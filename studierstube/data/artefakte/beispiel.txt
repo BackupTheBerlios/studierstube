@@ -1,0 +1,6 @@
+<ArcanoviArtefakt ID="" Name="" Version="" Aktiv="">
+<Teilartefakt AusloeserText="" AusloeserZuschlag="" Praeservanz="" Ladungen="">
+<Ladung>
+</Ladung>
+</Teilartefakt>
+</ArcanoviArtefakt>

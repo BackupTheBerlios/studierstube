@@ -30,7 +30,7 @@ public class ZauberXML extends XMLHilfsfunktionen {
   * vorhanden, so wird die mitgelieferte Resource verwendet.
   */
   public void ladeZauberliste() {
-	document = ladeDokument("zauber.xml");
+	document = ladeDokument("data/zauber/zauber.xml");
 	if (document == null) {
 	  Main.log("   * Die Datei 'zauber.xml' wurde nicht gefunden.");
 	  Main.log("   * Lade Zauberliste aus mitgelieferter Resource ...");
