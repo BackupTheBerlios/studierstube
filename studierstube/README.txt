@@ -5,9 +5,9 @@ Es implementiert einige Regeln, angefangen mit der Artefaktherstellung,
 und soll vor allem Spieler von Magier-Helden durch automatische Berechnungen 
 unterstützen.
 
-Ohne die Kenntnis des Regelwerks ist dieses Programm leider nutzlos. Auf 
-Erklärungstexte wurde aus lizenzrechtlichen Gründen bewusst verzichtet. Das 
-Programm ist ein Fanprojekt und daher keine offizielle DSA-Publikation.
+Ohne die Kenntnis des Regelwerks ist dieses Programm leider nutzlos. Auf viele 
+Erklärungstexte wurde aus lizenzrechtlichen Gründen verzichtet. Das Programm 
+ist ein Fanprojekt und daher keine offizielle DSA-Publikation.
 
 "Das Schwarze Auge" ist ein eingetragenes Warenzeichen der Firma Fantasy 
 Productions. Copyright (c) 1997. Alle Rechte vorbehalten.
@@ -24,13 +24,13 @@ LICENSE.txt und OpenSource.txt.
 
 Bugs:
 
-Es lässt sich kaum vermeiden, dass sich in ein Programm dieser Art Logik- oder 
-Programmierfehler einschleichen. Wenn Sie einen solchen Bug bemerken, bitte 
-informieren Sie mich darüber (twelwan@gmx.de) und ich werde versuchen, den 
-Fehler in einer Nachfolgeversion zu beheben. Vielen Dank für die Mühe.
+Es lässt sich kaum vermeiden, dass sich in ein Programm dieser Art Programmier-
+fehler einschleichen. Wenn Sie einen solchen Bug bemerken, bitte informieren 
+Sie mich darüber (twelwan@gmx.de) und ich werde versuchen, den Fehler in einer 
+Nachfolgeversion zu beheben. Vielen Dank für die Mühe.
 
 
-An dieser Stelle soll in Zukunft noch eine Kurzanleitung zu finden sein.
+[An dieser Stelle soll in Zukunft noch eine Kurzanleitung zu finden sein.]
 
 
 Fragen aller Art bitte an twelwan@gmx.de
