@@ -22,6 +22,15 @@ mit den Quellen arbeiten wollen, lesen Sie bitte die Lizenzbedingungen in
 LICENSE.txt und OpenSource.txt.
 
 
+Features:
+
+Ich habe zwar selbst viele Ideen, wie man die "Studierstube" erweitern könnte, 
+dennoch freue ich mich über Vorschläge - selbst für nur kleine Verbesserungen. 
+Das Programm ist nicht für den Einsatz direkt am Spieltisch gedacht, sondern 
+für langwierige Aktionen wie z.B. Artefaktherstellung und Zauberwerkstatt, die 
+außerhalb des Spielgeschehens abgehandelt werden können.
+
+
 Bugs:
 
 Es lässt sich kaum vermeiden, dass sich in ein Programm dieser Art Programmier-

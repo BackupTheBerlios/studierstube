@@ -2,7 +2,7 @@ Copyright (c) 2005-2006, Stefan Holzmüller
 
 Es ist erlaubt und erwünscht, dieses Programm zu erweitern, zu modifizieren 
 oder in ein anderes Programm zu integrieren. Der Quelltext ist offengelegt 
-unter der neuen BSD-Lizenz, welche in LICENSE.txt nachzulesen ist.
+unter der neuen BSD-Lizenz, welche in LICENSE.txt (englisch) nachzulesen ist.
 Auf den Punkt gebracht verlangt diese Lizenz nur, dass man den Lizenztext 
 reproduziert und damit auf die Urheberschaft des Autors aufmerksam macht.
 
