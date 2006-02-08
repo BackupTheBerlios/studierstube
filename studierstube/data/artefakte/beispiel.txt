@@ -1,15 +1,31 @@
 <ArcanoviArtefakt ID="Testartefakt" Name="Testartefakt" Version="0.1" Aktiv="ja">
-
 <Teilartefakt Praeservanz="einmalig" Ladungen="2" AusloeserText="Fingerschnippen" AusloeserZuschlag="3">
+<WirkenderSpruch ID="Flim Flam Funkel" Wirkung="macht Licht" Reihung="2" Stapelung="3">
+<Wirkungsmatrix rep="" ....>
+<ZfP uebrig="5"/>
+<ZfP uebrig="1"/>
+<ZfP uebrig="8"/>
+</Wirkungsmatrix>
+<Wirkungsmatrix rep="" ....>
+<ZfP uebrig="4"/>
+<ZfP uebrig="8"/>
+<ZfP uebrig="4"/>
+</Wirkungsmatrix>
+</WirkenderSpruch>
 </Teilartefakt>
-
 <Teilartefakt Praeservanz="aufladbar" Ladungen="2" AusloeserText="Fingerschnippen" AusloeserZuschlag="3">
+<WirkenderSpruch ID="" Wirkung="" Reihung="" Stapelung="">
+...
+</WirkenderSpruch>
 </Teilartefakt>
-
 <Teilartefakt Praeservanz="semipermanent (täglich)" Ladungen="2" AusloeserText="Fingerschnippen" AusloeserZuschlag="3">
+<WirkenderSpruch ID="" Wirkung="" Reihung="" Stapelung="">
+...
+</WirkenderSpruch>
 </Teilartefakt>
-
 <Teilartefakt Praeservanz="Matrixgeber (labil)" Ladungen="1" AusloeserText="Fingerschnippen" AusloeserZuschlag="3">
+<WirkenderSpruch ID="" Wirkung="" Reihung="" Stapelung="">
+...
+</WirkenderSpruch>
 </Teilartefakt>
-
 </ArcanoviArtefakt>
