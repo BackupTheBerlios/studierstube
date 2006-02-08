@@ -17,7 +17,7 @@ verletzen. Nach meinem Stand der Erkenntnis muss man Folgendes beachten:
 - Man darf kein Geld mit dem Programm verdienen (außer man erwirbt eine Lizenz 
   von FanPro dafür).
 - Das Regelwerk darf durch genaue Reproduktion der Regeln nicht entwertet 
-  werden (Erklärungstexte, Stichwörter, etc. sind aber okay).
+  werden (einzelne Erklärungstexte, Stichwörter, etc. sind aber okay).
 - Werte bzw. Daten dürfen nicht in ausdruckbarer Form vorliegen.
 - Es sollte deutlich gemacht werden, dass
   - DSA und Aventurien eingetragene Warenzeichen von FanPro sind.
