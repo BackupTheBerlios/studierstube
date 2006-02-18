@@ -29,8 +29,6 @@ import javax.swing.KeyStroke;
 import studierstube.Main;
 
 public class Hauptfenster extends JFrame implements ActionListener {
-	
-  static final long serialVersionUID = 1; // brauchbarer Wert ?
   
   static final Color farbeHintergrund = new Color(200,210,255);
   

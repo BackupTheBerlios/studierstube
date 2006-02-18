@@ -7,6 +7,16 @@
 
 package studierstube.gui.custom;
 
-public class StudierstubeButton {
+import javax.swing.JCheckBox;
 
+public class SCheckBox extends JCheckBox {
+
+  public SCheckBox() {
+    super();
+    init();
+  }
+  
+  private void init() {
+    setBackground(null);
+  }
 }

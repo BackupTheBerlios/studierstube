@@ -9,10 +9,9 @@ package studierstube.gui.custom;
 
 import javax.swing.JPanel;
 
-public class StudierstubePanel extends JPanel {
-  private static final long serialVersionUID = 1L;
-  
-  public StudierstubePanel() {
+public class SPanel extends JPanel {
+
+  public SPanel() {
     setBackground(null);
   }
 }

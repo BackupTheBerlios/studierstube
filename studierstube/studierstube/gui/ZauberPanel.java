@@ -23,8 +23,6 @@ import studierstube.Main;
 
 public class ZauberPanel extends JSplitPane {
   
-  static final long serialVersionUID = 1; // brauchbarer Wert ?
-  
   private String aktuellerZauber = null;
   
   private JList listeZauber;

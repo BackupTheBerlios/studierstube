@@ -23,8 +23,6 @@ import studierstube.Main;
 
 public class ArtefaktPanel extends JSplitPane {
   
-  private static final long serialVersionUID = 1L;
-  
   private String aktuelleThesis = null;
   private String aktuellesArtefakt = null;
   
