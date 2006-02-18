@@ -16,14 +16,12 @@ import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JToolBar;
 import javax.swing.KeyStroke;
 
 import studierstube.Main;
@@ -52,38 +50,39 @@ public class Hauptfenster extends JFrame implements ActionListener {
     
     JPanel panelHauptfenster = new JPanel();
     panelHauptfenster.setLayout(new BorderLayout());
-    JButton buttonArtefaktPanel = new JButton(nameArtefaktPanel);
-    JButton buttonZauberPanel = new JButton(nameZauberPanel);
-    buttonArtefaktPanel.addActionListener(new java.awt.event.ActionListener() {
-	  public void actionPerformed(java.awt.event.ActionEvent e) {
-	    zeigeArtefaktPanel();
-	  }
-	});
-    buttonZauberPanel.addActionListener(new java.awt.event.ActionListener() {
-  	  public void actionPerformed(java.awt.event.ActionEvent e) {
-  	    zeigeZauberPanel();
-  	  }
-  	});
-    JToolBar toolBar = new JToolBar(JToolBar.HORIZONTAL);
-    toolBar.add(buttonArtefaktPanel);
-    toolBar.add(buttonZauberPanel);
-    panelHauptfenster.add(toolBar, java.awt.BorderLayout.NORTH);
-    
+//    JButton buttonArtefaktPanel = new JButton(nameArtefaktPanel);
+//    JButton buttonZauberPanel = new JButton(nameZauberPanel);
+//    buttonArtefaktPanel.addActionListener(new java.awt.event.ActionListener() {
+//	  public void actionPerformed(java.awt.event.ActionEvent e) {
+//	    zeigeArtefaktPanel();
+//	  }
+//	});
+//    buttonZauberPanel.addActionListener(new java.awt.event.ActionListener() {
+//  	  public void actionPerformed(java.awt.event.ActionEvent e) {
+//  	    zeigeZauberPanel();
+//  	  }
+//  	});
+//    JToolBar toolBar = new JToolBar(JToolBar.HORIZONTAL);
+//    toolBar.add(buttonArtefaktPanel);
+//    toolBar.add(buttonZauberPanel);
+//    panelHauptfenster.add(toolBar, java.awt.BorderLayout.NORTH);
+//    
 //    JPanel statusBar = new JPanel();
 //    statusBar.setLayout(new BorderLayout());
 //    statusBar.add(new JLabel("Subhash"), BorderLayout.CENTER);
 //    statusBar.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
 //    panelHauptfenster.add(statusBar,BorderLayout.SOUTH);
     
-    cardLayout = new CardLayout();
-    panels = new JPanel(cardLayout);
-    panels.setBackground(farbeHintergrund);
-    panels.add(nameArtefaktPanel, new ArtefaktPanel());
-    panels.add(nameZauberPanel, new ZauberPanel());
-    panelHauptfenster.add(panels, java.awt.BorderLayout.CENTER);
+//    cardLayout = new CardLayout();
+//    panels = new JPanel(cardLayout);
+//    panels.setBackground(farbeHintergrund);
+//    panels.add(nameArtefaktPanel, new ArtefaktPanel());
+//    panels.add(nameZauberPanel, new ZauberPanel());
+//    panelHauptfenster.add(panels, java.awt.BorderLayout.CENTER);
+    panelHauptfenster.add(new ArtefaktDesign());
     
     getContentPane().add(panelHauptfenster);
-    zeigeArtefaktPanel();
+//    zeigeArtefaktPanel();
     pack();
     setResizable(true);
     setLocationRelativeTo(null);

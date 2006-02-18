@@ -7,16 +7,24 @@
 
 package studierstube.gui.custom;
 
-import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 
-public class SPanel extends JPanel {
+public class SRadioButton extends JRadioButton {
+  
+  private String name = null;
 
-  public SPanel() {
+  public SRadioButton(String text) {
     super();
+    name = text;
     init();
   }
   
   private void init() {
     setBackground(null);
+    setText(name);
+  }
+  
+  public String getName() {
+    return name;
   }
 }

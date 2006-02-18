@@ -8,11 +8,14 @@
 package studierstube.gui;
 
 import javax.swing.BoxLayout;
+import javax.swing.ButtonGroup;
+import javax.swing.JPanel;
 
 import studierstube.gui.custom.SCheckBox;
 import studierstube.gui.custom.SPanel;
+import studierstube.gui.custom.SRadioButton;
 
-public class ArtefaktDesign extends SPanel {
+public class ArtefaktDesign extends JPanel {
   
   ArtefaktDesign() {
     super();
@@ -20,23 +23,16 @@ public class ArtefaktDesign extends SPanel {
   }
   
   private void init() {
-    
+    add(machePanelEigenschaften());
+    add(machePanelTempArtefakt());
   }
   
   private SPanel machePanelEigenschaften() {
     
-    SCheckBox checkBoxEigenschaftSiegel = new SCheckBox();
-    checkBoxEigenschaftSiegel.setText("Siegel und Zertifikat");
-    
-    SCheckBox checkBoxEigenschaftUnzerbrechlichkeit = new SCheckBox();
-    checkBoxEigenschaftUnzerbrechlichkeit.setText("Unzerbrechlichkeit");
-    
-    SCheckBox checkBoxEigenschaftGespuer= new SCheckBox();
-    checkBoxEigenschaftGespuer.setText("Gespür des Schöpfers");
-    checkBoxEigenschaftGespuer.setActionCommand("Gespür des Schöpfers");
-    
-    SCheckBox checkBoxEigenschaftApport = new SCheckBox();
-    checkBoxEigenschaftApport.setText("Magischer Apport");
+    SCheckBox checkBoxEigenschaftSiegel = new SCheckBox("Siegel und Zertifikat");
+    SCheckBox checkBoxEigenschaftUnzerbrechlichkeit = new SCheckBox("Unzerbrechlichkeit");
+    SCheckBox checkBoxEigenschaftGespuer = new SCheckBox("Gespür des Schöpfers");
+    SCheckBox checkBoxEigenschaftApport = new SCheckBox("Magischer Apport");
     
     SPanel panelEigenschaftenInnen = new SPanel();
     panelEigenschaftenInnen.setLayout(new BoxLayout(panelEigenschaftenInnen, BoxLayout.Y_AXIS));
@@ -50,5 +46,35 @@ public class ArtefaktDesign extends SPanel {
     panelEigenschaften.add(panelEigenschaftenInnen);
     
     return panelEigenschaften;
+  }
+  
+  private SPanel machePanelTempArtefakt() {
+    
+    SCheckBox checkBoxTempArtefakt = new SCheckBox("Temporäres Artefakt");
+    
+    SPanel panelGrundzeitraum = new SPanel();
+    panelGrundzeitraum.setLayout(new BoxLayout(panelGrundzeitraum, BoxLayout.Y_AXIS));
+    panelGrundzeitraum.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Grundzeitraum", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, null, null));
+    ButtonGroup buttonGroupGrundzeitraum = new ButtonGroup();
+    
+    SRadioButton radioButtonGrundzeitraumMonat = new SRadioButton("ein Monat");
+    buttonGroupGrundzeitraum.add(radioButtonGrundzeitraumMonat);
+    panelGrundzeitraum.add(radioButtonGrundzeitraumMonat);
+    
+    SRadioButton radioButtonGrundzeitraumWoche = new SRadioButton("eine Woche");
+    buttonGroupGrundzeitraum.add(radioButtonGrundzeitraumWoche);
+    panelGrundzeitraum.add(radioButtonGrundzeitraumWoche);
+    
+    SRadioButton radioButtonGrundzeitraumTag = new SRadioButton("ein Tag");
+    buttonGroupGrundzeitraum.add(radioButtonGrundzeitraumTag);
+    panelGrundzeitraum.add(radioButtonGrundzeitraumTag);
+    
+    SPanel panelTempArtefakt = new SPanel();
+    panelTempArtefakt.setLayout(new BoxLayout(panelTempArtefakt, BoxLayout.Y_AXIS));
+    
+    panelTempArtefakt.add(checkBoxTempArtefakt);
+    panelTempArtefakt.add(panelGrundzeitraum);
+    
+    return panelTempArtefakt;
   }
 }

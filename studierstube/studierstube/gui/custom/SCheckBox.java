@@ -11,12 +11,21 @@ import javax.swing.JCheckBox;
 
 public class SCheckBox extends JCheckBox {
 
-  public SCheckBox() {
+  private String name = null;
+  
+  public SCheckBox(String text) {
     super();
+    name = text;
     init();
   }
   
   private void init() {
+    setText(name);
+    setActionCommand(name);
     setBackground(null);
+  }
+  
+  public String getName() {
+    return name;
   }
 }

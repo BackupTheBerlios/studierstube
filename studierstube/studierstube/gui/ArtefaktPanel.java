@@ -110,7 +110,7 @@ public class ArtefaktPanel extends JSplitPane {
   }
   
   private JPanel getRechteSeite() {
-    JPanel rechtesPanel = new JPanel();
+    ArtefaktDesign rechtesPanel = new ArtefaktDesign();
     
     return rechtesPanel;
   }
