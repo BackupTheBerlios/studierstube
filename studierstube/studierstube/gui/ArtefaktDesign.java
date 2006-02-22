@@ -28,7 +28,6 @@ public class ArtefaktDesign extends JPanel {
   }
   
   private SPanel machePanelEigenschaften() {
-    
     SCheckBox checkBoxEigenschaftSiegel = new SCheckBox("Siegel und Zertifikat");
     SCheckBox checkBoxEigenschaftUnzerbrechlichkeit = new SCheckBox("Unzerbrechlichkeit");
     SCheckBox checkBoxEigenschaftGespuer = new SCheckBox("Gespür des Schöpfers");
@@ -49,7 +48,6 @@ public class ArtefaktDesign extends JPanel {
   }
   
   private SPanel machePanelTempArtefakt() {
-    
     SCheckBox checkBoxTempArtefakt = new SCheckBox("Temporäres Artefakt");
     
     SPanel panelGrundzeitraum = new SPanel();
