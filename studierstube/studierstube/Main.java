@@ -58,7 +58,7 @@ public class Main {
     
     log("-> Lade Zauberliste ...");
     ZauberXML z = new ZauberXML();
-    z.ladeZauberliste();
+    z.ladeZauberlisteXDIML2();
     int anzahl = globaleZauberliste.getAnzahlZauber();
     log("   = " + anzahl + " Zauber geladen.");
     log("");
@@ -66,7 +66,7 @@ public class Main {
     File file = new File("data/zauber/zauber.xml");
     if (!file.exists()) {
       log("-> Schreibe Zauberliste nach zauber.xml ...");
-      z.speichereKompletteZauberliste("data/zauber/zauber.xml");
+      z.speichereKompletteZauberlisteXDIML2("data/zauber/zauber.xml");
       log("   fertig.");
       log("");
     }

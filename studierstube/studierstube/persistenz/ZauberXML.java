@@ -29,7 +29,7 @@ public class ZauberXML extends XMLHilfsfunktionen {
   * werden in der globalen Zauberliste abgelegt. Ist die Datei nicht
   * vorhanden, so wird die mitgelieferte Resource verwendet.
   */
-  public void ladeZauberliste() {
+  public void ladeZauberlisteXDIML2() {
 	document = ladeDokument("data/zauber/zauber.xml");
 	if (document == null) {
 	  Main.log("   * Die Datei 'zauber.xml' wurde nicht gefunden.");
@@ -58,7 +58,7 @@ public class ZauberXML extends XMLHilfsfunktionen {
     Node zauberspruecheNode = sucheChildNode(inhaltNode, "Zaubersprüche");
     NodeList zauberNodes = zauberspruecheNode.getChildNodes();
     for (int i = 0; i < zauberNodes.getLength(); i++) {
-      leseZauber(zauberNodes.item(i));
+      leseZauberXDIML2(zauberNodes.item(i));
     }
   }
   
@@ -67,7 +67,7 @@ public class ZauberXML extends XMLHilfsfunktionen {
   * 
   * @param zauberNode Node des Zaubers
   */
-  private void leseZauber(Node zauberNode) {
+  private void leseZauberXDIML2(Node zauberNode) {
     if (zauberNode.getNodeName() == "Zauber") {
       
       String id = zeigeAttribut(zauberNode, "ID");
@@ -112,7 +112,7 @@ public class ZauberXML extends XMLHilfsfunktionen {
   * 
   * @param dateiname	der Name der XML-Datei
   */
-  public void speichereKompletteZauberliste(String dateiname) {
+  public void speichereKompletteZauberlisteXDIML2(String dateiname) {
 	factory = DocumentBuilderFactory.newInstance();
 	try {
 	  document = factory.newDocumentBuilder().newDocument();
@@ -132,23 +132,24 @@ public class ZauberXML extends XMLHilfsfunktionen {
     eInhalt.appendChild(eZaubersprueche);
     
     for (int i = 0; i < Main.getZauberliste().getAnzahlZauber(); i++) {
-      Element eZauber = erstelleZauberElement(Main.getZauberliste().getZauber(i));
+      Element eZauber = erstelleZauberElementXDIML2(Main.getZauberliste().getZauber(i));
       eZaubersprueche.appendChild(eZauber);
     } // catch, Fehlermeldung?
     
     schreibeDatei(document, dateiname);
   }
   
-  private Element erstelleZauberElement(Zauber z) {
+  // TODO broken with jdk 1.4.2
+  private Element erstelleZauberElementXDIML2(Zauber z) {
 	Element eZauber = document.createElement("Zauber");
 	eZauber.setAttribute("ID", z.getName());
 	
 	Element eProbe = document.createElement("Probe");
-	eProbe.setTextContent(z.getProbeAlsString());
+//	eProbe.setTextContent(z.getProbeAlsString());
 	eZauber.appendChild(eProbe);
 	
 	Element eKomplexitaet = document.createElement("Komplexität");
-	eKomplexitaet.setTextContent(z.getKomplexitaet());
+//	eKomplexitaet.setTextContent(z.getKomplexitaet());
 	eZauber.appendChild(eKomplexitaet);
 	
 	if (z.getMerkmale() != null) {
@@ -156,7 +157,7 @@ public class ZauberXML extends XMLHilfsfunktionen {
 	  Element eMerkmal;
 	  for (int i = 0; i < z.getMerkmale().length; i++) {
 	    eMerkmal = document.createElement("Merkmal");
-        eMerkmal.setTextContent(z.getMerkmale()[i]);
+ //       eMerkmal.setTextContent(z.getMerkmale()[i]);
 	    eMerkmale.appendChild(eMerkmal);
 	  }
 	  eZauber.appendChild(eMerkmale);
@@ -167,7 +168,7 @@ public class ZauberXML extends XMLHilfsfunktionen {
 	  Element eVariante;
 	  for (int i = 0; i < z.getVarianten().length; i++) {
 	    eVariante = document.createElement("Variante");
-	    eVariante.setTextContent(z.getVarianten()[i]);
+//	    eVariante.setTextContent(z.getVarianten()[i]);
 	    eVarianten.appendChild(eVariante);
 	  }
 	  eZauber.appendChild(eVarianten);

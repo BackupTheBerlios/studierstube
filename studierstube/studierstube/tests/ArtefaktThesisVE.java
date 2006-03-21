@@ -63,7 +63,7 @@ public class ArtefaktThesisVE extends JFrame {
 	 */
 	private void initialize() {
 		this.setSize(571, 391);
-		this.setMinimumSize(new java.awt.Dimension(90,208));
+		//this.setMinimumSize(new java.awt.Dimension(90,208));
 		this.setResizable(true);
 		this.setContentPane(getJContentPane());
 		this.setTitle("Artefaktthesis für: unbenanntes Artefakt");
