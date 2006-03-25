@@ -7,11 +7,8 @@
 
 package studierstube.gui.custom;
 
-import javax.swing.JButton;
+import javax.swing.JList;
 
-public class SButton extends JButton {
+public class SList extends JList {
 
-  public SButton(String s) {
-    super(s);
-  }
 }
