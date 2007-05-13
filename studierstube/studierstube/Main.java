@@ -30,7 +30,7 @@ public class Main {
 
   public static final String PROJEKTNAME = "Studierstube";
   public static final String VERSION = "0.1";
-  public static final String COPYRIGHT = "Copyright (c) 2005-2006";
+  public static final String COPYRIGHT = "Copyright (c) 2005-2007";
   public static final String AUTHOR = "Stefan Holzmüller";
   public static final String EMAIL = "twelwan@gmx.de";
 
